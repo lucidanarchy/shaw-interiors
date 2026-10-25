@@ -1,0 +1,195 @@
+<div class="col-lg-6 col-md-6">
+      <div>
+        <span class="text-uppercase text-muted fs-8 tracking-wider fw-bold mb-2 d-block">About Shaw Interiors</span>
+        <h3 class="fw-bold text-dark text-uppercase fs-3 mb-3">Crafting Tactile Sanctuary</h3>
+        
+        <p class=" fst-italic lead text-dark mb-3 fs-6 lh-base">
+          At Shaw Interiors, we pride ourselves on designing quiet luxury—where raw architectural geometry seamlessly dialogues with bespoke tactile warmth.
+        </p>
+        
+        <p class="text-muted lh-base  mb-0">
+          Every space we craft is an exploration of light, material, and spatial rhythm. From rich natural stone and hand-finished timber to layered ambient lighting, we approach each residence with editorial precision. <strong>We do not merely decorate rooms; we curate the subtle texture of human living</strong>, transforming everyday environments into personal sanctuaries of timeless elegance.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+/* =====================
+   MOBILE VIEW (Bootstrap Screen Breaks)
+===================== */
+
+@media screen and (max-width: 768px) { /* Aligned with Bootstrap's standard md breakpoint */
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        flex-direction: column;
+        align-items: stretch;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+
+    .menu li {
+        text-align: center;
+        border-top: 1px solid #444;
+        display: block;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 15px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .menu li a:hover {
+        background: limegreen;
+        color: white;
+    }
+
+    /* Show dropdown menu when checkbox is checked */
+    #menu-toggle:checked ~ .menu {
+        max-height: 400px;
+        opacity: 1;
+    }
+
+    /* Disable underline on mobile */
+    .menu li a::after {
+        display: none;
+    }
+	
+	
+	
+}
+
+
+
+
+
+
+<!-- SECTION 1: Trending Projects (Horizontal Row with Bottom-Right Square Controls) -->
+<div class="container my-5 fade-in">
+  
+  <!-- Header -->
+  <div class="mb-3">
+    <h3 class="fw-bold fs-2 text-start text-lg-center dkk-gray">Trending Projects</h3>
+    <p class="lt-gray text-start text-lg-center">Featured architectural blueprints and commercial concepts.</p>
+  </div>
+
+  <!-- Horizontal Scroll Container -->
+  <div class="card-slider-container">
+    <div class="card-slider" id="projectSlider">
+      
+      <div class="slider-card-item">
+        <div class="card light-card h-100 shadow-sm">
+          <img src="build2.jpg" class="card-img-top" alt="Project" style="height: 160px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=400&q=80'">
+          <div class="card-body p-3">
+            <h5 class="card-title h6 fw-bold text-dark">Modern Skyscraper</h5>
+            <p class="card-text text-muted small">Commercial blueprint design.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-card-item">
+        <div class="card light-card h-100 shadow-sm">
+          <img src="build3.jpg" class="card-img-top" alt="Project" style="height: 160px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80'">
+          <div class="card-body p-3">
+            <h5 class="card-title h6 fw-bold text-dark">Urban Complex</h5>
+            <p class="card-text text-muted small">Sustainable mixed-use living.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-card-item">
+        <div class="card light-card h-100 shadow-sm">
+          <img src="building.jpg" class="card-img-top" alt="Project" style="height: 160px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=400&q=80'">
+          <div class="card-body p-3">
+            <h5 class="card-title h6 fw-bold text-dark">Glass Pavilion</h5>
+            <p class="card-text text-muted small">Minimalist structural art.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-card-item">
+        <div class="card light-card h-100 shadow-sm">
+          <img src="build2.jfif" class="card-img-top" alt="Project" style="height: 160px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=400&q=80'">
+          <div class="card-body p-3">
+            <h5 class="card-title h6 fw-bold text-dark">Eco Tower</h5>
+            <p class="card-text text-muted small">Green vertical gardens.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-card-item">
+        <div class="card light-card h-100 shadow-sm">
+          <img src="build3.jpg" class="card-img-top" alt="Project" style="height: 160px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80'">
+          <div class="card-body p-3">
+            <h5 class="card-title h6 fw-bold text-dark">Metro Hub</h5>
+            <p class="card-text text-muted small">High-speed transit station.</p>
+          </div>
+        </div>
+      </div>
+
+<div class="slider-card-item">
+        <div class="card light-card h-100 shadow-sm">
+          <img src="build3.jpg" class="card-img-top" alt="Project" style="height: 160px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80'">
+          <div class="card-body p-3">
+            <h5 class="card-title h6 fw-bold text-dark">Metro Hub</h5>
+            <p class="card-text text-muted small">High-speed transit station.</p>
+          </div>
+        </div>
+      </div>
+
+<div class="slider-card-item">
+        <div class="card light-card h-100 shadow-sm">
+          <img src="build3.jpg" class="card-img-top" alt="Project" style="height: 160px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=400&q=80'">
+          <div class="card-body p-3">
+            <h5 class="card-title h6 fw-bold text-dark">Metro Hub</h5>
+            <p class="card-text text-muted small">High-speed transit station.</p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Bottom-Right Square Navigation Buttons -->
+  <div class="d-flex justify-content-end mt-4">
+    <div class="slider-nav-btns d-flex gap-2">
+      <button class="btn square-btn scroll-left-btn" aria-label="Previous Projects">&larr;</button>
+      <button class="btn square-btn scroll-right-btn" aria-label="Next Projects">&rarr;</button>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

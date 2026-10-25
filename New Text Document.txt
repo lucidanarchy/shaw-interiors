@@ -1,0 +1,124 @@
+<div class="col-lg-6 col-md-6">
+      <div>
+        <span class="text-uppercase text-muted fs-8 tracking-wider fw-bold mb-2 d-block">About Shaw Interiors</span>
+        <h3 class="fw-bold text-dark text-uppercase fs-3 mb-3">Crafting Tactile Sanctuary</h3>
+        
+        <p class=" fst-italic lead text-dark mb-3 fs-6 lh-base">
+          At Shaw Interiors, we pride ourselves on designing quiet luxury—where raw architectural geometry seamlessly dialogues with bespoke tactile warmth.
+        </p>
+        
+        <p class="text-muted lh-base  mb-0">
+          Every space we craft is an exploration of light, material, and spatial rhythm. From rich natural stone and hand-finished timber to layered ambient lighting, we approach each residence with editorial precision. <strong>We do not merely decorate rooms; we curate the subtle texture of human living</strong>, transforming everyday environments into personal sanctuaries of timeless elegance.
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+/* =====================
+   MOBILE VIEW (Bootstrap Screen Breaks)
+===================== */
+
+@media screen and (max-width: 768px) { /* Aligned with Bootstrap's standard md breakpoint */
+
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #333;
+        flex-direction: column;
+        align-items: stretch;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, opacity 0.5s ease;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        z-index: 1000;
+    }
+
+    .menu li {
+        text-align: center;
+        border-top: 1px solid #444;
+        display: block;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 15px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .menu li a:hover {
+        background: limegreen;
+        color: white;
+    }
+
+    /* Show dropdown menu when checkbox is checked */
+    #menu-toggle:checked ~ .menu {
+        max-height: 400px;
+        opacity: 1;
+    }
+
+    /* Disable underline on mobile */
+    .menu li a::after {
+        display: none;
+    }
+	
+	
+	
+}
+
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(element => {
+      observer.observe(element);
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
