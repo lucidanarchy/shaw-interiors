@@ -744,6 +744,18 @@ h1, h2, h3 {
     padding: 10px 14px !important;
     margin-top: 1rem !important;
   }
+  
+  
+    .carousel-caption-glass {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  display: inline-block;
+}
+  
+  
+  
+  
 }
 
 @media (max-width: 576px) {
@@ -761,6 +773,16 @@ h1, h2, h3 {
     font-size: 0.95rem !important;
     letter-spacing: 4px !important;
   }
+  
+  
+  .carousel-caption-glass {
+  background: rgba(0, 0, 0, 0.0);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  display: inline-block;
+}
+  
+  
 }
 
 
