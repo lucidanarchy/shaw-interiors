@@ -444,8 +444,9 @@ h1, h2, h3, h5 {
     top: 80px;
     left: 0;
     width: 100%;
-    max-width: 320px;
-    height: calc(100vh - 80px);
+    max-width: 300px;
+    //min-height: 100px;
+	height: calc(100vh - 80px);
     background-color: rgba(26, 26, 26, 0.97);
     -webkit-backdrop-filter: blur(17px) !important;
     backdrop-filter: blur(17px) !important;
@@ -460,6 +461,7 @@ h1, h2, h3, h5 {
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #424242 transparent;
+	overflow-x: hidden;
   }
 
   #menu-toggle:checked ~ ul.menu {
@@ -583,6 +585,13 @@ h1, h2, h3, h5 {
     right: auto !important;
     width: 90px !important; /* Adjust this width if you want it slightly shorter or longer */
   }
+  
+  .gone-md {
+	  
+	  display: none;
+  }
+  
+  
 }
 
 
@@ -764,9 +773,9 @@ h1, h2, h3, h5 {
   }
   
   .carousel-caption-glass {
-  background: rgba(0, 0, 0, 0.0);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
+  background: rgba(0, 0, 0, 0.0.05);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
   display: inline-block;}
   
   
@@ -1133,6 +1142,16 @@ h1, h2, h3, h5 {
   .gone {
     display: none;  
   }
+  
+  
+  
+  .t-md {
+	  
+	font-size:0.85em;  
+	  
+  }
+  
+  
 }
 
 /* Default Logo Size (Desktop & Tablet) */
