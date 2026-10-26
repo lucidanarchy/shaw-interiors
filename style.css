@@ -17,7 +17,7 @@ body, p, input, button { font-family: 'Montserrat', sans-serif; font-size: 1.05r
 
 //h1, h2, h3, .section-title { font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, sans-serif; }
 
-h1, h2, h3 {
+h1, h2, h3, h5 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;             /* Bold / Heavy weight */
   text-transform: uppercase;     /* All capital letters */
@@ -689,20 +689,21 @@ h1, h2, h3 {
   font-weight: 400;
   letter-spacing: 10px;
   line-height: 1.4em;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
   margin-bottom: 15px;
 }
 
 .carousel-caption p {
   font-size: 1.25rem;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-caption-glass {
-  background: rgba(0, 0, 0, 0.05);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   display: inline-block;
+  border-radius: 22px;
 }
 
 /* =========================================================
@@ -722,9 +723,9 @@ h1, h2, h3 {
   }
 
   .carousel-caption {
-    bottom: 18% !important;
-    left: 8%;
-    right: 8%;
+    bottom: 24% !important;
+    left: 18%;
+    right: 18%;
   }
 
   .carousel-caption h2 {
@@ -744,18 +745,6 @@ h1, h2, h3 {
     padding: 10px 14px !important;
     margin-top: 1rem !important;
   }
-  
-  
-    .carousel-caption-glass {
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  display: inline-block;
-}
-  
-  
-  
-  
 }
 
 @media (max-width: 576px) {
@@ -766,7 +755,7 @@ h1, h2, h3 {
   }
 
   .carousel-caption {
-    bottom: 14% !important;
+    bottom: 20% !important;
   }
 
   .carousel-caption h2 {
@@ -774,13 +763,14 @@ h1, h2, h3 {
     letter-spacing: 4px !important;
   }
   
-  
   .carousel-caption-glass {
   background: rgba(0, 0, 0, 0.0);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
-  display: inline-block;
-}
+  display: inline-block;}
+  
+  
+  
   
   
 }
@@ -938,6 +928,20 @@ h1, h2, h3 {
 
 .project-slide.border {
   border-color: #d4d4d4 !important; /* Change #333333 to your desired color */
+}
+
+/* Default height for mobile screens */
+.project-img-responsive {
+  height: 250px !important;
+  object-fit: cover;
+}
+
+/* Larger height for tablets and desktops (768px and up) */
+@media (min-width: 768px) {
+  .project-img-responsive {
+    height: 420px !important;
+	object-fit: cover;
+  }
 }
 
 /* =========================================================
@@ -1158,6 +1162,18 @@ background-color:#202020;
 
 
 
+.ft-bg {
+  width: 100%;
+  background-color: #202020;
+  overflow-x: hidden;
+}
+
+.arrcc-footer {
+  background-color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+
 
 
 
@@ -1356,4 +1372,8 @@ background-color:#202020;
     text-transform: uppercase;
   }
 }
+
+
+
+
 
