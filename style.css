@@ -577,6 +577,20 @@ overflow-x: hidden !important;
 	
   }
 
+@media screen and (max-width: 576px){
+
+ ul.menu {
+	
+max-width: 576px;	
+	
+ }
+	
+}
+
+
+
+
+
   #menu-toggle:checked ~ ul.menu {
     transform: translateX(0);
   }
