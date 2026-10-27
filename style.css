@@ -82,6 +82,8 @@ h1, h2, h3, h5 {
   font-size: 0.75rem;
 }
 
+
+
 .tracking-wider {
   letter-spacing: 1.5px;
 }
@@ -220,6 +222,38 @@ h1, h2, h3, h5 {
     transform: translateY(-100%) !important;
   }
 }
+
+
+@media screen and (min-width: 769px) {
+  /* 1. Disable click interactions on the checkbox and label on desktop */
+  .dropdown-checkbox,
+  .menu li.has-dropdown label {
+    pointer-events: none !important;
+  }
+
+  /* 2. Nullify the ':checked' state so clicking can never lock it open */
+  .dropdown-checkbox:checked ~ .dropdown-menu-box {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(10px) !important;
+  }
+
+  /* 3. Control dropdowns strictly via desktop hover */
+  .menu li.has-dropdown:hover .dropdown-menu-box {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* 4. Smoothly rotate the arrow on hover without locking */
+  .menu li.has-dropdown:hover .angle-bracket {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+
 
 /* Dropdown Items, Thumbnails & Accordion Triggers */
 .menu li.has-dropdown {
@@ -401,6 +435,82 @@ h1, h2, h3, h5 {
     transform: translateY(0);
   }
 }
+
+ /* --- SCROLL SETTINGS FOR SERVICES DROP DOWN MOBILE --- */
+
+@media screen and (max-width: 768px) {
+  /* ... (other mobile navigation code above) ... */
+
+ .dropdown-menu-box {
+    
+   
+    /* --- COMFORTABLE MOBILE SCROLLING HEIGHT --- */
+    max-height: 275px !important;     /* Shows ~3.5 items comfortably without looking squished */
+    overflow-y: scroll !important;
+overflow-x: hidden !important;
+    /* Enables clean scrolling */
+    
+	
+	-webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #424242 transparent;
+	
+	
+	
+  }
+
+
+/* Thin Scrollbar for WebKit Mobile Browsers (Chrome, Safari, Edge) */
+  .dropdown-menu-box::-webkit-scrollbar {
+    width: 3px !important;
+  }
+
+  .dropdown-menu-box::-webkit-scrollbar-track {
+    background: transparent !important;
+  }
+
+  .dropdown-menu-box::-webkit-scrollbar-thumb {
+    background-color: #424242 !important;
+    border-radius: 10px !important;
+  }
+
+
+
+
+
+
+  /* Prevent individual rows from squishing/compressing */
+  .dropdown-menu-box .dropdown-item-row {
+    flex-shrink: 0 !important;
+  }
+  
+ 
+  
+  
+  
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile Fixed Header, Side-Drawer & Accordion */
 @media screen and (max-width: 768px) {
@@ -779,12 +889,7 @@ h1, h2, h3, h5 {
   display: inline-block;}
   
   
-  
-  
-  
 }
-
-
 
 
 
@@ -981,7 +1086,7 @@ h1, h2, h3, h5 {
     to top, 
     rgba(0, 0, 0, 0.9) 0%, 
     rgba(0, 0, 0, 0.4) 50%, 
-    rgba(0, 0, 0, 0.2) 100%
+    rgba(0, 0, 0, 0.3) 100%
   );
   backdrop-filter: blur(2px);
   opacity: 0;
@@ -995,7 +1100,9 @@ h1, h2, h3, h5 {
 .recent-work-overlay .category-tag {
   font-size: 0.7rem;
   letter-spacing: 1.5px;
-  color: #d1d5db;
+  //color: #d1d5db;
+  //color:#ebebeb;
+    color:#fafafa;
   transform: translateY(-10px);
   transition: transform 0.4s ease;
 }
@@ -1022,6 +1129,19 @@ h1, h2, h3, h5 {
   color: #000000 !important;
   border-color: #ffffff !important;
 }
+
+.proj-text-hd {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  line-height:24px;
+}
+
+.proj-text {
+color:#a1a1a1;
+}
+
+
+
 
 
 /* =========================================================
@@ -1054,6 +1174,18 @@ h1, h2, h3, h5 {
 .fs-8 {
   font-size: 0.85rem;
   letter-spacing: 0.5px;
+}
+
+@media (max-width: 576px) {
+
+
+.margin-b {
+	
+margin-bottom:20px;	
+	
+	
+}
+
 }
 
 
