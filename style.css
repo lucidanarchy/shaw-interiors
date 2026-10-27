@@ -17,12 +17,23 @@ body, p, input, button { font-family: 'Montserrat', sans-serif; font-size: 1.05r
 
 //h1, h2, h3, .section-title { font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, sans-serif; }
 
-h1, h2, h3, h5 {
+h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;             /* Bold / Heavy weight */
   text-transform: uppercase;     /* All capital letters */
   letter-spacing: 2px;          /* Generous character spacing */
 }
+
+
+h5 {
+  //font-family: 'Montserrat', sans-serif;
+  //font-weight: 700;             /* Bold / Heavy weight */
+  text-transform: uppercase;     /* All capital letters */
+  letter-spacing: 1px;          /* Generous character spacing */
+}
+
+
+
 
 /* Text Colors */
 .dkkk-gray {
