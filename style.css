@@ -444,7 +444,7 @@ h1, h2, h3, h5 {
     top: 80px;
     left: 0;
     width: 100%;
-    max-width: 300px;
+    max-width: 330px;
     //min-height: 100px;
 	height: calc(100vh - 80px);
     background-color: rgba(26, 26, 26, 0.97);
