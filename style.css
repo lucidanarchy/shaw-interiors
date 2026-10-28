@@ -455,8 +455,8 @@ h5 {
  .dropdown-menu-box {
     
    
-    /* --- COMFORTABLE MOBILE SCROLLING HEIGHT --- */
-    max-height: 275px !important;     /* Shows ~3.5 items comfortably without looking squished */
+    /* --- SERVICES MOBILE SCROLLING HEIGHT --- */
+    max-height: 229px !important;     /* Shows ~3.5 items comfortably without looking squished */
     overflow-y: scroll !important;
 overflow-x: hidden !important;
     /* Enables clean scrolling */
@@ -554,13 +554,13 @@ overflow-x: hidden !important;
     width: 100%;
     max-width: 330px;
     
-	height: calc(100vh - 100px);
+	height: calc(100vh - 90px);
     background-color: rgba(26, 26, 26, 0.97);
     -webkit-backdrop-filter: blur(17px) !important;
     backdrop-filter: blur(17px) !important;
     list-style: none;
     margin: 0;
-    padding-top: 45px;
+    padding-top: 25px;
 	//padding-left:5px;
     display: flex;
     flex-direction: column;
@@ -609,14 +609,14 @@ max-width: 576px;
 
   ul.menu li a {
     display: block;
-    padding: 12px 14px;
-    font-size: 15px;
+    padding: 10px 14px;
+    font-size: 14px;
     //text-transform: uppercase;
     letter-spacing: 1px;
     color: #858585;
     text-decoration: none;
     transition: color 0.3s ease;
-    margin-left: 0.80em;
+    margin-left: 0.70em;
   }
 
   ul.menu li a:hover,
