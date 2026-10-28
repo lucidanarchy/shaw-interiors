@@ -506,7 +506,9 @@ overflow-x: hidden !important;
 
 
 
-
+/* =========================================================
+    Mobile Fixed Header, Side-Drawer & Accordion
+   ========================================================= */
 
 /* Mobile Fixed Header, Side-Drawer & Accordion */
 @media screen and (max-width: 768px) {
@@ -558,7 +560,8 @@ overflow-x: hidden !important;
     backdrop-filter: blur(17px) !important;
     list-style: none;
     margin: 0;
-    padding: 20px 0 2rem 0;
+    padding-top: 45px;
+	//padding-left:5px;
     display: flex;
     flex-direction: column;
     transform: translateX(-100%);
@@ -606,11 +609,11 @@ max-width: 576px;
 
   ul.menu li a {
     display: block;
-    padding: 14px 14px;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #cccccc;
+    padding: 12px 14px;
+    font-size: 15px;
+    //text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #858585;
     text-decoration: none;
     transition: color 0.3s ease;
     margin-left: 0.80em;
@@ -704,6 +707,59 @@ max-width: 576px;
 
 
 
+@media screen and (max-width: 768px) {
+
+  /* 1. Restrict trigger link and label strictly to content width */
+  .menu li.has-dropdown > a,
+  .menu li.has-dropdown .accordion-trigger {
+    width: fit-content !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  /* 2. Neutralize mobile hover leaks so the arrow stays pointing RIGHT (-45deg) by default */
+  .menu li.has-dropdown:hover .angle-bracket,
+  .menu li.has-dropdown > a:hover .angle-bracket,
+  .accordion-trigger:hover .angle-bracket {
+    transform: rotate(-45deg) !important;
+  }
+
+  /* 3. Rotate cleanly to DOWN (45deg) ONLY when the checkbox is checked on mobile */
+  .dropdown-checkbox:checked ~ a .angle-bracket,
+  .dropdown-checkbox:checked ~ .dropdown-link .angle-bracket,
+  #services-toggle:checked ~ .dropdown-link .angle-bracket,
+  #projects-toggle:checked ~ .dropdown-link .angle-bracket {
+    transform: rotate(45deg) !important;
+    border-color: #ffffff !important;
+  }
+
+  /* 4. Ensure the dropdown content box and its items are fully interactive */
+  .dropdown-menu-box {
+    pointer-events: auto !important;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  
+  /* Completely disable hover lighting and rotation on mobile */
+  .menu li.has-dropdown:hover .angle-bracket,
+  .menu li.has-dropdown > a:hover .angle-bracket,
+  .accordion-trigger:hover .angle-bracket {
+    transform: rotate(-45deg) !important;
+    border-color: #757575 !important; /* Keeps it unlit when hovering empty space */
+  }
+
+}
+
+
+
+
+
+
+
 
 
 
@@ -716,7 +772,7 @@ max-width: 576px;
   .menu li.has-dropdown > a::after {
     left: 14px !important;
     right: auto !important;
-    width: 90px !important; /* Adjust this width if you want it slightly shorter or longer */
+    width: 100px !important; /* Adjust this width if you want it slightly shorter or longer */
   }
   
   .gone-md {
@@ -726,6 +782,34 @@ max-width: 576px;
   
   
 }
+
+
+@media screen and (max-width: 768px) {
+
+  /* 1. Restrict the trigger anchor to fit only its content width */
+  .menu li.has-dropdown > a {
+    width: fit-content !important;
+    display: inline-flex !important;
+    align-items: center;
+  }
+
+  /* 2. Ensure the label trigger inside matches the tight width */
+  .menu li.has-dropdown .accordion-trigger {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px; /* Adds clean spacing between text and arrow */
+    width: fit-content !important;
+    cursor: pointer;
+  }
+
+}
+
+
+
+
+
+
+
 
 
 
