@@ -35,17 +35,29 @@ h5 {
 
 
 
+
+
+
+.services-tr-bt {
+	
+background-color: white;
+padding:0.65em 0;	
+//border:1px solid #9e9e9e;	
+	
+}
+
+
 /* Text Colors */
 .dkkk-gray {
 	color: #1a1a1a;
 }
 
 .dkk-gray {
-	color: #424242;
+	color: #424242 !important;
 }
 
 .dk-gray {
-	color: #5e5e5d;
+	color: #5e5e5d !important;
 }
 
 .lt-gray {
@@ -68,9 +80,19 @@ h5 {
   
 }
 
-.bg-lt-gray {
-	 background: #858483;
+.//bg-lt-gray {
+	background-color: #858483;
 }
+
+.bg-lt-gray {
+	background-color: #f3f3f3;
+}
+
+
+
+
+
+
 
 /* Divider Bars & Utilities */
 .bar {
@@ -1630,8 +1652,5 @@ background-color:#202020;
     text-transform: uppercase;
   }
 }
-
-
-
 
 
