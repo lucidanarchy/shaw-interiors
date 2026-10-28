@@ -554,7 +554,7 @@ overflow-x: hidden !important;
     width: 100%;
     max-width: 330px;
     
-	height: calc(100vh - 60px);
+	height: calc(100vh - 80px);
     background-color: rgba(26, 26, 26, 0.97);
     -webkit-backdrop-filter: blur(17px) !important;
     backdrop-filter: blur(17px) !important;
