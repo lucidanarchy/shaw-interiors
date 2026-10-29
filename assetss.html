@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Services — SHAW Interiors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+ <style>
+    /* =========================================================
+       CONTROL YOUR DESKTOP HEIGHTS HERE (Change values freely)
+       ========================================================= */
+    .frame-height-550 {
+      height: 570px !important;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    .frame-height-600 {
+      height: 640px !important;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    .hero-frame-height {
+      height: 550px !important;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    /* Standard responsive image fill */
+    .service-static-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* =========================================================
+       CONTROL YOUR MOBILE HEIGHTS HERE (Change values freely)
+       ========================================================= */
+    @media (max-width: 767.98px) {
+      .services-section-wrap {
+        padding-top: 0 !important;
+        padding-bottom: 10px !important;
+      }
+      .services-section-wrap h3 {
+        margin-top: 0 !important;
+        margin-bottom: 30px !important;
+      }
+      
+      .badge {
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+        font-size: 12px !important;
+      }
+      
+      /* Change this mobile height value whenever you want */
+      .frame-height-550,
+      .frame-height-600 {
+        height: 320px !important;
+      }
+      
+      .hero-frame-height {
+        height: 520px !important;
+      }
+
+      /* FIX: Force carousel inner elements to inherit the 720px mobile height */
+      .hero-frame-height .carousel,
+      .hero-frame-height .carousel-inner,
+      .hero-frame-height .carousel-item {
+        height: 720px !important;
+      }
+    }
+  </style>
+</head>
+<body style="scroll-behavior: smooth;">
+
+  <!-- =========================================================
+       SECTION 1: GLOBAL NAVIGATION HEADER
+       ========================================================= -->
+  <div class="bg">
+    <div class="container-md">
+      <div class="nv-containe">
+
+        <a href="index.html"><img src="logo-1.png" class="nav-logo" alt="Shaw Interiors Logo"></a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+
+          <!-- SERVICES DROPDOWN / ACCORDION -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
+            
+            <a href="services.html" class="dropdown-link">
+              <label for="services-toggle" class="accordion-trigger">
+                Services <span class="angle-bracket"></span>
+              </label>
+            </a>
+
+            <!-- Dropdown Box with Scrollable Items -->
+            <div class="dropdown-menu-box">
+              <a href="services.html#service-01" class="dropdown-item-row">
+                <img src="build13.jpg" class="dropdown-thumb" alt="Residential Interior">
+                <div class="dropdown-text py-2">
+                  <span class="item-title">01. Residential Interior</span>
+                  <span class="item-sub">Bespoke Homes & Private Estates</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-02" class="dropdown-item-row">
+                <img src="build28.jpg" class="dropdown-thumb" alt="Commercial Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">02. Commercial Interior</span>
+                  <span class="item-sub">Retail, Hospitality & Public Spaces</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-03" class="dropdown-item-row">
+                <img src="build21.png" class="dropdown-thumb" alt="Corporate Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">03. Corporate Interior</span>
+                  <span class="item-sub">Corporate & Modern Workspaces</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-04" class="dropdown-item-row">
+                <img src="build26.png" class="dropdown-thumb" alt="Custom Kitchen Design">
+                <div class="dropdown-text">
+                  <span class="item-title">04. Custom Kitchen Design</span>
+                  <span class="item-sub">High-End Culinary Environments</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-05" class="dropdown-item-row">
+                <img src="build27.jpg" class="dropdown-thumb" alt="Master Suite Design">
+                <div class="dropdown-text">
+                  <span class="item-title">05. Master Suite Design</span>
+                  <span class="item-sub">Private Bedroom Retreats</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-06" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Architectural Millwork">
+                <div class="dropdown-text">
+                  <span class="item-title">06. Architectural Millwork</span>
+                  <span class="item-sub">Custom Cabinetry & Joinery</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-07" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Atmospheric Lighting">
+                <div class="dropdown-text">
+                  <span class="item-title">07. Atmospheric Lighting</span>
+                  <span class="item-sub">Architectural Illumination Plans</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-08" class="dropdown-item-row">
+                <img src="build35.jpg" class="dropdown-thumb" alt="Spa & Bath Design">
+                <div class="dropdown-text">
+                  <span class="item-title">08. Spa & Bath Design</span>
+                  <span class="item-sub">Sanctuary Bathrooms & Wellness</span>
+                </div>
+              </a>
+
+              <a href="services.html#service-09" class="dropdown-item-row">
+                <img src="build24.png" class="dropdown-thumb" alt="Material & Texture Design">
+                <div class="dropdown-text">
+                  <span class="item-title">09. Material & Texture Design</span>
+                  <span class="item-sub">Fine Finishes & Textiles</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- PROJECTS DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="projects-toggle" class="dropdown-checkbox">
+            <a href="#" class="dropdown-link">
+              <label for="projects-toggle" class="accordion-trigger">
+                Projects <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="index.html#projects" class="dropdown-item-row">
+                <img src="build30.jpg" class="dropdown-thumb" alt="Residential Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Residential Works</span>
+                  <span class="item-sub">Residential Estates</span>
+                </div>
+              </a>
+              <a href="index.html#projects" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Commercial Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Commercial Works</span>
+                  <span class="item-sub">Commercial Metros</span>
+                </div>
+              </a>
+              <a href="index.html#projects" class="dropdown-item-row">
+                <img src="build27.jpg" class="dropdown-thumb" alt="Completed Projects">
+                <div class="dropdown-text">
+                  <span class="item-title">Completed Projects</span>
+                  <span class="item-sub">Our portfolio</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+
+      </div>
+    </div> 
+  </div>
+
+  <!-- =========================================================
+       SECTION 2: HERO BANNER CAROUSEL
+       ========================================================= -->
+  <div class="position-relative overflow-hidden text-white" style="margin-top: 0px;">
+  
+  <!-- HERO CAROUSEL FRAME -->
+  <div class="hero-frame-height position-relative w-100">
+    <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
+      <div class="carousel-inner w-100 h-100">
+        <div class="carousel-item active w-100 h-100">
+          <img src="build30.jpg" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 1">
+        </div>
+        <div class="carousel-item w-100 h-100">
+          <img src="build13.jpg" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 2">
+        </div>
+        <div class="carousel-item w-100 h-100">
+          <img src="build27.jpg" class="service-static-img shadow-sm" alt="Shaw Interiors Design Services Banner 3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAY COVERING FRAME -->
+  <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.45); z-index: 1;"></div>
+
+  <!-- CENTERED TEXT CONTENT -->
+  <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3 fade-in" style="z-index: 2;">
+    <div class="row pt-5 justify-content-center">
+      <div class="col-11 col-md-10 pt-5 col-lg-8">
+         <span class="badge bg-dark rounded-0 px-3 py-2  fs-6 fw-light  mb-3">Our Disciplines</span>
+        <h3 class=" text-white  mb-4 tracking-wider display-6">Articulating Vision</h3>
+        <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt- 3text-center opacity-90">
+          "A home should be an autobiography."
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+ <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <!-- =========================================================
+       TEXT INTRODUCTION & SERVICES
+       
+       ========================================================= -->
+  <div class="container my-5"> 
+  <div class="pt-4 my-4 fade-in">
+    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block text-center">Interior Design Specialist</span>
+    <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Full Spectrum Design Services</h1>
+    <div class="divider-line-dk mx-auto mt-3 mb-5"></div>
+  </div>
+      
+  <p class="text-muted lh-lg mb-0 text-start text-lg-center text-justify fade-in">
+    At SHAW Interiors, our specialized disciplines span every dimension of interior architecture—from strategic spatial planning and bespoke joinery to atmospheric lighting and material curation. <strong class="fst-italic">We do not merely execute layouts; we engineer complete architectural environments</strong>, guiding each project from foundational concept to final styling with uncompromising editorial precision.
+  </p>
+</div>
+
+
+
+
+ <hr class="border-1 opacity-50 my-4 fade-in">
+
+
+
+
+
+
+
+
+
+
+
+<!-- =========================================================
+       SECTION 3: CONTENT-RICH SERVICES SHOWCASE (01 TO 09)
+       ========================================================= -->
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 01: RESIDENTIAL INTERIOR ARCHITECTURE (550px) -->
+    <section id="service-01" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="frame-height-550">
+            <div id="serviceCarousel1" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build13.jpg" class="service-static-img shadow-sm" alt="Residential 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build30.jpg" class="service-static-img shadow-sm" alt="Residential 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build27.jpg" class="service-static-img shadow-sm" alt="Residential 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">01 Residential</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Residential Interior Architecture</h3>
+          <p class="text-muted  leading-relaxed mb-3 fst-italic fs-5 text-justify">
+            "Our residential design service is built on the belief that uncovering your personal narrative is part of the process."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            We begin by listening deeply—to your must-haves, your always-wanteds, and the quiet details of how you actually live. This comprehensive, white-glove experience covers every layer from foundation to finish: strategic spatial zoning, custom furniture fabrication, architectural lighting, and nuanced magazine-ready styling.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Strategic Spatial Zoning</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Custom Furniture Fabrication</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Architectural Lighting Plans</h6>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 02: COMMERCIAL INTERIOR SPACES (600px) -->
+    <section id="service-02" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="frame-height-600">
+            <div id="serviceCarousel2" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3800">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build28.jpg" class="service-static-img shadow-sm" alt="Commercial 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build31.jpg" class="service-static-img shadow-sm" alt="Commercial 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build20.jpg" class="service-static-img shadow-sm" alt="Commercial 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">02 Commercial</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Commercial Interior Spaces</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-5 text-justify">
+            "Commercial environments must balance high-traffic operational demands with striking brand storytelling."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            We treat commercial architecture as a physical manifestation of brand identity. Every circulation path, touchpoint, and focal material is engineered to foster engagement, customer loyalty, and long-lasting commercial memorability.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 01.75-.75h3a.75.75 0 01.75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349m-16.5 11.65V9.35m0 0a3.001 3.001 0 003.75-.615A2.993 2.993 0 009.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 002.25 1.016c.896 0 1.7-.393 2.25-1.016a3.001 3.001 0 003.75.614m-16.5 0a3.004 3.004 0 01-.621-4.72L4.318 3.28A1.5 1.5 0 015.37 2.75h13.26a1.5 1.5 0 011.052.53l2.258 2.35a3.004 3.004 0 01-.621 4.72m-13.5 0h13.5"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Brand Ethos Integration</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 6.75V15m6-6v8.25m.5 7.5h-13a2.25 2.25 0 01-2.25-2.25V6.75A2.25 2.25 0 013.75 4.5h16.5A2.25 2.25 0 0122.5 6.75v10.5a2.25 2.25 0 01-2.25 2.25z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">High-Traffic Circulation Flow</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Retail & Hospitality Experience</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 03: CORPORATE INTERIOR WORKSPACES (550px) -->
+    <section id="service-03" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="frame-height-550">
+            <div id="serviceCarousel3" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="4000">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build21.png" class="service-static-img shadow-sm" alt="Corporate 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build20.jpg" class="service-static-img shadow-sm" alt="Corporate 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build28.jpg" class="service-static-img shadow-sm" alt="Corporate 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">03 Corporate</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Corporate Interior Workspaces</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-6 text-justify">
+            "Modern corporate environments must inspire focus, collaboration, and executive prestige."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            We design dynamic headquarters that seamlessly integrate executive boardrooms, agile open-plan collaboration zones, and advanced acoustic treatments to elevate employee wellness and corporate culture.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Collaborative Open-Plan Design</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Executive Boardroom Suites</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.054 1.035-.159 1.5"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Acoustic & Privacy Integration</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 04: CUSTOM KITCHEN ARCHITECTURE (600px) -->
+    <section id="service-04" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="frame-height-600">
+            <div id="serviceCarousel4" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3600">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build26.png" class="service-static-img shadow-sm" alt="Kitchen 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build33.jpg" class="service-static-img shadow-sm" alt="Kitchen 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build13.jpg" class="service-static-img shadow-sm" alt="Kitchen 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">04 kitchen</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Custom Kitchen Architecture</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-6 text-justify">
+            "The kitchen is the absolute heart of the home—where professional functionality meets gathering."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            We specialize in designing culinary environments energized by rigorous operational planning. From monolithic stone islands and concealed prep pantries to bespoke cabinetry profiles, we create spaces that invite connection.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Ergonomic Culinary Workflow</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Monolithic Stone Islands</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Concealed Storage & Pantries</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 05: MASTER SUITE SANCTUARIES (550px) -->
+    <section id="service-05" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="frame-height-550">
+            <div id="serviceCarousel5" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3900">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build27.jpg" class="service-static-img shadow-sm" alt="Master Suite 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build35.jpg" class="service-static-img shadow-sm" alt="Master Suite 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build32.jpg" class="service-static-img shadow-sm" alt="Master Suite 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">05 Suites</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Master Suite Sanctuaries</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-6 text-justify">
+            "Private bedroom quarters designed as true restorative retreats for absolute personal peace."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            We focus on the delicate interplay of acoustic soft furnishings, custom upholstered wall paneling, and indirect illumination to curate an environment engineered around your evening relaxation rituals.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Restorative Acoustic Calm</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.657 0 1.188.533 1.12 1.207z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Bespoke Walk-In Dressing Joinery</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Indirect Mood Illumination</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 06: ARCHITECTURAL MILLWORK & JOINERY (600px) -->
+    <section id="service-06" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="frame-height-600">
+            <div id="serviceCarousel6" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3700">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build32.jpg" class="service-static-img shadow-sm" alt="Millwork 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build29.jpg" class="service-static-img shadow-sm" alt="Millwork 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build26.png" class="service-static-img shadow-sm" alt="Millwork 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">06 Joinery</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Architectural Millwork & Joinery</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-6 text-justify">
+            "Handcrafted architectural woodwork bridging structural engineering and bespoke furniture design."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            Partnering with master cabinetmakers, we produce fluted wall paneling, library shelving systems, and hidden storage portals that inject tactile warmth and organic character.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.83-5.83m-3.75 3.75l-3.5-3.5m0 0l-3.5 3.5m3.5-3.5v9.5m0-9.5l3.5-3.5m-3.5 3.5l-3.5-3.5"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Custom Fluted Wall Paneling</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Integrated Library Shelving</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Concealed Portal Joinery</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 07: ATMOSPHERIC LIGHTING DESIGN (550px) -->
+    <section id="service-07" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="frame-height-550">
+            <div id="serviceCarousel7" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="4100">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build13.jpg" class="service-static-img shadow-sm" alt="Lighting 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build21.png" class="service-static-img shadow-sm" alt="Lighting 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build30.jpg" class="service-static-img shadow-sm" alt="Lighting 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">07 Lighting</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Atmospheric Lighting Design</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-6 text-justify">
+            "Lighting is the invisible brushstroke that defines how architecture and materials are experienced."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            We curate layered illumination strategies that accentuate raw stone textures, manipulate room volume, and establish seamless emotional transitions from bright day to intimate night.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Concealed Linear Cove Architecture</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Smart Scene Automation</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Textural Accent Spotlighting</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 08: SPA & BATH ARCHITECTURE (600px) -->
+    <section id="service-08" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6 order-lg-2">
+          <div class="frame-height-600">
+            <div id="serviceCarousel8" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3800">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build35.jpg" class="service-static-img shadow-sm" alt="Spa Bath 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build27.jpg" class="service-static-img shadow-sm" alt="Spa Bath 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build24.png" class="service-static-img shadow-sm" alt="Spa Bath 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">08 Spa & Bath</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Spa & Bath Architecture</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-6 text-justify">
+            "Transforming everyday hygiene into an immersive, restorative wellness ritual."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            We design home sanctuaries utilizing tactile natural travertine, micro-cement finishes, and monolithic stone soaking tubs paired with therapeutic steam enclosures.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-3.018m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.25m-15.686 0A8.959 8.959 0 013 12c0-.778.099-1.533.284-2.25m0 0A11.959 11.959 0 0112 10.5c2.998 0 5.74 1.1 7.843 3.018"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Natural Travertine & Micro-Cement</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Monolithic Stone Soaking Tubs</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Therapeutic Steam Enclosures</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <hr class="border-1 opacity-50 my-4 fade-in">
+
+  <div class="container my-5 pt-4">
+
+    <!-- SERVICE 09: MATERIAL & TEXTURE CURATION (550px) -->
+    <section id="service-09" class="py-5 fade-in services-section-wrap">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="frame-height-550">
+            <div id="serviceCarousel9" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="4000">
+              <div class="carousel-inner w-100 h-100">
+                <div class="carousel-item active w-100 h-100">
+                  <img src="build24.png" class="service-static-img shadow-sm" alt="Materials 1">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build32.jpg" class="service-static-img shadow-sm" alt="Materials 2">
+                </div>
+                <div class="carousel-item w-100 h-100">
+                  <img src="build28.jpg" class="service-static-img shadow-sm" alt="Materials 3">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">09 Materials</span>
+          <h3 class="fw-bold text-dark text-uppercase mb-3">Material & Texture Curation</h3>
+          <p class="text-muted leading-relaxed mb-3 fst-italic fs-6 text-justify">
+            "The magic of a truly elevated interior lies in layering tactile, harmonious physical elements."
+          </p>
+          <p class="text-muted leading-relaxed mb-4 text-justify">
+            Through meticulous material sourcing—from Venetian lime-wash plasters and raw linens to patinated bronze and hand-knotted wool rugs—we curate enduring tactile palettes.
+          </p>
+
+          <div class="d-flex flex-column gap-4 mt-4">
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Venetian Lime-Wash Plasters</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.83-5.83m-3.75 3.75l-3.5-3.5m0 0l-3.5 3.5m3.5-3.5v9.5m0-9.5l3.5-3.5m-3.5 3.5l-3.5-3.5"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Patinated Bronze & Metalwork</h6>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <svg class="flex-shrink-0 text-dark" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"></path></svg>
+                <h6 class="text-uppercase text-dark fw-bold mb-0 fs-8 tracking-wider">Hand-Knotted Textiles & Rugs</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+
+
+
+ <hr class="border-1 opacity-50 my-4 fade-in">
+
+
+
+
+<!-- =========================================================
+     SECTION 5: THE SHAW INTERIORS PROCESS
+     ========================================================= -->
+<div class="container my-5 pt-5 fade-in">
+  <div class="text-center mb-5">
+    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Our Approach</span>
+    <h2 class="fw-bold text-dark text-uppercase mb-3">How We Execute</h2>
+    <div class="divider-line-dk mx-auto mt-3"></div>
+  </div>
+
+  <div class="row g-4 text-center">
+    <!-- Step 1 -->
+    <div class="col-md-4">
+      <div class="p-4 border border-light shadow-sm h-100">
+        <span class="fs-4 fw-light text-muted d-block mb-2">01</span>
+        <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3">Discovery & Zoning</h5>
+        <p class="text-muted small mb-0">Uncovering lifestyle narratives, spatial flow requirements, and structural architectural parameters.</p>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="col-md-4">
+      <div class="p-4 border border-light shadow-sm h-100">
+        <span class="fs-4 fw-light text-muted d-block mb-2">02</span>
+        <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3">Materialization</h5>
+        <p class="text-muted small mb-0">Crafting custom joinery specs, tactile material palettes, and architectural lighting plans.</p>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="col-md-4">
+      <div class="p-4 border border-light shadow-sm h-100">
+        <span class="fs-4 fw-light text-muted d-block mb-2">03</span>
+        <h5 class="fw-bold text-uppercase fs-7 tracking-wider text-dark mb-3">Turnkey Installation</h5>
+        <p class="text-muted small mb-0">Managing full-scale execution, white-glove furniture installation, and magazine-ready styling.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+ <hr class="border-1 opacity-50 my-4 fade-in">
+
+
+
+
+
+
+
+<!-- =========================================================
+     SECTION 5: CONSULTATION & PROJECT INQUIRY (CTA)
+     ========================================================= -->
+<section class="bg-dark text-white py-5 my-5 fade-in">
+  <div class="container py-4 text-center">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Start Your Journey</span>
+        <h2 class="fw-bold text-white text-uppercase mb-3 tracking-wider">Ready to Articulate Your Space?</h2>
+        <div class="divider-line-dk bg-white mx-auto my-4 opacity-25"></div>
+        <p class="text-light leading-relaxed mb-4 fs-6 opacity-75">
+          Whether embarking on a full residential restoration or curating a tailored commercial space, our studio collaborates with select clients worldwide to bring vision into form.
+        </p>
+        <a href="contact.html" class="btn btn-outline-light rounded-0 px-4 py-3 text-uppercase fs-7 tracking-wider fw-bold">
+          Book a Design Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- =========================================================
+     SECTION 5: EDITORIAL QUOTE / ENDORSEMENT
+     ========================================================= -->
+<div class="container my-5 py-4 text-center fade-in">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="mb-3">
+        <svg width="32" height="32" fill="currentColor" class="text-muted opacity-50" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+        </svg>
+      </div>
+      <p class="fs-5 text-dark fst-italic leading-relaxed mb-4">
+        "Shaw Interiors brought an extraordinary level of discipline and tactile sophistication to our home. Every room feels like a museum-quality space that remains exceptionally lived-in."
+      </p>
+      <span class="text-uppercase fw-bold text-dark fs-8 tracking-wider d-block">Private Residence — Cape Town</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- =========================================================
+     CLOSING CONCEPT 1: DISCIPLINE INDEX & QUICK NAV
+     ========================================================= -->
+<section class="bg-light py-5 my-5 fade-in border-top border-bottom">
+  <div class="container py-3">
+    <div class="row align-items-center mb-4">
+      <div class="col-md-8">
+        <span class="text-uppercase text-muted small tracking-wider fw-bold fs-8 d-block mb-1">Index of Services</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-0 fs-4">Our Complete Practice</h3>
+      </div>
+      <div class="col-md-4 text-md-end mt-3 mt-md-0">
+        <a href="contact.html" class="btn btn-dark rounded-0 px-4 py-2 text-uppercase fs-8 tracking-wider fw-bold">Initiate Project</a>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-6 col-md-4"><a href="#service-01" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">01 Residential</a></div>
+      <div class="col-6 col-md-4"><a href="#service-02" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">02 Commercial</a></div>
+      <div class="col-6 col-md-4"><a href="#service-03" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">03 Corporate</a></div>
+      <div class="col-6 col-md-4"><a href="#service-04" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">04 Culinary</a></div>
+      <div class="col-6 col-md-4"><a href="#service-05" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">05 Suites</a></div>
+      <div class="col-6 col-md-4"><a href="#service-06" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">06 Joinery</a></div>
+      <div class="col-6 col-md-4"><a href="#service-07" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">07 Lighting</a></div>
+      <div class="col-6 col-md-4"><a href="#service-08" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">08 Wellness</a></div>
+      <div class="col-6 col-md-4"><a href="#service-09" class="text-decoration-none text-dark fw-bold fs-8 text-uppercase tracking-wider d-block p-3 bg-white shadow-sm border-start border-2 border-dark">09 Materials</a></div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- =========================================================
+     CLOSING CONCEPT 2: MONOGRAPH & PORTFOLIO TEASER
+     ========================================================= -->
+<div class="container my-5 py-4 fade-in">
+  <div class="row align-items-center g-4 g-lg-5">
+    <div class="col-lg-5">
+      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Editorial Archive</span>
+      <h2 class="fw-bold text-dark text-uppercase mb-3">See Our Services in Practice</h2>
+      <p class="text-muted leading-relaxed mb-4 fs-6">
+        Explore how our nine design disciplines coalesce in our recently completed residential and commercial commissions.
+      </p>
+      <a href="portfolio.html" class="btn btn-outline-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">Explore Selected Works</a>
+    </div>
+    <div class="col-lg-7">
+      <div class="row g-3">
+        <div class="col-6">
+          <img src="build28.jpg" class="img-fluid shadow-sm" alt="Shaw Interiors Portfolio 1">
+        </div>
+        <div class="col-6">
+          <img src="build30.jpg" class="img-fluid shadow-sm" alt="Shaw Interiors Portfolio 2">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- =========================================================
+     CLOSING CONCEPT 3: STUDIO STATEMENT & LOCATIONS
+     ========================================================= -->
+<div class="container my-5 py-5 text-center fade-in">
+  <div class="divider-line-dk mx-auto mb-5"></div>
+  <p class="fs-4 text-dark text-uppercase tracking-wider fw-bold mb-3">
+    SHAW INTERIORS — ARCHITECTURAL STUDIO
+  </p>
+  <p class="text-muted small text-uppercase tracking-widest mb-4">
+    Cape Town &nbsp;&bull;&nbsp; Johannesburg &nbsp;&bull;&nbsp; London &nbsp;&bull;&nbsp; International Commissions
+  </p>
+  <a href="contact.html" class="text-dark text-uppercase fs-8 tracking-widest fw-bold text-decoration-none border-bottom border-dark pb-1">
+    Inquire For Project Availability &rarr;
+  </a>
+</div>
+
+
+
+<!-- =========================================================
+     CLOSING CONCEPT 4: CRAFTSMANSHIP COMMITMENT
+     ========================================================= -->
+<div class="container my-5 py-4 fade-in">
+  <div class="row g-4 text-center justify-content-center">
+    <div class="col-md-4">
+      <h6 class="text-uppercase text-dark fw-bold fs-8 tracking-wider mb-2">Bespoke Fabrication</h6>
+      <p class="text-muted small mb-0">Every joinery system and architectural element is custom-crafted in partnership with master artisans.</p>
+    </div>
+    <div class="col-md-4">
+      <h6 class="text-uppercase text-dark fw-bold fs-8 tracking-wider mb-2">Turnkey Management</h6>
+      <p class="text-muted small mb-0">Complete end-to-end execution—from initial spatial zoning to white-glove installation and styling.</p>
+    </div>
+    <div class="col-md-4">
+      <h6 class="text-uppercase text-dark fw-bold fs-8 tracking-wider mb-2">Tactile Integrity</h6>
+      <p class="text-muted small mb-0">Sourcing raw, authentic materials—natural stone, patinated metals, and sustainably harvested timber.</p>
+    </div>
+  </div>
+</div>
+
+
+
+HTML
+<!-- =========================================================
+     CLOSING CONCEPT 5: CLIENT FAQ ACCORDION
+     ========================================================= -->
+<div class="container my-5 py-4 fade-in">
+  <div class="text-center mb-5">
+    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Clarifications</span>
+    <h2 class="fw-bold text-dark text-uppercase mb-3">Frequently Asked Questions</h2>
+    <div class="divider-line-dk mx-auto mt-3"></div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="accordion accordion-flush" id="servicesFAQ">
+        
+        <div class="accordion-item border-bottom border-light">
+          <h2 class="accordion-header" id="faqOne">
+            <button class="accordion-button collapsed text-uppercase fw-bold text-dark fs-7 tracking-wider rounded-0 py-3 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              What is the typical timeline for a full residential commission?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#servicesFAQ">
+            <div class="accordion-body text-muted small leading-relaxed">
+              Timelines vary based on scope, but comprehensive residential interior architecture projects typically range from 6 to 18 months, covering initial spatial zoning through to bespoke joinery installation and final styling.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-bottom border-light">
+          <h2 class="accordion-header" id="faqTwo">
+            <button class="accordion-button collapsed text-uppercase fw-bold text-dark fs-7 tracking-wider rounded-0 py-3 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+              Does Shaw Interiors undertake international projects?
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#servicesFAQ">
+            <div class="accordion-body text-muted small leading-relaxed">
+              Yes. Our studio routinely accepts private residential and luxury commercial commissions across Europe, Africa, and North America, deploying turnkey management teams worldwide.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item border-bottom border-light">
+          <h2 class="accordion-header" id="faqThree">
+            <button class="accordion-button collapsed text-uppercase fw-bold text-dark fs-7 tracking-wider rounded-0 py-3 bg-transparent" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+              Can we engage Shaw Interiors for individual disciplines (e.g., Joinery or Lighting only)?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#servicesFAQ">
+            <div class="accordion-body text-muted small leading-relaxed">
+              While our primary focus is full-scope interior architecture, we selectively partner on specialized joinery, custom kitchen architecture, or standalone illumination packages for architectural residences.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- =========================================================
+     CLOSING CONCEPT 6: SPLIT IMAGE & CTA BANNER
+     ========================================================= -->
+<section class="container-fluid p-0 my-5 fade-in">
+  <div class="row g-0 align-items-stretch">
+    <!-- Left: Image Frame -->
+    <div class="col-lg-6 position-relative min-vh-50" style="min-height: 400px;">
+      <img src="build30.jpg" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0" alt="Shaw Interiors Design Studio">
+    </div>
+    <!-- Right: Dark Editorial Panel -->
+    <div class="col-lg-6 bg-dark text-white p-5 d-flex flex-column justify-content-center">
+      <div class="p-lg-4">
+        <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Collaborate With Us</span>
+        <h2 class="fw-bold text-white text-uppercase mb-3 tracking-wider">Transform Your Space</h2>
+        <p class="text-light opacity-75 leading-relaxed mb-4 fs-6">
+          Every project begins with a conversation about light, function, and human rhythm. Contact our studio to discuss your upcoming residential or commercial commission.
+        </p>
+        <a href="contact.html" class="btn btn-outline-light rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          Request Studio Brochure &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- =========================================================
+     CLOSING CONCEPT 7: CATEGORY NAV FILTER
+     ========================================================= -->
+<div class="container my-5 py-4 text-center fade-in">
+  <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Quick Overview</span>
+  <h3 class="fw-bold text-dark text-uppercase mb-4">Disciplines by Sector</h3>
+  
+  <div class="d-flex justify-content-center gap-3 flex-wrap mb-4">
+    <a href="#service-01" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">01 Residential</a>
+    <a href="#service-02" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">02 Commercial</a>
+    <a href="#service-03" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">03 Corporate</a>
+    <a href="#service-04" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">04 Culinary</a>
+    <a href="#service-05" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">05 Suites</a>
+    <a href="#service-06" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">06 Joinery</a>
+    <a href="#service-07" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">07 Lighting</a>
+    <a href="#service-08" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">08 Wellness</a>
+    <a href="#service-09" class="btn btn-outline-dark rounded-0 px-3 py-2 text-uppercase fs-8 tracking-wider">09 Materials</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- =========================================================
+       SECTION 4: EXTENDED FOOTER & INQUIRY FORM
+       ========================================================= -->
+  <div id="contact" class="fade-in overflow-hidden">
+    <footer class="arrcc-footer text-white py-5">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          
+          <!-- LEFT COLUMN: Brand, Addresses, Navigation Links & Social Media -->
+          <div class="col-lg-6 pe-lg-5 text-center text-lg-start gone">
+            
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <img src="logo-1.png" class="foot-logo" alt="Shaw Interiors Logo">
+            </div>
+
+            <!-- Physical Addresses Grid -->
+            <div class="row g-4 my-2 pt-3">
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Cape Town Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  12 Waterkant Street, Studio 401<br>
+                  Cape Town, 8001, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.ct@shawint.co.za</div>
+              </div>
+
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Johannesburg Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  45 Rosebank Road, Suite 12<br>
+                  Rosebank, 2196, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.jb@shawint.co.za</div>
+              </div>
+            </div>
+
+            <!-- Quick Navigation Links -->
+            <div class="my-4 pt-2">
+              <h6 class="text-white text-uppercase fw-bold mb-3 mt-2 fs-8 tracking-wider">Quick Navigational Links</h6>
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-1 gap-md-4 small">
+                <a href="index.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Home</a>
+                <a href="index.html#about" class="footer-nav-link text-white-50 fs-7 text-decoration-none">About</a>
+                <a href="services.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Services</a>
+                <a href="index.html#projects" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Projects</a>
+                <a href="index.html#gallery" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Gallery</a>
+                <a href="#contact" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Contact</a>
+              </div>
+            </div>
+
+            <!-- Flat White Square Social Icons -->
+            <div class="pt-2">
+              <h6 class="text-white fs-8 text-uppercase fw-bold mb-3 tracking-wider mt-4">Connect with us</h6>
+              <div class="social-icons-wrapper d-flex justify-content-center justify-content-lg-start gap-2">
+                <a href="#" class="square-social-icon" aria-label="Instagram">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a3.81 3.81 0 1 0 0 7.619 3.81 3.81 0 0 0 0-7.619zm0 1.441a2.368 2.368 0 1 1 0 4.736 2.368 2.368 0 0 1 0-4.736z"/></svg>
+                </a>
+                <a href="#" class="square-social-icon" aria-label="LinkedIn">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/></svg>
+                </a>
+                <a href="#" class="square-social-icon" aria-label="Facebook">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/></svg>
+                </a>
+                <a href="#" class="square-social-icon" aria-label="Pinterest">
+                  <svg width="18" height="18" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 0 0-2.915 15.452c-.07-.633-.134-1.606.027-2.297.146-.625.938-3.977.938-3.977s-.239-.479-.239-1.187c0-1.113.645-1.943 1.448-1.943.682 0 1.012.512 1.012 1.127 0 .686-.437 1.712-.663 2.663-.188.796.4 1.446 1.185 1.446 1.422 0 2.515-1.5 2.515-3.664 0-1.915-1.377-3.254-3.342-3.254-2.276 0-3.612 1.707-3.612 3.471 0 .688.265 1.425.595 1.826a.24.24 0 0 1 .056.23c-.061.252-.196.796-.222.907-.035.146-.116.177-.268.107-1-.465-1.624-1.926-1.624-3.1 0-2.523 1.834-4.84 5.287-4.84 2.781 0 4.942 1.982 4.942 4.632 0 2.763-1.742 4.986-4.161 4.986-.813 0-1.577-.423-1.839-.922l-.5 1.903c-.181.697-.669 1.569-.997 2.097A8 8 0 1 0 8 0z"/></svg>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- RIGHT COLUMN: High-Contrast Contact Form -->
+          <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <h3 class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Start a Project</h3>
+            </div>
+            
+            <p class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+              Whether initiating a full-scale residential build, a commercial transformation, or a bespoke interior curation, share your project location, scope, and spatial vision with us.
+            </p>
+
+            <div class="w-100">
+              <form>
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerName" class="form-label text-uppercase text-white fs-8 fw-bold mb-1 tracking-wider d-block">Your Name *</label>
+                    <input type="text" class="form-control arrcc-input text-center text-lg-start" id="footerName" placeholder="e.g. John Doe" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerEmail" class="form-label text-uppercase text-white fs-8 mb-1 fw-bold tracking-wider d-block">Email Address *</label>
+                    <input type="email" class="form-control arrcc-input text-center text-lg-start" id="footerEmail" placeholder="e.g. john@example.com" required>
+                  </div>
+                </div>
+
+                <div class="mb-4 text-center mt-2 text-lg-start">
+                  <label for="footerMessage" class="form-label text-uppercase text-white fs-8 mb-1 tracking-wider fw-bold d-block">Project Details / Message *</label>
+                  <textarea class="form-control arrcc-input text-center text-lg-start" id="footerMessage" rows="4" placeholder="Tell us about location, project type, and timeline..." required></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                  <button type="submit" class="btn btn-arrcc-submit text-uppercase rounded-0">
+                    Submit Inquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bottom Legal Bar -->
+    <div class="ft-bg py-3">
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center text-white-50 fs-8 text-center text-sm-start">
+          <p class="mb-2 fs-8 mb-sm-0">&copy; 2026 Shaw Interiors. All Rights Reserved.</p>
+          <div class="d-flex gap-4">
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Privacy Policy</a>
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="backToTopBtn" aria-label="Back to Top" class="btn btn-dark square-btn position-fixed shadow">
+    &uarr;
+  </button>
+
+  <!-- JAVASCRIPT CONTROLLERS -->
+  <script src="fade in scroll.js"></script>
+  <script src="back to top.js"></script>
+  <script src="desktop header peek.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

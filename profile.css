@@ -1,0 +1,180 @@
+ body {
+      background-color: #ffffff !important;
+      color: #1a1a1a;
+      //font-family: 'Montserrat', sans-serif;
+    }
+
+    .editorial-quote {
+      //font-family: 'Cormorant Garamond', Georgia, serif !important;
+	   font-family: 'Montserrat', sans-serif !important;
+      font-size: clamp(2.2rem, 4.5vw, 1,1rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.45 !important;
+      letter-spacing: 2px !important;
+      color: #5a5a5a;
+	  //font-style:italic;
+    }
+
+    .editorial-label {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 1rem !important;
+      letter-spacing: 3px !important;
+      text-transform: uppercase !important;
+      color: white !important;
+	  font-weight:semi-bold;
+    }
+	
+	
+	.editorial-label2 {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 1rem !important;
+      letter-spacing: 1px !important;
+      //text-transform: uppercase !important;
+      //color: #4a4a4a !important;
+	  color: white !important;
+	  font-weight:bold;
+    }
+	
+	
+	.editorial-label3 {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 0.9rem !important;
+      letter-spacing: 4px !important;
+      text-transform: uppercase !important;
+      color: #2a2a2a !important;
+	  font-weight:500;
+    }
+	
+	
+	
+	
+	
+	
+	
+	/* Base styling for tall editorial images */
+.tall-img-left,
+.tall-img-right {
+  height: 700px;
+  object-fit: cover;
+}
+
+/* Mobile responsive scaling */
+@media (max-width: 767px) {
+  .tall-img-left,
+  .tall-img-right {
+    height: 450px !important;
+  }
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+    .stat-number {
+      //font-family: 'Cormorant Garamond', Georgia, serif;
+	  
+	  font-family:'Montserrat';
+	  
+      font-size: 3.1rem;
+      font-weight: 600;
+      line-height: 1;
+      color: #4a4a4a;
+    }
+
+    /* Fixed Parallax Container Rules */
+    .parallax-wrapper-tall {
+      position: relative;
+      width: 100%;
+      height: 650px;
+      clip-path: inset(0 0 0 0);
+      -webkit-clip-path: inset(0 0 0 0);
+    }
+
+    .parallax-wrapper-tall .parallax-fixed-img {
+      //position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('build37.jpg');
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      will-change: transform;
+      z-index: -1;
+    }
+
+    .standard-editorial-img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+    }
+
+    /* Standard Middle Section Parallax */
+    .parallax-section {
+      background-image: url('ocean2.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+      width: 100%;
+    }
+
+    @media (max-width: 991.98px) {
+      .parallax-wrapper-tall {
+        height: 400px !important;
+        clip-path: none;
+        -webkit-clip-path: none;
+      }
+      .parallax-wrapper-tall .parallax-fixed-img {
+        position: absolute;
+        background-attachment: scroll;
+      }
+      .parallax-section {
+        background-attachment: scroll;
+        height: 350px;
+      }
+	  
+	   /* Stats smaller */
+	  
+	  @media (max-width: 576px) {
+  
+  	.editorial-label3 {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 0.65rem !important;
+      letter-spacing: 4px !important;
+      text-transform: uppercase !important;
+      color: #2a2a2a !important;
+	  font-weight:500;
+    }
+  
+  
+  
+  .stat-number {
+      //font-family: 'Cormorant Garamond', Georgia, serif;
+	  
+	  font-family:'Montserrat';
+	  
+      font-size: 2.1rem;
+      font-weight: 600;
+      line-height: 1;
+      color: #4a4a4a;
+    }
+  
+  
+  
+  }
+}
+	  
+	  
+	  
+	  
+	  
+	  
+    }

@@ -2,7 +2,16 @@
     /* =========================================================
        CONTROL YOUR DESKTOP HEIGHTS HERE (Change values freely)
        ========================================================= */
-    .frame-height-550 {
+    .frame-height-750 {
+      height: 570px !important;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+	
+	
+	
+	.frame-height-550 {
       height: 570px !important;
       position: relative;
       overflow: hidden;

@@ -18,8 +18,8 @@ body, p, input, button { font-family: 'Montserrat', sans-serif; font-size: 1.05r
 //h1, h2, h3, .section-title { font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, sans-serif; }
 
 h1, h2, h3 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;             /* Bold / Heavy weight */
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 300 !important;             /* Bold / Heavy weight */
   text-transform: uppercase;     /* All capital letters */
   letter-spacing: 2px;          /* Generous character spacing */
 }
@@ -55,6 +55,10 @@ padding:0.65em 0;
 	color: #1a1a1a;
 }
 
+.dkkk-gray2 {
+	background-color: #3a3a3a;
+}
+
 .dkk-gray {
 	color: #424242 !important;
 }
@@ -69,7 +73,7 @@ padding:0.65em 0;
 
 /* Background Colors */
 .bg-dkkk-gray {
-	background: #1a1a1a;
+	background-color: #1a1a1a;
 }
 
 .bg-dkk-gray {
@@ -892,7 +896,8 @@ max-width: 576px;
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.75) 90%);
+  //background: radial-gradient(circle, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.75) 90%);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
@@ -951,8 +956,8 @@ max-width: 576px;
 
 .carousel-caption-glass {
   background: rgba(0, 0, 0, 0.03);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   display: inline-block;
   border-radius: 22px;
 }
@@ -1096,6 +1101,22 @@ max-width: 576px;
   background-color: #858483;
   opacity: 0.5;
 }
+
+
+@media (max-width: 576px) {
+
+.bquote-border {
+  position: relative;
+  border-left: 5px solid #ecc542;
+  padding-left: 20px;
+}
+
+
+}
+
+
+
+
 
 
 /* =========================================================
