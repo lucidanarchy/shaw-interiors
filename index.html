@@ -292,20 +292,33 @@
        SECTION 4: TEXT INTRODUCTION & MANIFESTO
        Matches JS: Script 5 (Scroll Fade-In Effect Observer)
        ========================================================= -->
-  <div class="container my-5 px-3"> 
-    <div class="pt-4 my-4 fade-in text-center">
+  <!-- =========================================================
+       SECTION: MANIFESTO (PNG QUOTE LEFT & JUSTIFIED TEXT RIGHT)
+       ========================================================= -->
+  <div class="container my-3 py-3 pb-5 px-3">
+    <!-- Header Block -->
+    <div class="pt-3 my-4 fade-in text-center">
       <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">About Shaw Interiors</span>
       <h1 class="fw-bold text-dark text-uppercase mb-3">Crafting Tactile Sanctuary</h1>
       <div class="divider-line-dk mx-auto mt-3 mb-5"></div>
     </div>
-        
-    <p class="fst-italic lead text-dark mb-3 fs-5 lh-base text-center mt-5 mb-4 fade-in">
-  At Shaw Interiors, we pride ourselves on designing quiet luxury—where raw architectural geometry seamlessly dialogues with bespoke tactile warmth.
-</p>
 
-<p class="text-muted lh-lg mb-0 text-center fade-in">
-  Every space we craft is an exploration of light, material, and spatial rhythm. From rich natural stone and hand-finished timber to layered ambient lighting, we approach each residence with editorial precision. <strong>We do not merely decorate rooms; we curate the subtle texture of human living</strong>, transforming everyday environments into personal sanctuaries of timeless elegance.
-</p>
+    <!-- Side-by-Side Layout with zero column gap -->
+    <div class="row align-items-center g-0 mt-2">
+      
+      <!-- Left Column: PNG Quote Graphic (Hidden on mobile < 768px via d-none d-md-block) -->
+      <div class="col-auto pe-4 fade-in d-none d-md-block">
+        <img src="pngegg.png" alt="Quote Graphic" class="img-fluid" style="max-height: 100px; opacity: 0.45;">
+      </div>
+
+      <!-- Right Column: Justified Manifesto Text (Takes full width on mobile) -->
+      <div class="col-12 col-md fade-in">
+        <p class="text-muted lh-lg mb-0 text-justify">
+          <span class="fs-5 fst-italic text-dark">At Shaw Interiors, we pride ourselves on designing quiet luxury—where raw architectural geometry seamlessly dialogues with bespoke tactile warmth.</span> Every space we craft is an exploration of light, material, and spatial rhythm. From rich natural stone and hand-finished timber to layered ambient lighting, we approach each residence with editorial precision, transforming everyday environments into personal sanctuaries.
+        </p>
+      </div>
+
+    </div>
 </div>
 
 
