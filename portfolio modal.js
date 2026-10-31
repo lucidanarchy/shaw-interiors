@@ -1,9 +1,9 @@
 
     const portfolioData = [
       {
-        number: "01 Residential",
+        number: "PROJECT 01",
         title: "The Master Suite Sanctuary",
-        img: "build40.jpg",
+        img: "build27.jpg",
         desc: "Restorative acoustic sanctuary featuring recessed linear lighting, raw travertine walls, and rich dark orange velvet accents.",
         location: "Cape Town, SA",
         year: "2026",
@@ -11,7 +11,7 @@
         category: "Residential"
       },
       {
-        number: "02 Residential",
+        number: "PROJECT 02",
         title: "Architectural Lounge & Living",
         img: "build13.jpg",
         desc: "Deep burgundy seating amidst raw exposed concrete walls, floor-to-ceiling glazing, and structured low-profile furniture.",
@@ -21,7 +21,7 @@
         category: "Residential"
       },
       {
-        number: "03 Residential",
+        number: "PROJECT 03",
         title: "Culinary Architecture Suite",
         img: "build26.png",
         desc: "Monolithic marble island, suspended brass pan rack, and concealed dark oak cabinetry facing an expansive dining space.",
@@ -31,7 +31,7 @@
         category: "Residential"
       },
       {
-        number: "04 Residential",
+        number: "PROJECT 04",
         title: "Spa Sanctuary Bathroom",
         img: "build35.jpg",
         desc: "Single-perspective open bathroom with freestanding oval soaking tub, marble double vanity, and wall-hung toilet alcove.",
