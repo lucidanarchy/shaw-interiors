@@ -1410,10 +1410,58 @@
   <script src="desktop header peek.js"></script>
   
   
-   <!-- page transition -->
+   <!-- touc gesture -->
   
  
-  
+  <script>
+  /**
+   * Helper function to enable touch swiping on a custom slider container
+   * @param {string} sliderId - The ID of the slider wrapper (e.g., 'imageLeftSlider')
+   * @param {string} prevBtnSelector - CSS selector for the previous button
+   * @param {string} nextBtnSelector - CSS selector for the next button
+   */
+  function enableTouchSwipe(sliderId, prevBtnSelector, nextBtnSelector) {
+    const sliderEl = document.getElementById(sliderId);
+    if (!sliderEl) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 40; // Minimum drag distance in pixels to trigger a swipe
+
+    sliderEl.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    sliderEl.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const distance = touchEndX - touchStartX;
+      
+      // Swiped Left -> Go to Next Slide
+      if (distance < -minSwipeDistance) {
+        const nextBtn = document.querySelector(nextBtnSelector);
+        if (nextBtn) nextBtn.click();
+      } 
+      // Swiped Right -> Go to Previous Slide
+      else if (distance > minSwipeDistance) {
+        const prevBtn = document.querySelector(prevBtnSelector);
+        if (prevBtn) prevBtn.click();
+      }
+    }
+  }
+
+  // Initialize swipe capability for both sliders on DOM Content Loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Image-Left Slider
+    enableTouchSwipe('imageLeftSlider', '.imgleft-prev', '.imgleft-next');
+
+    // 2. Text-Left Slider
+    enableTouchSwipe('textLeftSlider', '.textleft-prev', '.textleft-next');
+  });
+</script>
   
   
   
