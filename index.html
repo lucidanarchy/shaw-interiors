@@ -1414,53 +1414,52 @@
   
  
   <script>
-  /**
-   * Helper function to enable touch swiping on a custom slider container
-   * @param {string} sliderId - The ID of the slider wrapper (e.g., 'imageLeftSlider')
-   * @param {string} prevBtnSelector - CSS selector for the previous button
-   * @param {string} nextBtnSelector - CSS selector for the next button
-   */
-  function enableTouchSwipe(sliderId, prevBtnSelector, nextBtnSelector) {
+ document.addEventListener("DOMContentLoaded", () => {
+  function setupCleanSwipe(sliderId, prevBtnSelector, nextBtnSelector) {
     const sliderEl = document.getElementById(sliderId);
-    if (!sliderEl) return;
+    const prevBtn = document.querySelector(prevBtnSelector);
+    const nextBtn = document.querySelector(nextBtnSelector);
+    
+    if (!sliderEl || !prevBtn || !nextBtn) return;
+
+    // Hide arrow buttons on mobile screens (< 768px wide)
+    const navContainer = prevBtn.closest(".d-flex.justify-content-end") || prevBtn.parentElement.parentElement;
+    if (navContainer && window.innerWidth < 576) {
+      navContainer.style.display = "none";
+    }
 
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchEndX = 0;
-    const minSwipeDistance = 40; // Minimum drag distance in pixels to trigger a swipe
+    let touchEndY = 0;
 
-    sliderEl.addEventListener('touchstart', (e) => {
+    sliderEl.addEventListener("touchstart", (e) => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     }, { passive: true });
 
-    sliderEl.addEventListener('touchend', (e) => {
+    sliderEl.addEventListener("touchend", (e) => {
       touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
+      touchEndY = e.changedTouches[0].screenY;
 
-    function handleSwipe() {
-      const distance = touchEndX - touchStartX;
-      
-      // Swiped Left -> Go to Next Slide
-      if (distance < -minSwipeDistance) {
-        const nextBtn = document.querySelector(nextBtnSelector);
-        if (nextBtn) nextBtn.click();
-      } 
-      // Swiped Right -> Go to Previous Slide
-      else if (distance > minSwipeDistance) {
-        const prevBtn = document.querySelector(prevBtnSelector);
-        if (prevBtn) prevBtn.click();
+      let diffX = touchStartX - touchEndX;
+      let diffY = touchStartY - touchEndY;
+
+      // Only trigger if horizontal movement is greater than vertical movement (prevents scroll conflict)
+      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+        if (diffX > 0) {
+          nextBtn.click(); // Swiped Left -> Next Slide
+        } else {
+          prevBtn.click(); // Swiped Right -> Previous Slide
+        }
       }
-    }
+    }, { passive: true });
   }
 
-  // Initialize swipe capability for both sliders on DOM Content Loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    // 1. Image-Left Slider
-    enableTouchSwipe('imageLeftSlider', '.imgleft-prev', '.imgleft-next');
-
-    // 2. Text-Left Slider
-    enableTouchSwipe('textLeftSlider', '.textleft-prev', '.textleft-next');
-  });
+  // Apply to your two sliders
+  setupCleanSwipe("imageLeftSlider", ".imgleft-prev", ".imgleft-next");
+  setupCleanSwipe("textLeftSlider", ".textleft-prev", ".textleft-next");
+});
 </script>
   
   
