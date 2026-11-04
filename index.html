@@ -1430,23 +1430,39 @@
 
     let touchStartX = 0;
     let touchStartY = 0;
-    let touchEndX = 0;
-    let touchEndY = 0;
+    let isScrolling = false;
 
     sliderEl.addEventListener("touchstart", (e) => {
       touchStartX = e.changedTouches[0].screenX;
       touchStartY = e.changedTouches[0].screenY;
+      isScrolling = false; // Reset scroll flag on new touch
+    }, { passive: true });
+
+    // Detect if user is scrolling vertically early
+    sliderEl.addEventListener("touchmove", (e) => {
+      if (isScrolling) return;
+      
+      let touchCurrentX = e.changedTouches[0].screenX;
+      let touchCurrentY = e.changedTouches[0].screenY;
+      
+      let diffX = Math.abs(touchCurrentX - touchStartX);
+      let diffY = Math.abs(touchCurrentY - touchStartY);
+
+      // If vertical movement starts dominating early, lock it out as a scroll
+      if (diffY > diffX && diffY > 10) {
+        isScrolling = true;
+      }
     }, { passive: true });
 
     sliderEl.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      touchEndY = e.changedTouches[0].screenY;
+      // If it was identified as a vertical scroll, ignore completely
+      if (isScrolling) return;
 
+      let touchEndX = e.changedTouches[0].screenX;
       let diffX = touchStartX - touchEndX;
-      let diffY = touchStartY - touchEndY;
 
-      // Only trigger if horizontal movement is greater than vertical movement (prevents scroll conflict)
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
+      // Only trigger if it's a deliberate horizontal swipe (> 50px)
+      if (Math.abs(diffX) > 50) {
         if (diffX > 0) {
           nextBtn.click(); // Swiped Left -> Next Slide
         } else {
