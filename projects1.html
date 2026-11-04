@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects — SHAW Interiors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- CSS Stylesheets -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="portfolio.css">
+  
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body style="scroll-behavior: smooth;">
+
+  <!-- =========================================================
+       SECTION 1: GLOBAL NAVIGATION HEADER
+       ========================================================= -->
+  <div class="bg">
+    <div class="container-md">
+      <div class="nv-containe">
+
+        <a href="index.html"><img src="logo-1.png" class="nav-logo" alt="Shaw Interiors Logo"></a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile.html">About</a></li>
+
+          <!-- SERVICES DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
+            <a href="services.html" class="dropdown-link">
+              <label for="services-toggle" class="accordion-trigger">
+                Services <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="services.html#service-01" class="dropdown-item-row">
+                <img src="build58.jpg" class="dropdown-thumb" alt="Residential">
+                <div class="dropdown-text py-2">
+                  <span class="item-title">01. Residential Interior</span>
+                  <span class="item-sub">Bespoke Homes & Estates</span>
+                </div>
+              </a>
+              <a href="services.html#service-02" class="dropdown-item-row">
+                <img src="build28.jpg" class="dropdown-thumb" alt="Commercial">
+                <div class="dropdown-text">
+                  <span class="item-title">02. Commercial Interior</span>
+                  <span class="item-sub">Retail & Hospitality</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- PROJECTS DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="projects-toggle" class="dropdown-checkbox">
+            <a href="portfolio.html" class="dropdown-link active">
+              <label for="projects-toggle" class="accordion-trigger">
+                Projects <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="portfolio.html" class="dropdown-item-row">
+                <img src="build30.jpg" class="dropdown-thumb" alt="Residential Works">
+                <div class="dropdown-text"><span class="item-title">Residential Works</span><span class="item-sub">Private Estates</span></div>
+              </a>
+              <a href="portfolio.html" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Commercial Works">
+                <div class="dropdown-text"><span class="item-title">Commercial Works</span><span class="item-sub">Hospitality Spaces</span></div>
+              </a>
+              <a href="portfolio.html" class="dropdown-item-row">
+                <img src="build27.jpg" class="dropdown-thumb" alt="Corporate Works">
+                <div class="dropdown-text"><span class="item-title">Corporate Works</span><span class="item-sub">Executive Suites</span></div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="gallerry.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+    </div> 
+  </div>
+
+  <!-- =========================================================
+       SECTION 2: HERO BANNER CAROUSEL
+       ========================================================= -->
+  <div class="position-relative overflow-hidden text-white" style="margin-top: 0px;">
+    <div class="hero-frame-height position-relative w-100">
+      <div id="heroCarousel" class="carousel slide carousel-fade w-100 h-100" data-bs-ride="carousel" data-bs-interval="3500">
+        <div class="carousel-inner w-100 h-100">
+          <div class="carousel-item active w-100 h-100"><img src="build57.jpg" class="service-static-img" alt="Banner 1"></div>
+          <div class="carousel-item w-100 h-100"><img src="build41.jpg" class="service-static-img" alt="Banner 2"></div>
+          <div class="carousel-item w-100 h-100"><img src="build36.jpg" class="service-static-img" alt="Banner 3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-overlay position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0, 0, 0, 0.5); z-index: 1;"></div>
+    <div class="container position-absolute top-50 start-50 translate-middle text-center pt-3" style="z-index: 2;">
+      <div class="row pt-4 justify-content-center">
+        <div class="col-11 col-md-10 pt-5 col-lg-8">
+          <span class="badge bg-dark rounded-0 px-3 py-2 fs-6 fw-light mb-3">Spatial Archive</span>
+          <h1 class="text-white mb-2 tracking-wider display-6 text-uppercase">Curated Projects Monograph</h1>
+          <p class="text-white leading-relaxed mb-0 fst-italic fs-5 mt-4 text-center opacity-90">
+            "Exploring residential sanctuaries, commercial showrooms, and corporate environments in a Z-pattern layout."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border-1 opacity-50 my-4">
+
+  <!-- =========================================================
+       SECTION 3: RESIDENTIAL WORKS (3 PLACES, Z-PATTERN)
+       ========================================================= -->
+  <div class="container my-5 pt-4">
+    <div class="text-center mb-5">
+      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Category 01</span>
+      <h2 class="fw-bold text-dark text-uppercase mb-3">Residential Works</h2>
+      <div class="divider-line-dk mx-auto mt-3 mb-4"></div>
+    </div>
+
+    <!-- Residential Item 1: Image Left, Text Right -->
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="01 Residential" data-title="The Master Suite Sanctuary" data-img="build55.jpg" data-desc="Restorative acoustic sanctuary featuring recessed linear lighting, raw travertine walls, and rich dark orange velvet accents." data-location="Cape Town, SA" data-year="2026" data-materials="Raw Travertine, Plaster, Velvet" data-category="Residential">
+            <img src="build55.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Master Suite Sanctuary">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">01. Residential</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">The Master Suite Sanctuary</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Restorative acoustic sanctuary featuring recessed linear lighting, raw travertine walls, and rich dark orange velvet accents designed for high-end private estates in Cape Town.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Cape Town &bull; <strong>Year:</strong> 2026</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Residential Item 2: Text Left, Image Right (Z-Pattern) -->
+    <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="02 Residential" data-title="Architectural Lounge & Living" data-img="build41.jpg" data-desc="Deep burgundy seating amidst raw exposed concrete walls, floor-to-ceiling glazing, and structured low-profile furniture." data-location="Constantia, SA" data-year="2025" data-materials="Exposed Concrete, Glass, Velvet" data-category="Residential">
+            <img src="build41.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Architectural Lounge">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 pe-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">02. Residential</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Architectural Lounge & Living</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Deep burgundy seating amidst raw exposed concrete walls, floor-to-ceiling glazing, and structured low-profile furniture crafted for modern suburban estates.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Constantia &bull; <strong>Year:</strong> 2025</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Residential Item 3: Image Left, Text Right -->
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="03 Residential" data-title="Culinary Architecture Suite" data-img="build64.jpg" data-desc="Monolithic marble island, suspended brass pan rack, and concealed dark oak cabinetry facing an expansive dining space." data-location="Camps Bay, SA" data-year="2026" data-materials="Marble, Brass, Dark Oak" data-category="Residential">
+            <img src="build64.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Culinary Suite">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">03. Residential</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Culinary Architecture Suite</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Monolithic marble island, suspended brass pan rack, and concealed dark oak cabinetry facing an expansive panoramic dining space overlooking the ocean.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Camps Bay &bull; <strong>Year:</strong> 2026</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border-1 opacity-50 my-5">
+
+  <!-- =========================================================
+       SECTION 4: COMMERCIAL WORKS (3 PLACES, Z-PATTERN)
+       ========================================================= -->
+  <div class="container my-5 pt-4">
+    <div class="text-center mb-5">
+      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Category 02</span>
+      <h2 class="fw-bold text-dark text-uppercase mb-3">Commercial Works</h2>
+      <div class="divider-line-dk mx-auto mt-3 mb-4"></div>
+    </div>
+
+    <!-- Commercial Item 1: Image Left, Text Right -->
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="01 Commercial" data-title="Commercial Metro Lounge" data-img="build36.jpg" data-desc="High-end commercial interior with lush dark green velvet curved sectional sofa, terrazzo floors, and expansive high-rise views." data-location="Johannesburg, SA" data-year="2026" data-materials="Terrazzo, Velvet, Glass" data-category="Commercial">
+            <img src="build36.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Commercial Metro Lounge">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">01. Commercial</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Commercial Metro Lounge</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          High-end commercial interior featuring a lush dark green velvet curved sectional sofa, custom terrazzo flooring, and expansive high-rise city views.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Johannesburg &bull; <strong>Year:</strong> 2026</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Commercial Item 2: Text Left, Image Right (Z-Pattern) -->
+    <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="02 Commercial" data-title="Atmospheric Lighting Pavilion" data-img="build46.jpg" data-desc="Architectural illumination study using concealed cove lighting and dramatic linear pendants over raw grey plaster surfaces." data-location="Franschhoek, SA" data-year="2026" data-materials="Grey Plaster, LED, Steel" data-category="Commercial">
+            <img src="build46.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Lighting Pavilion">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 pe-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">02. Commercial</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Atmospheric Lighting Pavilion</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Architectural illumination study utilizing concealed cove lighting and dramatic linear pendants over raw grey plaster surfaces for a retail gallery experience.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Franschhoek &bull; <strong>Year:</strong> 2026</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Commercial Item 3: Image Left, Text Right -->
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="03 Commercial" data-title="Hospitality Atrium Lounge" data-img="build58.jpg" data-desc="Soaring triple-height atrium featuring bespoke modular lounge seating, acoustic ceiling slates, and warm timber fins." data-location="Durban, SA" data-year="2026" data-materials="Timber Fins, Acoustic Slates" data-category="Commercial">
+            <img src="build58.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Hospitality Atrium">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">03. Commercial</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Hospitality Atrium Lounge</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Soaring triple-height hospitality atrium featuring bespoke modular lounge seating, acoustic ceiling slates, and warm architectural timber fins.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Durban &bull; <strong>Year:</strong> 2026</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="border-1 opacity-50 my-5">
+
+  <!-- =========================================================
+       SECTION 5: CORPORATE WORKS (3 PLACES, Z-PATTERN)
+       ========================================================= -->
+  <div class="container my-5 pt-4">
+    <div class="text-center mb-5">
+      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block">Category 03</span>
+      <h2 class="fw-bold text-dark text-uppercase mb-3">Corporate Works</h2>
+      <div class="divider-line-dk mx-auto mt-3 mb-4"></div>
+    </div>
+
+    <!-- Corporate Item 1: Image Left, Text Right -->
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="01 Corporate" data-title="Executive Corporate Suite" data-img="build66.jpg" data-desc="Modern corporate workplace integrating custom oak joinery, acoustic dark blue textiles, and minimal ambient lighting." data-location="Sandton, SA" data-year="2026" data-materials="Custom Oak, Dark Blue Textiles" data-category="Corporate">
+            <img src="build66.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Executive Suite">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">01. Corporate</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Executive Corporate Suite</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Modern corporate headquarters integrating custom oak joinery, acoustic dark blue wall textiles, and minimal ambient linear lighting for executive focus.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Sandton &bull; <strong>Year:</strong> 2026</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Corporate Item 2: Text Left, Image Right (Z-Pattern) -->
+    <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="02 Corporate" data-title="Private Library Millwork" data-img="build62.jpg" data-desc="Custom fluted timber paneling, concealed storage portals, and integrated floor-to-ceiling library joinery." data-location="Bishopscourt, SA" data-year="2025" data-materials="Fluted Timber, Library Joinery" data-category="Corporate">
+            <img src="build62.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Private Library">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 pe-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">02. Corporate</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Private Library Millwork</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Custom fluted timber paneling, concealed storage portals, and integrated floor-to-ceiling library joinery designed for executive institutional archives.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Bishopscourt &bull; <strong>Year:</strong> 2025</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Corporate Item 3: Image Left, Text Right -->
+    <div class="row align-items-center g-5 mb-5">
+      <div class="col-lg-6">
+        <div class="position-relative overflow-hidden shadow-sm" style="cursor: pointer;" onclick="openLightboxFromElement(this)">
+          <div class="portfolio-img-wrapper" data-number="03 Corporate" data-title="Financial Boardroom Pavilion" data-img="build67.jpg" data-desc="Monolithic solid oak conference table paired with concealed state-of-the-art AV integration and raw granite wall panels." data-location="Pretoria, SA" data-year="2026" data-materials="Solid Oak, Raw Granite, AV" data-category="Corporate">
+            <img src="build67.jpg" class="img-fluid w-100" style="height: 420px; object-fit: cover;" alt="Financial Boardroom">
+            <div class="portfolio-overlay"><button class="btn-quick-view">Inspect Space</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <span class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">03. Corporate</span>
+        <h3 class="fw-bold text-dark text-uppercase mb-3">Financial Boardroom Pavilion</h3>
+        <p class="text-muted leading-relaxed mb-4 text-justify">
+          Monolithic solid oak conference table paired with concealed state-of-the-art AV integration and raw granite acoustic wall panels for corporate leadership.
+        </p>
+        <div class="mb-4 text-muted small"><strong>Location:</strong> Pretoria &bull; <strong>Year:</strong> 2026</div>
+        <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Work in Gallery &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 6: FINAL BANNER (VIEW OUR COMPLETED WORK CTA TO GALLERY)
+       ========================================================= -->
+  <div class="container-fluid px-0 mt-5">
+    <div class="parallax-section-2 d-flex align-items-center justify-content-center text-center text-white position-relative" style="min-height: 400px;">
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.45);"></div>
+      <div class="container position-relative px-3 py-5" style="z-index:2;">
+        <span class="editorial-label text-white d-block mb-3 badge">Exhibition Archive</span>
+        <h2 class="text-white fw-light display-5 font-serif mb-4">View our completed work</h2>
+        <p class="text-white-50 mx-auto mb-4" style="max-width: 600px;">
+          Explore our complete portfolio gallery containing all residential, commercial, and corporate environments crafted by SHAW Interiors.
+        </p>
+        <a href="gallerry.html" class="btn btn-outline-light rounded-0 px-5 py-3 text-uppercase fs-8 tracking-wider fw-bold">
+          View Our Completed Work (Gallery) &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SECTION 7: GLOBAL FOOTER & INQUIRY FORM
+       ========================================================= -->
+  <div id="contact" class="fade-in overflow-hidden mt-4">
+    <footer class="arrcc-footer text-white py-5">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          
+          <div class="col-lg-6 pe-lg-5 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <img src="logo-1.png" class="foot-logo" alt="Logo">
+            </div>
+
+            <div class="row g-4 my-2 pt-3">
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Cape Town Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">12 Waterkant Street, Studio 401<br>Cape Town, 8001</div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+              </div>
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Johannesburg Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">45 Rosebank Road, Suite 12<br>Rosebank, 2196</div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+              </div>
+            </div>
+
+            <div class="my-4 pt-2">
+              <h6 class="text-white text-uppercase fw-bold mb-3 mt-2 fs-8 tracking-wider">Quick Navigational Links</h6>
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 small">
+                <a href="index.html" class="footer-nav-link text-white-50 text-decoration-none">Home</a>
+                <a href="profile.html" class="footer-nav-link text-white-50 text-decoration-none">Profile</a>
+                <a href="services.html" class="footer-nav-link text-white-50 text-decoration-none">Services</a>
+                <a href="portfolio.html" class="footer-nav-link text-white-50 text-decoration-none">Projects</a>
+                <a href="gallerry.html" class="footer-nav-link text-white-50 text-decoration-none">Gallery</a>
+                <a href="contact.html" class="footer-nav-link text-white-50 text-decoration-none">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
+            <h3 class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</h3>
+            <p class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+              Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back.
+            </p>
+
+            <form>
+              <div class="row g-3 mt-1">
+                <div class="col-md-6 mb-3 text-center text-lg-start">
+                  <label class="form-label text-uppercase text-white fs-8 fw-bold mb-1">Your Name *</label>
+                  <input type="text" class="form-control arrcc-input" placeholder="e.g. John Doe" required>
+                </div>
+                <div class="col-md-6 mb-3 text-center text-lg-start">
+                  <label class="form-label text-uppercase text-white fs-8 fw-bold mb-1">Phone Number *</label>
+                  <input type="text" class="form-control arrcc-input" placeholder="+27 00 000 0000" required>
+                </div>
+              </div>
+              <div class="mb-4 text-center text-lg-start">
+                <label class="form-label text-uppercase text-white fs-8 fw-bold mb-1">Message *</label>
+                <textarea class="form-control arrcc-input" rows="3" placeholder="Tell us about your project..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-arrcc-submit text-uppercase rounded-0">Submit Inquiry</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+      <div class="modal-content modal-content-custom position-relative shadow-lg">
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+        <div class="row g-0">
+          <div class="col-lg-7 bg-dark d-flex align-items-center justify-content-center" style="min-height: 400px;">
+            <img id="modalImg" src="" class="modal-img-fit" alt="Project Image">
+          </div>
+          <div class="col-lg-5 p-4 p-md-5 d-flex flex-column justify-content-between">
+            <div>
+              <span id="modalNumber" class="badge bg-dark rounded-0 px-2 py-2 fs-8 mb-3">PROJECT</span>
+              <h3 id="modalTitle" class="fw-bold text-dark text-uppercase mb-4">Title</h3>
+              <p id="modalDesc" class="text-muted leading-relaxed mb-4">Description...</p>
+              <div class="bg-light p-3 border mb-4 text-muted small">
+                <div><strong>Location:</strong> <span id="modalLocation"></span></div>
+                <div><strong>Year:</strong> <span id="modalYear"></span></div>
+                <div><strong>Materials:</strong> <span id="modalMaterials"></span></div>
+              </div>
+            </div>
+            <a href="gallerry.html" class="btn btn-dark rounded-0 px-4 py-2 text-uppercase fs-8 tracking-wider text-center text-decoration-none">View Complete Gallery</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="fade in scroll.js"></script>
+  <script src="back to top.js"></script>
+  <script src="desktop header peek.js"></script>
+  <script src="lightbox.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

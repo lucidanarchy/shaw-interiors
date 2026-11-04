@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — SHAW Interiors</title>
+
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="portfolio.css">
+  
+  <!-- Google Fonts Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #1D1D1D;
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Pushes content down so it doesn't hide underneath your fixed header navbar */
+    .page-content-wrapper {
+      margin-top: 90px; /* Adjust if your header height differs */
+    }
+
+    /* Site Theme Colors */
+    .bg-cream-custom { background-color: #F4F2EE; }
+    .bg-dark-pillar { background-color: #35322F; }
+    .bg-dark-pillar-right { background-color: #45403B; }
+    
+    .label-line::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background-color: #62605D;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .top-right-dark-panel {
+      background: linear-gradient(160deg, #383431 0%, #2e2a27 60%, #433932 100%);
+      position: relative;
+    }
+
+    .btn-view-project {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-view-project:hover {
+      background-color: #1D1D1D !important;
+      color: #FFFFFF !important;
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       SECTION 1: GLOBAL NAVIGATION HEADER
+       ========================================================= -->
+  <div class="bg">
+    <div class="container-md">
+      <div class="nv-containe">
+
+        <a href="index.html"><img src="logo-1.png" class="nav-logo" alt="Shaw Interiors Logo"></a>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="profile.html">About</a></li>
+
+          <!-- SERVICES DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
+            <a href="services.html" class="dropdown-link">
+              <label for="services-toggle" class="accordion-trigger">
+                Services <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="services.html#service-01" class="dropdown-item-row">
+                <img src="build58.jpg" class="dropdown-thumb" alt="Residential Interior">
+                <div class="dropdown-text py-2">
+                  <span class="item-title">01. Residential Interior</span>
+                  <span class="item-sub">Bespoke Homes & Private Estates</span>
+                </div>
+              </a>
+              <a href="services.html#service-02" class="dropdown-item-row">
+                <img src="build28.jpg" class="dropdown-thumb" alt="Commercial Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">02. Commercial Interior</span>
+                  <span class="item-sub">Retail, Hospitality & Public Spaces</span>
+                </div>
+              </a>
+              <a href="services.html#service-03" class="dropdown-item-row">
+                <img src="build21.png" class="dropdown-thumb" alt="Corporate Interior">
+                <div class="dropdown-text">
+                  <span class="item-title">03. Corporate Interior</span>
+                  <span class="item-sub">Corporate & Modern Workspaces</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <!-- PROJECTS DROPDOWN -->
+          <li class="has-dropdown">
+            <input type="checkbox" id="projects-toggle" class="dropdown-checkbox">
+            <a href="portfolio.html" class="dropdown-link active">
+              <label for="projects-toggle" class="accordion-trigger">
+                Projects <span class="angle-bracket"></span>
+              </label>
+            </a>
+            <div class="dropdown-menu-box">
+              <a href="portfolio.html" class="dropdown-item-row">
+                <img src="build30.jpg" class="dropdown-thumb" alt="Residential Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Residential Works</span>
+                  <span class="item-sub">Residential Estates</span>
+                </div>
+              </a>
+              <a href="portfolio.html" class="dropdown-item-row">
+                <img src="build32.jpg" class="dropdown-thumb" alt="Commercial Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Commercial Works</span>
+                  <span class="item-sub">Commercial Metros</span>
+                </div>
+              </a>
+              <a href="portfolio.html" class="dropdown-item-row">
+                <img src="build27.jpg" class="dropdown-thumb" alt="Corporate Works">
+                <div class="dropdown-text">
+                  <span class="item-title">Corporate Works</span>
+                  <span class="item-sub">Executive Suites</span>
+                </div>
+              </a>
+            </div>
+          </li>
+
+          <li><a href="gallerry.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+      </div>
+    </div> 
+  </div>
+
+  <!-- =========================================================
+       SECTION 2: EMBEDDED MONOGRAPH SECTIONS (PROPERLY SPACED)
+       ========================================================= -->
+  <main class="w-100 page-content-wrapper">
+
+    <!-- TOP SECTION: OUR PHILOSOPHY & APPROACH -->
+    <div class="row g-0 w-100 m-0">
+      
+      <!-- Left Content Box (col-lg-8) -->
+      <div class="col-lg-8 bg-cream-custom px-5 py-5 py-lg-5 d-flex flex-column justify-content-between">
+        <div class="row g-4 align-items-start">
+          
+          <!-- Column 1: Philosophy Title -->
+          <div class="col-md-7">
+            <div class="label-line text-uppercase tracking-widest text-muted mb-4" style="font-size: 11px;">
+              OUR PHILOSOPHY
+            </div>
+            <h1 class="font-serif display-6 text-dark fw-normal" style="line-height: 1.15;">
+              We believe spaces should be experienced rather than merely occupied.
+            </h1>
+          </div>
+
+          <!-- Column 2: Approach Paragraph & Label -->
+          <div class="col-md-5 d-flex flex-column justify-content-between h-100 pt-md-3">
+            <p class="text-secondary fw-light mb-5" style="font-size: 14px; line-height: 1.8;">
+              At Shaw Interiors, we design with intention — where light, material and proportion create environments that enhance the way people live, work and connect.
+            </p>
+            <div class="label-line text-uppercase tracking-widest text-muted mt-auto" style="font-size: 11px;">
+              OUR APPROACH
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Middle Narrow Vertical Image Panel (col-lg-2) using local image build57.jpg -->
+      <div class="col-lg-2 bg-dark hero-image-container position-relative border-top border-lg-top-0 border-start border-secondary opacity-75" style="min-height: 280px;">
+        <img 
+          src="build57.jpg" 
+          alt="Architectural Interior Shadow & Texture"
+          onerror="this.onerror=null; this.src='https://placehold.co/400x800/222222/cccccc?text=Interior+Detail';"
+        />
+      </div>
+
+      <!-- Right Column: Dark Architectural Pillar (col-lg-2) -->
+      <div class="col-lg-2 top-right-dark-panel p-4 d-flex flex-column justify-content-between text-light border-top border-lg-top-0 border-start border-dark">
+        <div class="d-flex flex-column gap-2 pt-2 text-uppercase text-light opacity-75" style="font-size: 11px; letter-spacing: 0.25em;">
+          <div>LIGHT</div>
+          <div>MATERIAL</div>
+          <div>PROPORTION</div>
+          <div>PEOPLE</div>
+        </div>
+        <div class="pt-4">
+          <div class="w-25 bg-warning opacity-50" style="height: 1px;"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM SECTION: FEATURED PROJECT (THE GLASS PAVILION) -->
+    <div class="row g-0 w-100 m-0 border-top border-secondary opacity-90" style="min-height: 420px;">
+      
+      <!-- Left Box: Project Info (col-lg-3) -->
+      <div class="col-lg-3 bg-cream-custom px-5 py-5 d-flex flex-column justify-content-between border-end border-light">
+        <div>
+          <div class="label-line text-uppercase tracking-widest text-muted mb-4" style="font-size: 11px;">
+            FEATURED PROJECT
+          </div>
+
+          <h2 class="font-serif text-uppercase text-dark fw-medium mb-3" style="font-size: 26px; letter-spacing: 0.08em;">
+            THE GLASS PAVILION
+          </h2>
+
+          <p class="text-secondary fw-light mb-5" style="font-size: 13px; line-height: 1.75;">
+            A residence designed around natural light, openness and calm.
+          </p>
+        </div>
+
+        <div>
+          <a href="gallerry.html#master-suite" class="btn-view-project d-inline-block border border-dark text-dark text-uppercase text-decoration-none px-4 py-3 fw-medium" style="font-size: 10px; letter-spacing: 0.25em;">
+            VIEW PROJECT
+          </a>
+        </div>
+      </div>
+
+      <!-- Center Box: Modern Architectural Hero Panoramic Image using local image build62.jpg -->
+      <div class="col-lg-7 bg-dark hero-image-container position-relative" style="min-height: 350px;">
+        <img 
+          src="build62.jpg" 
+          alt="The Glass Pavilion — Modern Interior Architecture with Ocean View"
+          onerror="this.onerror=null; this.src='https://placehold.co/1200x700/222222/cccccc?text=The+Glass+Pavilion';"
+        />
+      </div>
+
+      <!-- Right Box: Dark Sidebar Pillar (col-lg-2) -->
+      <div class="col-lg-2 bg-dark-pillar-right p-4 d-flex flex-column justify-content-start text-light border-start border-dark">
+        <div class="d-flex flex-column gap-2 pt-2 text-uppercase text-light opacity-75" style="font-size: 11px; letter-spacing: 0.25em;">
+          <div>SIMPLE</div>
+          <div>TIMELESS</div>
+          <div>HUMAN</div>
+        </div>
+        
+        <div class="pt-4 mt-2">
+          <div class="w-25 bg-secondary" style="height: 1px;"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- =========================================================
+       SECTION 3: GLOBAL FOOTER & INQUIRY FORM
+       ========================================================= -->
+  <div id="contact" class="fade-in overflow-hidden mt-0">
+    <footer class="arrcc-footer text-white py-5">
+      <div class="container">
+        <div class="row g-4 g-lg-5">
+          
+          <div class="col-lg-6 pe-lg-5 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <img src="logo-1.png" class="foot-logo" alt="Shaw Interiors Logo">
+            </div>
+
+            <div class="row g-4 my-2 pt-3">
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Cape Town Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  12 Waterkant Street, Studio 401<br>
+                  Cape Town, 8001, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.ct@shawint.co.za</div>
+              </div>
+
+              <div class="col-sm-6">
+                <h6 class="text-white text-uppercase fw-bold mb-2 fs-8 tracking-wider">Johannesburg Studio</h6>
+                <div class="text-white-50 small leading-relaxed mb-3">
+                  45 Rosebank Road, Suite 12<br>
+                  Rosebank, 2196, South Africa
+                </div>
+                <div class="text-white fw-bold fs-8 mb-1">+27 (0)11 200 0000</div>
+                <div class="text-white fw-bold fs-8">Email: info.jb@shawint.co.za</div>
+              </div>
+            </div>
+
+            <div class="my-4 pt-2">
+              <h6 class="text-white text-uppercase fw-bold mb-3 mt-2 fs-8 tracking-wider">Quick Navigational Links</h6>
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-1 gap-md-4 small">
+                <a href="index.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Home</a>
+                <a href="profile.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Profile</a>
+                <a href="services.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Services</a>
+                <a href="portfolio.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Projects</a>
+                <a href="gallerry.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Gallery</a>
+                <a href="contact.html" class="footer-nav-link text-white-50 fs-7 text-decoration-none">Contact</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
+            <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
+              <h3 class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</h3>
+            </div>
+            
+            <p class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+              Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back.
+            </p>
+
+            <div class="w-100">
+              <form>
+                <div class="row g-3 mt-1">
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerName" class="form-label text-uppercase text-white fs-8 fw-bold mb-1 tracking-wider d-block">Your Name *</label>
+                    <input type="text" class="form-control arrcc-input text-center text-lg-start" id="footerName" placeholder="e.g. John Doe" required>
+                  </div>
+
+                  <div class="col-md-6 mb-3 text-center text-lg-start">
+                    <label for="footerEmail" class="form-label text-uppercase text-white fs-8 mb-1 fw-bold tracking-wider d-block">Phone Number *</label>
+                    <input type="text" class="form-control arrcc-input text-center text-lg-start" id="footerEmail" placeholder="+27 00 000 0000" required>
+                  </div>
+                </div>
+
+                <div class="mb-4 text-center mt-2 text-lg-start">
+                  <label for="footerMessage" class="form-label text-uppercase text-white fs-8 mb-1 tracking-wider fw-bold d-block">Project Details / Message *</label>
+                  <textarea class="form-control arrcc-input text-center text-lg-start" id="footerMessage" rows="4" placeholder="Tell us about location, project type, and timeline..." required></textarea>
+                </div>
+
+                <div class="d-flex justify-content-center justify-content-lg-start">
+                  <button type="submit" class="btn btn-arrcc-submit text-uppercase rounded-0">
+                    Submit Inquiry
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+
+    <div class="ft-bg py-3">
+      <div class="container">
+        <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center text-white-50 fs-8 text-center text-sm-start">
+          <p class="mb-2 fs-8 mb-sm-0">&copy; 2026 Shaw Interiors. All Rights Reserved.</p>
+          <div class="d-flex gap-4">
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Privacy Policy</a>
+            <a href="#" class="text-white-50 fs-8 text-decoration-none footer-nav-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

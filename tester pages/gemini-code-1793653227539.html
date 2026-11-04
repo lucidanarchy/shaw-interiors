@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects — SHAW Interiors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap 5.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="profile.css">
+  <link rel="stylesheet" href="portfolio.css">
+  
+  <!-- Google Fonts Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #1D1D1D;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Custom precise styling for exact replica details */
+    .bg-cream-custom { background-color: #F4F2EE; }
+    .bg-dark-pillar { background-color: #35322F; }
+    .bg-dark-pillar-right { background-color: #45403B; }
+    
+    .label-line::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background-color: #62605D;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .top-right-dark-panel {
+      background: linear-gradient(160deg, #383431 0%, #2e2a27 60%, #433932 100%);
+      position: relative;
+    }
+
+    .btn-view-project {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-view-project:hover {
+      background-color: #1D1D1D !important;
+      color: #FFFFFF !important;
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+
+<body class="p-2 sm:p-4 md:p-5 d-flex justify-content-center align-items-center min-vh-100">
+
+  <!-- MAIN MONOGRAPH CONTAINER -->
+  <div class="w-100 shadow-lg overflow-hidden d-flex flex-column border border-dark" style="max-width: 1400px; background-color: #000000;">
+
+    <!-- =========================================================
+         SECTION 1: OUR PHILOSOPHY & APPROACH
+         ========================================================= -->
+    <div class="row g-0 w-100 min-vh-lg-30">
+      
+      <!-- Left Content Box (col-lg-8) -->
+      <div class="col-lg-8 bg-cream-custom p-4 p-sm-5 d-flex flex-column justify-content-between">
+        <div class="row g-4 align-items-start">
+          
+          <!-- Column 1: Philosophy Title -->
+          <div class="col-md-7">
+            <div class="label-line text-uppercase tracking-widest text-muted mb-4" style="font-size: 11px;">
+              OUR PHILOSOPHY
+            </div>
+            <h1 class="font-serif display-6 text-dark fw-normal" style="line-height: 1.15;">
+              We believe spaces should be experienced rather than merely occupied.
+            </h1>
+          </div>
+
+          <!-- Column 2: Approach Paragraph & Label -->
+          <div class="col-md-5 d-flex flex-column justify-content-between h-100 pt-md-3">
+            <p class="text-secondary fw-light mb-5" style="font-size: 14px; line-height: 1.8;">
+              At Shaw Interiors, we design with intention — where light, material and proportion create environments that enhance the way people live, work and connect.
+            </p>
+            <div class="label-line text-uppercase tracking-widest text-muted mt-auto" style="font-size: 11px;">
+              OUR APPROACH
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Middle Narrow Vertical Image Panel (col-lg-2) -->
+      <div class="col-lg-2 bg-dark hero-image-container position-relative border-top border-lg-top-0 border-start border-secondary opacity-75" style="min-height: 250px;">
+        <img 
+          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" 
+          alt="Architectural Interior Shadow & Texture"
+        />
+      </div>
+
+      <!-- Right Column: Dark Architectural Pillar (col-lg-2) -->
+      <div class="col-lg-2 top-right-dark-panel p-4 d-flex flex-column justify-content-between text-light border-top border-lg-top-0 border-start border-dark">
+        <div class="d-flex flex-column gap-2 pt-2 text-uppercase text-light opacity-75" style="font-size: 11px; letter-spacing: 0.25em;">
+          <div>LIGHT</div>
+          <div>MATERIAL</div>
+          <div>PROPORTION</div>
+          <div>PEOPLE</div>
+        </div>
+        <div class="pt-4">
+          <div class="w-25 bg-warning opacity-50" style="height: 1px;"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         SECTION 2: FEATURED PROJECT (THE GLASS PAVILION)
+         ========================================================= -->
+    <div class="row g-0 w-100 border-top border-secondary opacity-90" style="min-height: 420px;">
+      
+      <!-- Left Box: Project Info (col-lg-3) -->
+      <div class="col-lg-3 bg-cream-custom p-4 p-sm-5 d-flex flex-column justify-content-between border-end border-light">
+        <div>
+          <div class="label-line text-uppercase tracking-widest text-muted mb-4" style="font-size: 11px;">
+            FEATURED PROJECT
+          </div>
+
+          <h2 class="font-serif text-uppercase text-dark fw-medium mb-3" style="font-size: 26px; letter-spacing: 0.08em;">
+            THE GLASS PAVILION
+          </h2>
+
+          <p class="text-secondary fw-light mb-5" style="font-size: 13px; line-height: 1.75;">
+            A residence designed around natural light, openness and calm.
+          </p>
+        </div>
+
+        <div>
+          <a href="gallerry.html#master-suite" class="btn-view-project d-inline-block border border-dark text-dark text-uppercase text-decoration-none px-4 py-3 fw-medium" style="font-size: 10px; letter-spacing: 0.25em;">
+            VIEW PROJECT
+          </a>
+        </div>
+      </div>
+
+      <!-- Center Box: Modern Architectural Hero Panoramic Image (col-lg-7) -->
+      <div class="col-lg-7 bg-dark hero-image-container position-relative" style="min-height: 320px;">
+        <img 
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80" 
+          alt="The Glass Pavilion — Modern Interior Architecture with Ocean View"
+        />
+      </div>
+
+      <!-- Right Box: Dark Sidebar Pillar (col-lg-2) -->
+      <div class="col-lg-2 bg-dark-pillar-right p-4 d-flex flex-column justify-content-start text-light border-start border-dark">
+        <div class="d-flex flex-column gap-2 pt-2 text-uppercase text-light opacity-75" style="font-size: 11px; letter-spacing: 0.25em;">
+          <div>SIMPLE</div>
+          <div>TIMELESS</div>
+          <div>HUMAN</div>
+        </div>
+        
+        <div class="pt-4 mt-2">
+          <div class="w-25 bg-secondary" style="height: 1px;"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
