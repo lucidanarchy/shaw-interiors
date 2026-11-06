@@ -135,6 +135,49 @@
       height: 400px;
       width: 100%;
     }
+	
+	
+	.parallax-section-residentual {
+      background-image: url('build62.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      width: 100%;
+    }
+	
+	
+	
+	.parallax-section-commercial {
+      background-image: url('build73.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      width: 100%;
+    }
+	
+	
+	
+	.parallax-section-corporate {
+      background-image: url('build67.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 400px;
+      width: 100%;
+    }
+	
+	
+	
+	
+	
+	
+	
+	
 
     @media (max-width: 991.98px) {
       .parallax-wrapper-tall {

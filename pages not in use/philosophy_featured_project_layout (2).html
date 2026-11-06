@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHAW Interiors — Philosophy & Featured Project</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          },
+          colors: {
+            'cream-bg': '#F4F2EE',
+            'dark-sidebar': '#35322F',
+            'dark-sidebar-right': '#45403B',
+            'editorial-text': '#1D1D1D',
+            'editorial-muted': '#62605D',
+            'accent-line': '#4A4744',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom precise styling for exact replica details */
+    body {
+      background-color: #0d0d0d;
+      color: #1D1D1D;
+      font-family: 'Montserrat', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Fine line before labels */
+    .label-line::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 1px;
+      background-color: #62605D;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    /* Ambient lighting gradient on top-right panel to emulate warm LED cove strip */
+    .top-right-dark-panel {
+      background: linear-gradient(160deg, #383431 0%, #2e2a27 60%, #433932 100%);
+      position: relative;
+    }
+
+    .top-right-dark-panel::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35px;
+      background: linear-gradient(to top, rgba(240, 190, 130, 0.25), transparent);
+      pointer-events: none;
+    }
+
+    /* Subtle hover effect on the outlined button */
+    .btn-view-project {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-view-project:hover {
+      background-color: #1D1D1D;
+      color: #FFFFFF;
+    }
+
+    /* Responsive Canvas wrapper for image frame ratio */
+    .hero-image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+</head>
+<body class="p-0 sm:p-4 md:p-8 flex justify-center items-center min-h-screen">
+
+  <!-- MAIN MONOGRAPH CONTAINER -->
+  <div class="w-full max-w-[1400px] bg-black shadow-2xl overflow-hidden flex flex-col border border-stone-800">
+
+    <!-- =========================================================
+         TOP SECTION: OUR PHILOSOPHY & APPROACH
+         ========================================================= -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 w-full min-h-[380px]">
+      
+      <!-- Left Content Box -->
+      <div class="lg:col-span-8 bg-cream-bg px-8 py-10 sm:px-12 sm:py-14 md:px-14 md:py-14 flex flex-col justify-between">
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+          
+          <!-- Column 1: Philosophy Title -->
+          <div class="md:col-span-7">
+            <div class="label-line text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium text-editorial-muted mb-6">
+              OUR PHILOSOPHY
+            </div>
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-[44px] leading-[1.12] text-editorial-text font-normal tracking-tight">
+              We believe spaces should be experienced rather than merely occupied.
+            </h1>
+          </div>
+
+          <!-- Column 2: Approach Paragraph & Label -->
+          <div class="md:col-span-5 flex flex-col justify-between h-full pt-1 md:pt-4">
+            <p class="text-editorial-muted text-[13px] sm:text-[14px] leading-[1.8] font-light mb-8 md:mb-12">
+              At Shaw Interiors, we design with intention — where light, material and proportion create environments that enhance the way people live, work and connect.
+            </p>
+            <div class="label-line text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium text-editorial-muted mt-auto">
+              OUR APPROACH
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Middle Narrow Vertical Image Panel -->
+      <div class="lg:col-span-2 bg-stone-900 hero-image-container relative min-h-[220px] lg:min-h-[380px] border-t lg:border-t-0 lg:border-l border-stone-300/30">
+        <img 
+          src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=800&q=80" 
+          alt="Architectural Interior Shadow & Texture"
+          onerror="this.onerror=null; this.src='https://placehold.co/400x800/222222/cccccc?text=Interior+Detail';"
+        />
+      </div>
+
+      <!-- Right Column: Dark Architectural Pillar -->
+      <div class="lg:col-span-2 top-right-dark-panel p-8 sm:p-10 flex flex-col justify-between text-stone-300 border-t lg:border-t-0 lg:border-l border-stone-700/40">
+        <div class="flex flex-col space-y-3 pt-2 text-[11px] tracking-[0.25em] font-normal text-stone-300/90 uppercase">
+          <div>LIGHT</div>
+          <div>MATERIAL</div>
+          <div>PROPORTION</div>
+          <div>PEOPLE</div>
+        </div>
+
+        <div class="pt-8">
+          <div class="w-7 h-[1px] bg-amber-200/40 mb-2"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         BOTTOM SECTION: FEATURED PROJECT
+         ========================================================= -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 w-full min-h-[420px] border-t border-stone-300/40">
+      
+      <!-- Left Box: Project Info (26% equivalent) -->
+      <div class="lg:col-span-3 bg-cream-bg p-8 sm:p-12 flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-stone-300/30">
+        <div>
+          <div class="label-line text-[10px] sm:text-[11px] uppercase tracking-[0.22em] font-medium text-editorial-muted mb-6">
+            FEATURED PROJECT
+          </div>
+
+          <h2 class="font-serif text-2xl sm:text-[28px] uppercase tracking-[0.1em] text-editorial-text font-medium mb-3">
+            THE GLASS PAVILION
+          </h2>
+
+          <p class="text-editorial-muted text-[13px] leading-[1.75] font-light mb-10">
+            A residence designed around natural light, openness and calm.
+          </p>
+        </div>
+
+        <div>
+          <a href="#" class="btn-view-project inline-block border border-editorial-text text-editorial-text px-7 py-3 text-[10px] uppercase tracking-[0.25em] font-medium">
+            VIEW PROJECT
+          </a>
+        </div>
+      </div>
+
+      <!-- Center Box: Modern Architectural Hero Panoramic Image (62% equivalent) -->
+      <div class="lg:col-span-7 bg-stone-900 hero-image-container relative min-h-[300px] lg:min-h-[440px]">
+        <img 
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=80" 
+          alt="The Glass Pavilion — Modern Interior Architecture with Ocean View"
+          onerror="this.onerror=null; this.src='https://placehold.co/1200x700/222222/cccccc?text=The+Glass+Pavilion';"
+        />
+      </div>
+
+      <!-- Right Box: Dark Sidebar Pillar (12% equivalent) -->
+      <div class="lg:col-span-2 bg-dark-sidebar-right p-8 sm:p-10 flex flex-col justify-start text-stone-300 border-t lg:border-t-0 lg:border-l border-stone-700/40">
+        <div class="flex flex-col space-y-3 pt-2 text-[11px] tracking-[0.25em] font-normal text-stone-300/90 uppercase">
+          <div>SIMPLE</div>
+          <div>TIMELESS</div>
+          <div>HUMAN</div>
+        </div>
+        
+        <div class="pt-8">
+          <div class="w-7 h-[1px] bg-stone-500/50"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

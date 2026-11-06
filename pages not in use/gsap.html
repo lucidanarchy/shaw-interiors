@@ -1,0 +1,315 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Suite Sanctuary</title>
+  
+  <!-- Bootstrap CSS (Required for Grid Utilities) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Custom Color Class */
+    .bg-cream-custom {
+      background-color: #f7f6f2;
+    }
+
+    /* Architectural Divider Line */
+    .divider-line-dk {
+      height: 1px;
+      background-color: #222;
+      width: 100%;
+    }
+
+    /* =========================================================
+       GSAP SCROLL-DRIVEN REVEAL STYLES
+       ========================================================= */
+    .gsap-reveal-box {
+      position: relative;
+      overflow: hidden;
+      background-color: #111;
+    }
+
+    .gsap-reveal-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      will-change: clip-path, transform;
+      /* Initial state: masked inward with slight scale */
+      clip-path: inset(25% 15% 25% 15%);
+      transform: scale(1.2);
+    }
+	
+	
+	
+	
+	/* =========================================================
+     GSAP SCROLL-DRIVEN REVEAL STYLES (SEAMLESS WIPE)
+     ========================================================= */
+  .gsap-reveal-box {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent; /* Removes any grey/dark box backing */
+  }
+
+  .gsap-reveal-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: clip-path, transform;
+    /* Starts as a clean centered vertical/horizontal slit */
+    clip-path: inset(10% 10% 10% 10%);
+    transform: scale(1.05);
+  }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </style>
+</head>
+<body>
+
+<main class="page-content fade-in">
+
+  <!-- =========================================================
+       TOP SECTION: 01 / FEATURED PROJECT (INTRO & METADATA)
+       ========================================================= -->
+  <div class="container-fluid border-bottom border-secondary pt-4 p-0">
+    <div class="container p-0">
+      
+      <!-- DESKTOP VIEW -->
+      <div class="row g-0 w-100 mb-0 align-items-stretch d-none d-lg-flex" style="min-height: 400px;">
+        
+        <!-- Left Text Box (col-lg-7) -->
+        <div class="col-lg-7 bg-cream-custom px-4 px-md-5 d-flex flex-column justify-content-center">
+          <div class="row g-4 align-items-center w-100 m-0">
+            
+            <!-- Column 1: Featured Heading -->
+            <div class="col-md-6 ps-0 pe-md-4 d-flex flex-column justify-content-center">
+              <div class="mb-4">
+                <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase">01 FEATURED Project</span>
+              </div>
+              
+              <h2 class="font-serif text-dark fw-normal mb-0" style="font-size: 2.2em; line-height: 1.1; letter-spacing: -0.01em;">
+                The Master Suite Sanctuary
+              </h2>
+              
+              <div class="divider-line-dk mt-4 mb-4 fade-in"></div>
+              
+              <p class="text-secondary fw-light mb-4" style="font-size: 15px; line-height: 1.65;">
+                Restorative acoustic sanctuary featuring recessed linear lighting, raw travertine walls, and rich dark orange velvet accents.
+              </p>
+            </div>
+
+            <!-- Column 2: Specs & Metadata -->
+            <div class="col-md-6 px-0 ps-md-3 d-flex flex-column justify-content-center">
+              <p class="fw-light mb-0" style="font-size: 25px; line-height: 1.3;">
+                <span class="text-uppercase text-dark" style="font-size: 12px; letter-spacing: 0.08em;">
+                  <strong class="fw-semibold text-dark">Location:</strong> Cape Town, SA &nbsp;&bull;&nbsp;
+                  <strong class="fw-semibold text-dark">Year:</strong> 2026 &nbsp;&bull;&nbsp;
+                  <strong class="fw-semibold text-dark">Category:</strong> Residential
+                  <br>
+                  <strong class="fw-semibold text-dark">Materials:</strong> Raw Travertine, Lime-Wash Plaster, Velvet
+                </span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Middle Vertical Image Panel (col-lg-4) - UNBOXED FULL-BLEED -->
+        <div class="col-lg-4 p-0 gsap-reveal-box" style="height: 400px; background: transparent;">
+          <img 
+            class="gsap-reveal-img"
+            src="build72.jpg" 
+            alt="Architectural Interior Detail"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x800/222222/cccccc?text=Interior+Detail';"
+          />
+        </div>
+
+        <!-- Right Architectural Pillar (col-lg-1) -->
+        <div class="col-lg-1 top-right-dark-panel p-0 d-flex flex-column align-items-center justify-content-center text-light border-top border-lg-top-0 border-start border-dark" style="height: 400px;">
+          <div class="d-flex flex-column text-uppercase text-light" style="font-size: 15px; letter-spacing: 0.25em;">
+            <h3 class="mb-0 fw-light">01</h3>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MOBILE VIEW -->
+      <div class="d-block d-lg-none bg-cream-custom">
+        
+        <!-- 1. Heading & Intro Paragraph -->
+        <div class="px-4 py-4">
+          <div class="mb-3">
+            <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase">01 FEATURED Project</span>
+          </div>
+          <h2 class="font-serif text-dark fw-normal mb-0" style="font-size: 2.2em; line-height: 1.1; letter-spacing: -0.01em;">
+            The Master Suite Sanctuary
+          </h2>
+          <div class="divider-line-dk mt-3 mb-3 fade-in"></div>
+          <p class="text-secondary fw-light mb-0" style="font-size: 15px; line-height: 1.65;">
+            Restorative acoustic sanctuary featuring recessed linear lighting, raw travertine walls, and rich dark orange velvet accents.
+          </p>
+        </div>
+
+        <!-- 2. Middle Vertical Image Panel (Unboxed Mobile) -->
+        <div class="w-100 gsap-reveal-box" style="height: 350px; background: transparent;">
+          <img 
+            class="gsap-reveal-img"
+            src="build72.jpg" 
+            alt="Architectural Interior Detail"
+            onerror="this.onerror=null; this.src='https://placehold.co/400x800/222222/cccccc?text=Interior+Detail';"
+          />
+        </div>
+
+        <!-- 3. Location & Specs -->
+        <div class="px-4 py-4">
+          <p class="text-dark fw-light mb-0" style="font-size: 25px; line-height: 1.3;">
+            <span class="text-uppercase" style="font-size: 12px; letter-spacing: 0.08em;">
+              <strong class="fw-semibold text-dark">Location:</strong> Cape Town, SA &nbsp;&bull;&nbsp;
+              <strong class="fw-semibold text-dark">Year:</strong> 2026 &nbsp;&bull;&nbsp;
+              <strong class="fw-semibold text-dark">Category:</strong> Residential
+              <br>
+              <strong class="fw-semibold text-dark">Materials:</strong> Raw Travertine, Lime-Wash Plaster, Velvet
+            </span>
+          </p>
+        </div>
+
+        <!-- 4. Pillar Number Block -->
+        <div class="bg-dark py-3 text-center text-light border-top border-dark">
+          <div class="text-uppercase text-light" style="font-size: 15px; letter-spacing: 0.25em;">
+            <h3 class="mb-0 fw-light">01</h3>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================================================
+       BOTTOM SECTION: FEATURED PROJECT (CTA & PANORAMA)
+       ========================================================= -->
+  <div class="container-fluid p-0">
+    <div class="container p-0">
+      
+      <!-- DESKTOP VIEW -->
+      <div class="row g-0 w-100 align-items-stretch d-none d-lg-flex" style="min-height: 380px;">
+        
+        <!-- Left Text Box (col-lg-3) -->
+        <div class="col-lg-3 bg-cream-custom px-4 px-md-5 py-5 d-flex flex-column justify-content-center border-end border-light">
+          <div>
+            <h2 class="font-serif text-uppercase text-dark fw-medium mb-3" style="font-size: 30px; letter-spacing: 0.08em; line-height: 1.2;">
+              PROJECT SHOWCASE
+            </h2>
+
+            <p class="text-secondary fw-light mb-4" style="font-size: 15px; line-height: 1.65;">
+              Explore the complete photographic monograph and spatial details in our archive.
+            </p>
+          </div>
+
+          <div>
+            <a href="gallerry.html#master-suite" class="btn-view-project d-inline-block border border-dark text-dark text-uppercase text-decoration-none px-4 py-3 fw-medium" style="font-size: 9.5px; letter-spacing: 0.22em;">
+              VIEW PROJECT
+            </a>
+          </div>
+        </div>
+
+        <!-- Center Panoramic Image (col-lg-9) - UNBOXED FULL-BLEED -->
+        <div class="col-lg-9 gsap-reveal-box" style="height: 440px; min-height: 360px; background: transparent;">
+          <img 
+            class="gsap-reveal-img"
+            src="build62.jpg" 
+            alt="The Master Suite Sanctuary — Panoramic View"
+            onerror="this.onerror=null; this.src='https://placehold.co/1200x700/222222/cccccc?text=The+Glass+Pavilion';"
+          />
+        </div>
+
+      </div>
+
+      <!-- MOBILE VIEW -->
+      <div class="d-block d-lg-none bg-cream-custom">
+        
+        <!-- 1. Center Panoramic Image (Unboxed Mobile) -->
+        <div class="w-100 gsap-reveal-box" style="height: 300px; background: transparent;">
+          <img 
+            class="gsap-reveal-img"
+            src="build62.jpg" 
+            alt="The Master Suite Sanctuary — Panoramic View"
+            onerror="this.onerror=null; this.src='https://placehold.co/1200x700/222222/cccccc?text=The+Glass+Pavilion';"
+          />
+        </div>
+
+        <!-- 2. Text & Button -->
+        <div class="px-4 py-5">
+          <h2 class="font-serif text-uppercase text-dark fw-medium mb-3" style="font-size: 30px; letter-spacing: 0.08em; line-height: 1.2;">
+            PROJECT SHOWCASE
+          </h2>
+
+          <p class="text-secondary fw-light mb-4" style="font-size: 15px; line-height: 1.65;">
+            Explore the complete photographic monograph and spatial details in our archive.
+          </p>
+
+          <a href="gallerry.html#master-suite" class="btn-view-project d-inline-block border border-dark text-dark text-uppercase text-decoration-none px-4 py-3 fw-medium" style="font-size: 9.5px; letter-spacing: 0.22em;">
+            VIEW PROJECT
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</main>
+
+<!-- Load GSAP & ScrollTrigger Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+  window.addEventListener("load", () => {
+    // Register GSAP Plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Target each image reveal container
+    const revealBoxes = document.querySelectorAll(".gsap-reveal-box");
+
+    revealBoxes.forEach((box) => {
+      const img = box.querySelector(".gsap-reveal-img");
+      if (!img) return;
+
+      // Animate clipPath and scale strictly bound to scroll progress
+      gsap.to(img, {
+        clipPath: "inset(0% 0% 0% 0%)",
+        scale: 1,
+        ease: "none",
+        scrollTrigger: {
+          trigger: box,
+          start: "top 90%",   // Reveal begins when panel hits bottom 90% of screen
+          end: "top 20%",     // Reveal completes when panel reaches top 20% of screen
+          scrub: 1            // Smooth 1s scroll tracking lag
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
