@@ -1721,7 +1721,17 @@
 </script>
   
  
-
+<script>
+  // Nuke mobile card hover zoom via JS on touch devices
+  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
+    document.querySelectorAll('.card img').forEach(img => {
+      img.style.transition = 'none';
+      img.addEventListener('touchstart', () => {
+        img.style.transform = 'none';
+      }, { passive: true });
+    });
+  }
+</script>
   
   
   
