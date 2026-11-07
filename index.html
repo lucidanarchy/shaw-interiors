@@ -616,8 +616,14 @@
   border-radius: 0 !important;
 }
 
-/* Only enable zoom on devices with a real mouse pointer */
-@media (hover: hover) and (pointer: fine) {
+
+/* Base image has NO transition or zoom */
+.card img {
+  transform: scale(1);
+}
+
+/* Transition and zoom apply ONLY on desktop screens (768px and up) */
+@media (min-width: 768px) {
   .card img {
     transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
   }
@@ -625,6 +631,16 @@
     transform: scale(1.05);
   }
 }
+
+@media (hover: none) {
+  .card img {
+    pointer-events: none !important;
+    transform: none !important;
+  }
+}
+
+
+
 
 /* DESKTOP 3-RECTANGLE NAVIGATION BAR STYLING */
 .nav-bar-pill {
