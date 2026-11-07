@@ -1052,7 +1052,7 @@ max-width: 576px;
   font-size: clamp(2rem, 1.8vw + 1rem, 3rem); 
   line-height: 1.1em;
   letter-spacing: -0.3px;
-  color: #5e5e5d;
+  color: #3a3a3a;
 }
 
 .bquote-border {
@@ -1503,14 +1503,14 @@ background-color:#202020;
 
 
 .slider-nav-btns .square-btn {
-  width: 40px;
-  height: 40px;
-  padding: 0;
+  width: 90px;
+  height: 30px;
+  //padding: 12px 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 0px !important;
-  font-size: 1.21rem;
+  font-size: 0.85rem;
   border: 1px solid #8a8a8a;
   background-color: #ffffff;
   color: #8a8a8a;
