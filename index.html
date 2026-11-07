@@ -332,132 +332,140 @@
 	 
 	 
 <div class="container my-5">
-  
 
   <!-- ==========================================
-       DESKTOP VERSION (3-card groups)
+       DESKTOP VERSION (3-card groups - visible >= 768px)
        ========================================== -->
   <div class="d-none d-md-block">
     <div class="services-carousel-wrapper overflow-hidden fade-in">
-      <div class="services-track d-flex mt-3" id="desktopServicesTrack">
+      <div class="services-track d-flex mt-3" id="desktopServicesTrack" style="transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);">
         
         <!-- GROUP 1 -->
-        <div class="services-group row g-4 w-100 flex-shrink-0">
+        <div class="services-group row g-2 w-100 flex-shrink-0">
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build35.jpg" class="card-img-top" alt="Residential Design" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fs-6 fw-bold text-dark">01. Residential Interior</h5>
-                <p class="card-text text-muted text-justify mt-1 small flex-grow-1">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light.</p>
-                <a href="services3.html#service-01" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-01" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build35.jpg" class="card-img-top w-100 object-fit-cover" alt="Residential Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase text-center mb-2 tracking-wider">01. Residential Interior</h5>
+                  <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light.</p>
+                </div>
+              </a>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build61.jpg" class="card-img-top" alt="Virtual Interior Design" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-dark">02. Commercial Interior</h5>
-                <p class="card-text text-muted small text-justify mt-1 flex-grow-1">Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces that captivate guests.</p>
-                <a href="services3.html#service-02" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-02" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build61.jpg" class="card-img-top w-100 object-fit-cover" alt="Commercial Interior" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">02. Commercial Interior</h5>
+                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces that captivate guests.</p>
+                </div>
+              </a>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build40.jpg" class="card-img-top" alt="Commercial Spaces" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex fs-6 flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-dark">03. Corporate Interior</h5>
-                <p class="card-text text-muted text-justify mt-1 small flex-grow-1">Elevated professional environments designed to inspire productivity, balancing executive sophistication with ergonomic functionality.</p>
-                <a href="services3.html#service-03" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-03" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build40.jpg" class="card-img-top w-100 object-fit-cover" alt="Corporate Interior" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">03. Corporate Interior</h5>
+                  <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Elevated professional environments designed to inspire productivity, balancing executive sophistication with ergonomic functionality.</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- GROUP 2 -->
-        <div class="services-group row g-4 w-100 flex-shrink-0">
+        <div class="services-group row g-2 w-100 flex-shrink-0">
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build51.jpg" class="card-img-top" alt="Concept & Mood Boards" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-dark">04. Custom Kitchen Design</h5>
-                <p class="card-text text-muted text-justify mt-1 small flex-grow-1">Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry & premium stone surfaces.</p>
-                <a href="services3.html#service-04" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-04" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build51.jpg" class="card-img-top w-100 object-fit-cover" alt="Custom Kitchen Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">04. Custom Kitchen Design</h5>
+                  <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry & premium stone surfaces.</p>
+                </div>
+              </a>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build41.jpg" class="card-img-top" alt="Custom Floor Plans" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-dark">05. Master Suite Design</h5>
-                <p class="card-text text-muted small text-justify mt-1 flex-grow-1">Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.</p>
-                <a href="services3.html#service-05" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-05" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build41.jpg" class="card-img-top w-100 object-fit-cover" alt="Master Suite Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">05. Master Suite Design</h5>
+                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.</p>
+                </div>
+              </a>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build52.jpg" class="card-img-top" alt="Shopping & Procurement" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-dark">06. Architectural Millwork</h5>
-                <p class="card-text text-muted small text-justify mt-1 flex-grow-1">Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.</p>
-                <a href="services3.html#service-06" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-06" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build52.jpg" class="card-img-top w-100 object-fit-cover" alt="Architectural Millwork" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">06. Architectural Millwork</h5>
+                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
 
         <!-- GROUP 3 -->
-        <div class="services-group row g-4 w-100 flex-shrink-0">
+        <div class="services-group row g-2 w-100 flex-shrink-0">
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build46.jpg" class="card-img-top" alt="Lighting & Ambiance" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-dark">07. Atmospheric Lighting</h5>
-                <p class="card-text text-muted small text-justify mt-1 flex-grow-1">Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and curate the perfect mood.</p>
-                <a href="services3.html#service-07" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-07" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build46.jpg" class="card-img-top w-100 object-fit-cover" alt="Atmospheric Lighting" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">07. Atmospheric Lighting</h5>
+                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and curate the perfect mood.</p>
+                </div>
+              </a>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build54.jpg" class="card-img-top" alt="Renovation Guidance" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-dark">08. Spa & Bath Design</h5>
-                <p class="card-text text-muted small text-justify mt-1 flex-grow-1">Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, and therapeutic water elements.</p>
-                <a href="services3.html#service-08" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-08" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build54.jpg" class="card-img-top w-100 object-fit-cover" alt="Spa & Bath Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">08. Spa & Bath Design</h5>
+                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, and therapeutic water elements.</p>
+                </div>
+              </a>
             </div>
           </div>
           <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden">
-              <img src="build48.jpg" class="card-img-top" alt="Turnkey Installation" style="height: 230px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80'">
-              <div class="card-body d-flex flex-column p-4">
-                <h5 class="card-title fw-bold fs-6 text-justify mt-1 text-dark">09. Material & Texture Design</h5>
-                <p class="card-text text-muted small flex-grow-1">Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth, and character.</p>
-                <a href="services3.html#service-09" class="custom-btn">Find out more</a>
-              </div>
+            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+              <a href="services3.html#service-09" class="text-decoration-none d-block h-100 d-flex flex-column">
+                <img src="build48.jpg" class="card-img-top w-100 object-fit-cover" alt="Material & Texture Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80'">
+                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">09. Material & Texture Design</h5>
+                  <p class="card-text text-muted small text-justify flex-grow-1 mb-0">Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth, and character.</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- Desktop Nav Buttons -->
-      <div class="d-flex justify-content-end mt-4">
-        <div class="slider-nav-btns d-flex gone gap-2">
-          <button class="btn square-btn" id="desktopPrev" aria-label="Previous">&larr;</button>
-          <button class="btn square-btn" id="desktopNext" aria-label="Next">&rarr;</button>
-        </div>
+      <!-- CENTERED 3-RECTANGLE NAV INDICATORS (Desktop >= 768px) -->
+      <div class="d-none d-md-flex justify-content-center align-items-center gap-2 mt-5">
+        <button class="nav-bar-pill active" id="barNav0" aria-label="Group 1"></button>
+        <button class="nav-bar-pill" id="barNav1" aria-label="Group 2"></button>
+        <button class="nav-bar-pill" id="barNav2" aria-label="Group 3"></button>
       </div>
+
     </div>
   </div>
 
 
   <!-- ==========================================
-       MOBILE VERSION (1-by-1 Ticker Slider)
+       MOBILE VERSION (1-by-1 Ticker Slider - visible < 768px)
        ========================================== -->
   <div class="d-block d-md-none">
     <div class="card-slider-container position-relative overflow-hidden fade-in">
@@ -465,137 +473,338 @@
         
         <!-- Card 1 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build35.jpg" class="card-img-top" alt="Residential Design" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">01. Residential Interior</h5>
-              <p class="card-text text-muted small mt-1 flex-grow-1">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light..</p>
-              <a href="services3.html#service-01" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-01" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build35.jpg" class="card-img-top w-100 object-fit-cover" alt="Residential Design" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold text-dark fs-8 text-uppercase mb-2 tracking-wider">01. Residential Interior</h5>
+                <p class="card-text text-muted text-justify small mt-1 flex-grow-1 mb-0">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 2 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build61.jpg" class="card-img-top" alt="Virtual Interior Design" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold fs-8 text-dark ">02. Commercial Interior</h5>
-              <p class="card-text text-muted small  mt-1 flex-grow-1">Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces that captivate guests.</p>
-              <a href="services3.html#service-02" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-02" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build61.jpg" class="card-img-top w-100 object-fit-cover" alt="Commercial Interior" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">02. Commercial Interior</h5>
+                <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces that captivate guests.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 3 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build40.jpg" class="card-img-top" alt="Commercial Spaces" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">03. Corporate Interior</h5>
-              <p class="card-text text-muted small mt-1 flex-grow-1">Elevated professional environments designed to inspire productivity, balancing executive sophistication with ergonomic functionality.</p>
-              <a href="services3.html#service-03" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-03" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build40.jpg" class="card-img-top w-100 object-fit-cover" alt="Corporate Interior" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">03. Corporate Interior</h5>
+                <p class="card-text text-muted text-justify small mt-1 flex-grow-1 mb-0">Elevated professional environments designed to inspire productivity, balancing executive sophistication with ergonomic functionality.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 4 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build51.jpg" class="card-img-top" alt="Concept & Mood Boards" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">04. Custom Kitchen Design</h5>
-              <p class="card-text text-muted mt-1 small flex-grow-1">Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry & premium stone surfaces.</p>
-              <a href="services3.html#service-04" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-04" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build51.jpg" class="card-img-top w-100 object-fit-cover" alt="Custom Kitchen Design" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold text-dark fs-8 text-uppercase mb-2 tracking-wider">04. Custom Kitchen Design</h5>
+                <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry & premium stone surfaces.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 5 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build41.jpg" class="card-img-top" alt="Custom Floor Plans" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">05. Master Suite Design</h5>
-              <p class="card-text text-muted mt-1 small flex-grow-1">Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.</p>
-              <a href="services3.html#service-05" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-05" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build41.jpg" class="card-img-top w-100 object-fit-cover" alt="Master Suite Design" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">05. Master Suite Design</h5>
+                <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 6 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build52.jpg" class="card-img-top" alt="Shopping & Procurement" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">06. Architectural Millwork</h5>
-              <p class="card-text text-muted small mt-1 flex-grow-1">Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.</p>
-              <a href="services3.html#service-06" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-06" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build52.jpg" class="card-img-top w-100 object-fit-cover" alt="Architectural Millwork" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">06. Architectural Millwork</h5>
+                <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 7 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build46.jpg" class="card-img-top" alt="Lighting & Ambiance" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">07. Atmospheric Lighting</h5>
-              <p class="card-text text-muted small mt-1 flex-grow-1">Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and curate the perfect mood.</p>
-              <a href="services3.html#service-07" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-07" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build46.jpg" class="card-img-top w-100 object-fit-cover" alt="Atmospheric Lighting" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">07. Atmospheric Lighting</h5>
+                <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and curate the perfect mood.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 8 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build54.jpg" class="card-img-top" alt="Renovation Guidance" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">08. Spa & Bath Design</h5>
-              <p class="card-text text-muted mt-1 small flex-grow-1">Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, and therapeutic water elements.</p>
-              <a href="services3.html#service-08" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-08" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build54.jpg" class="card-img-top w-100 object-fit-cover" alt="Spa & Bath Design" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">08. Spa & Bath Design</h5>
+                <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, and therapeutic water elements.</p>
+              </div>
+            </a>
           </div>
         </div>
 
         <!-- Card 9 -->
         <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
-          <div class="card light-card h-100 shadow-sm overflow-hidden">
-            <img src="build48.jpg" class="card-img-top" alt="Turnkey Installation" style="height: 200px; object-fit: cover;">
-            <div class="card-body d-flex flex-column p-4">
-              <h5 class="card-title fw-bold text-dark fs-8">09. Material & Texture Design</h5>
-              <p class="card-text text-muted small mt-1 flex-grow-1">Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth, and character.</p>
-              <a href="services3.html#service-09" class="custom-btn">Find out more</a>
-            </div>
+          <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
+            <a href="services3.html#service-09" class="text-decoration-none d-block h-100 d-flex flex-column">
+              <img src="build48.jpg" class="card-img-top w-100 object-fit-cover" alt="Material & Texture Design" style="height: 235px;">
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">09. Material & Texture Design</h5>
+                <p class="card-text text-muted small flex-grow-1 mb-0">Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth, and character.</p>
+              </div>
+            </a>
           </div>
         </div>
 
       </div>
-    </div>
 
-    <!-- Mobile Nav Buttons -->
-    
-	
-	
-	<div class = "gone">
-	<div class="d-flex justify-content-end  mt-4">
-      <div class="slider-nav-btns d-flex gone gap-2">
-        <button class="btn square-btn" id="mobilePrev" aria-label="Previous">&larr;</button>
-        <button class="btn square-btn" id="mobileNext" aria-label="Next">&rarr;</button>
+      <!-- CENTERED NAVIGATION LINES FOR MOBILE / TABLET (Visible between 576px and 767px, Hides below 576px) -->
+      <div class="d-none d-sm-flex d-md-none justify-content-center align-items-center gap-3  mt-5">
+        <button class="nav-line-pill active" id="mobileLineNav0" aria-label="Card 1"></button>
+        <button class="nav-line-pill" id="mobileLineNav1" aria-label="Card 2"></button>
+        <button class="nav-line-pill" id="mobileLineNav2" aria-label="Card 3"></button>
+        <button class="nav-line-pill" id="mobileLineNav3" aria-label="Card 4"></button>
+        <button class="nav-line-pill" id="mobileLineNav4" aria-label="Card 5"></button>
+        <button class="nav-line-pill" id="mobileLineNav5" aria-label="Card 6"></button>
+        <button class="nav-line-pill" id="mobileLineNav6" aria-label="Card 7"></button>
+        <button class="nav-line-pill" id="mobileLineNav7" aria-label="Card 8"></button>
+        <button class="nav-line-pill" id="mobileLineNav8" aria-label="Card 9"></button>
       </div>
+
     </div>
   </div>
-  
-  
-  
-  </div>
-
-
-
 
 </div>
 
+<style>
+
+.card, 
+  .card img, 
+  .light-card {
+    border-radius: 0 !important;
+  }
+
+
+
+  /* Card Hover Zoom Effect */
+  .card img {
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+  .card:hover img {
+    transform: scale(1.05);
+  }
+
+  /* DESKTOP 3-RECTANGLE NAVIGATION BAR STYLING */
+  .nav-bar-pill {
+    width: 40px;
+    height: 5px;
+    background-color: #d1d1d1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.4s ease, width 0.4s ease;
+  }
+  .nav-bar-pill:hover {
+    background-color: #888888;
+  }
+  .nav-bar-pill.active {
+    background-color: #3a3a3a;
+    width: 45px;
+  }
+
+  /* MOBILE / TABLET LINE NAVS STYLING (Multiple indicators for cards) */
+  .nav-line-pill {
+    width: 35px;
+    height: 3px;
+    background-color: #d1d1d1;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease, width 0.3s ease;
+  }
+  .nav-line-pill:hover {
+    background-color: #888888;
+  }
+  .nav-line-pill.active {
+    background-color: #3a3a3a;
+    width: 35px;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    /* ---------------------------------------------------------
+       1. DESKTOP CAROUSEL CONTROLLER (>= 768px)
+       --------------------------------------------------------- */
+    const desktopTrack = document.getElementById("desktopServicesTrack");
+    const desktopPills = [
+      document.getElementById("barNav0"),
+      document.getElementById("barNav1"),
+      document.getElementById("barNav2")
+    ];
+
+    if (desktopTrack && desktopPills[0]) {
+      let activeIndex = 0;
+      const totalGroups = 3;
+      let desktopTimer = null;
+
+      const moveToGroup = (index) => {
+        activeIndex = (index + totalGroups) % totalGroups;
+        desktopTrack.style.transform = `translateX(-${activeIndex * 100}%)`;
+
+        desktopPills.forEach((pill, i) => {
+          if (pill) pill.classList.toggle("active", i === activeIndex);
+        });
+      };
+
+      const startDesktopTimer = () => {
+        if (desktopTimer) clearInterval(desktopTimer);
+        desktopTimer = setInterval(() => {
+          moveToGroup(activeIndex + 1);
+        }, 4000);
+      };
+
+      desktopPills.forEach((pill, index) => {
+        if (pill) {
+          pill.addEventListener("click", () => {
+            moveToGroup(index);
+            startDesktopTimer();
+          });
+        }
+      });
+
+      const desktopWrapper = desktopTrack.closest('.services-carousel-wrapper');
+      if (desktopWrapper) {
+        desktopWrapper.addEventListener("mouseenter", () => {
+          if (desktopTimer) clearInterval(desktopTimer);
+        });
+        desktopWrapper.addEventListener("mouseleave", () => {
+          startDesktopTimer();
+        });
+      }
+
+      startDesktopTimer();
+    }
+
+    /* ---------------------------------------------------------
+       2. MOBILE TICKER SLIDER (< 768px) + Multi-Line Nav Sync
+       --------------------------------------------------------- */
+    const mobileSlider = document.getElementById("mobileServicesSlider");
+    const mobileLinePills = Array.from(document.querySelectorAll(".nav-line-pill"));
+
+    if (mobileSlider) {
+      let mobileTimer = null;
+      let isInteracting = false;
+
+      const updateMobileLines = () => {
+        if (mobileLinePills.length === 0) return;
+        const cardItem = mobileSlider.querySelector(".slider-card-item");
+        if (!cardItem) return;
+
+        const slideStep = cardItem.offsetWidth + 16;
+        const currentIndex = Math.round(mobileSlider.scrollLeft / slideStep);
+
+        mobileLinePills.forEach((pill, i) => {
+          if (pill) pill.classList.toggle("active", i === currentIndex);
+        });
+      };
+
+      const stepNextMobileCard = () => {
+        if (isInteracting) return;
+
+        const cardItem = mobileSlider.querySelector(".slider-card-item");
+        if (!cardItem) return;
+
+        const slideStep = cardItem.offsetWidth + 16;
+        const maxScroll = mobileSlider.scrollWidth - mobileSlider.clientWidth;
+
+        if (mobileSlider.scrollLeft >= maxScroll - 10) {
+          mobileSlider.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          mobileSlider.scrollBy({ left: slideStep, behavior: "smooth" });
+        }
+      };
+
+      const startMobileTimer = () => {
+        if (mobileTimer) clearInterval(mobileTimer);
+        mobileTimer = setInterval(stepNextMobileCard, 3000);
+      };
+
+      // Click event for line pills
+      mobileLinePills.forEach((pill, index) => {
+        if (pill) {
+          pill.addEventListener("click", () => {
+            const cardItem = mobileSlider.querySelector(".slider-card-item");
+            if (cardItem) {
+              const slideStep = cardItem.offsetWidth + 16;
+              mobileSlider.scrollTo({ left: slideStep * index, behavior: "smooth" });
+              startMobileTimer();
+            }
+          });
+        }
+      });
+
+      // Keep line pills updated on scroll
+      mobileSlider.addEventListener("scroll", updateMobileLines, { passive: true });
+
+      // Touch / Swipe listeners
+      mobileSlider.addEventListener("touchstart", () => {
+        isInteracting = true;
+        if (mobileTimer) clearInterval(mobileTimer);
+      }, { passive: true });
+
+      mobileSlider.addEventListener("touchend", () => {
+        isInteracting = false;
+        startMobileTimer();
+      }, { passive: true });
+
+      // Hover listeners
+      mobileSlider.addEventListener("mouseenter", () => {
+        isInteracting = true;
+        if (mobileTimer) clearInterval(mobileTimer);
+      });
+
+      mobileSlider.addEventListener("mouseleave", () => {
+        isInteracting = false;
+        startMobileTimer();
+      });
+
+      startMobileTimer();
+    }
+  });
+</script>
 
   <!-- Divider -->
   <hr class="border-1 opacity-50 my-4 fade-in">
