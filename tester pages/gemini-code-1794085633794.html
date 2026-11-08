@@ -1,0 +1,100 @@
+<!-- Include GSAP & ScrollTrigger from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- ==================== STYLES (CSS) ==================== -->
+<style>
+  /* Reset / Base Setup for Horizontal Section */
+  body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .horizontal-gallery-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-color: #0b0b0b;
+  }
+
+  /* The track holding all horizontal slides */
+  .gallery-track {
+    display: flex;
+    width: 300vw; /* 100vw * number of slides (3 slides = 300vw) */
+    height: 100%;
+    will-change: transform;
+  }
+
+  /* Individual Slide */
+  .slide {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+  }
+
+  /* Editorial Caption Overlay */
+  .slide-caption {
+    position: absolute;
+    bottom: 4rem;
+    left: 4rem;
+    z-index: 2;
+    font-family: monospace;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 1.5rem;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+</style>
+
+
+<!-- ==================== HTML STRUCTURE ==================== -->
+<section class="horizontal-gallery-wrapper">
+  <div class="gallery-track">
+    <div class="slide">
+      <img src="build72.jpg" alt="Master Suite Sanctuary">
+      <div class="slide-caption">01 / Master Suite Sanctuary</div>
+    </div>
+    <div class="slide">
+      <img src="build57.jpg" alt="Hospitality Atrium">
+      <div class="slide-caption">02 / Hospitality Atrium Lounge</div>
+    </div>
+    <div class="slide">
+      <img src="build67.jpg" alt="Boardroom Pavilion">
+      <div class="slide-caption">03 / Executive Boardroom Pavilion</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ==================== ANIMATIONS (JavaScript / GSAP) ==================== -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Register GSAP ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    const track = document.querySelector('.gallery-track');
+    const slides = gsap.utils.toArray('.slide');
+
+    // Pin section and scrub horizontally through slides based on vertical scroll
+    gsap.to(track, {
+      xPercent: -100 * (slides.length - 1),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.horizontal-gallery-wrapper',
+        pin: true,
+        scrub: 1, // Smooth lag effect on

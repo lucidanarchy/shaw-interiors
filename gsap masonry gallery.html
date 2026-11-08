@@ -1,0 +1,163 @@
+<!-- Include GSAP & ScrollTrigger from CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+<!-- ==================== STYLES (CSS) ==================== -->
+<style>
+  /* Global Reset to prevent horizontal scrollbars */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #0b0b0b;
+    color: #fff;
+    font-family: sans-serif;
+  }
+
+  /* Spacer to demonstrate scroll-triggered entry */
+  .spacer {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-family: monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Masonry Section Container */
+  .masonry-section {
+    padding: 6rem 5vw;
+    background-color: #121212;
+  }
+
+  .masonry-grid {
+    display: flex;
+    gap: 3rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .masonry-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    flex: 1;
+  }
+
+  /* Shifts column 2 down to break the rigid grid alignment */
+  .col-2 {
+    margin-top: 8rem;
+  }
+
+  /* Individual Card Styling */
+  .masonry-card {
+    overflow: hidden;
+    background: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .masonry-card img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    filter: brightness(0.85);
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .masonry-card:hover img {
+    transform: scale(1.04);
+  }
+
+  .masonry-card h4 {
+    padding: 1.5rem;
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #ccc;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: #1a1a1a;
+  }
+
+  /* Responsive layout for smaller screens */
+  @media (max-width: 768px) {
+    .masonry-grid {
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .col-2 {
+      margin-top: 0;
+    }
+    .masonry-card img {
+      height: 320px;
+    }
+  }
+</style>
+
+
+<!-- ==================== HTML STRUCTURE ==================== -->
+<div class="spacer">Scroll Down to View Masonry Grid</div>
+
+<section class="masonry-section">
+  <div class="masonry-grid">
+    <!-- Column 1 -->
+    <div class="masonry-col col-1">
+      <div class="masonry-card">
+        <img src="build35.jpg" alt="Residential Work" onerror="this.src='https://picsum.photos/600/800?random=1'">
+        <h4>01 / Residential Estate</h4>
+      </div>
+      <div class="masonry-card">
+        <img src="build41.jpg" alt="Custom Millwork" onerror="this.src='https://picsum.photos/600/800?random=2'">
+        <h4>03 / Handcrafted Millwork</h4>
+      </div>
+    </div>
+
+    <!-- Column 2 (Offset Column) -->
+    <div class="masonry-col col-2">
+      <div class="masonry-card">
+        <img src="build62.jpg" alt="Atrium Lounge" onerror="this.src='https://picsum.photos/600/800?random=3'">
+        <h4>02 / Atrium Lounge</h4>
+      </div>
+      <div class="masonry-card">
+        <img src="build48.jpg" alt="Material Textures" onerror="this.src='https://picsum.photos/600/800?random=4'">
+        <h4>04 / Material &amp; Finish Selection</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spacer">End of Section</div>
+
+
+<!-- ==================== ANIMATIONS (JavaScript / GSAP) ==================== -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Register GSAP ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Cascading scroll reveal animation for masonry cards
+    gsap.from('.masonry-card', {
+      y: 100,
+      opacity: 0,
+      duration: 1.4,
+      ease: 'power3.out',
+      stagger: {
+        amount: 0.5,
+        from: 'start' // Can be changed to 'random' for staggered unpredictability
+      },
+      scrollTrigger: {
+        trigger: '.masonry-grid',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+  });
+</script>
