@@ -352,7 +352,7 @@
             </div>
           </li>
 
-          <li><a href="gallerry.html">Gallery</a></li>
+          <li><a href="gallerry3.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
 
@@ -1095,21 +1095,50 @@
   
   
   
-<!-- GSAP quick jump delay Script -->
   
-  <script>
-  window.addEventListener("DOMContentLoaded", () => {
+ <!-- GSAP Horizontal Slide Hash Jump Fix -->
+<script>
+  window.addEventListener("load", () => {
     if (window.location.hash) {
       const target = document.querySelector(window.location.hash);
       if (target) {
         setTimeout(() => {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
+          ScrollTrigger.refresh();
+          
+          const slideItem = target.closest('.horizontal-slide-item');
+          const horizontalSection = target.closest('.gsap-horizontal-track');
+          
+          if (slideItem && horizontalSection) {
+            // Find the active ScrollTrigger instance for this horizontal section
+            const st = ScrollTrigger.getAll().find(st => st.trigger === horizontalSection);
+            if (st) {
+              const track = horizontalSection.querySelector('.gallery-track');
+              const slides = track.querySelectorAll('.horizontal-slide-item');
+              const index = Array.from(slides).indexOf(slideItem);
+              
+              // Calculate the exact vertical scroll position where this specific slide is active
+              const progress = index / (slides.length - 1);
+              const scrollPos = st.start + (st.end - st.start) * progress;
+              
+              window.scrollTo({
+                top: scrollPos,
+                behavior: 'smooth'
+              });
+              return;
+            }
+          }
+          
+          // Fallback for regular sections
+          const targetTop = target.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: targetTop - 80,
+            behavior: 'smooth'
+          });
+        }, 350);
       }
     }
   });
-</script>   
-  
+</script>
   
   
   
