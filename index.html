@@ -14,7 +14,9 @@
   
   
   
-  
+  <!-- Include GSAP Core and ScrollTrigger CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   
   
   
@@ -23,6 +25,93 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+  /* =========================================================
+       GSAP SCROLL IMAGE REVEAL STYLES (STATIC IMAGES + WHITE MASK)
+       ========================================================= */
+    .gsap-reveal-box {
+      position: relative;
+      overflow: hidden;
+      background-color: #FFFFFF !important;
+      background: #FFFFFF !important;
+    }
+
+    .gsap-reveal-img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      will-change: clip-path, transform;
+      clip-path: inset(15% 12% 15% 12%);
+      transform: scale(1.12);
+    }
+
+
+
+
+
+/* Force remove shadows, transitions, and hover lifts from cards */
+.card, 
+.light-card, 
+.recent-work-card,
+.featured-img-wrapper {
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Prevent card hover scaling or translation */
+.card:hover, 
+.light-card:hover,
+.recent-work-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Prevent image zoom effects inside cards on hover */
+//.card img, 
+.recent-work-img, 
+.featured-img-wrapper img {
+  transform: scale(1) !important;
+  transition: none !important;
+}
+
+//.card:hover img, 
+.recent-work-card:hover img {
+  transform: scale(1) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
 
 </head>
 
@@ -205,8 +294,8 @@
           <img src="build35.jpg" class="d-block carousel-img-fit" alt="test">
           <div class="carousel-overlay"></div>
           <div class="carousel-caption carousel-caption-glass  ">
-            <h2 class="animate-title  ">RAW GEOMETRY MEETS REFINED FINISHES</h2>
-            <p class="fst-italic animate-desc">Where form meets flawless function</p>
+            <h2 class="animate-title   ">RAW GEOMETRY MEETS REFINED FINISHES</h2>
+            <p class="fst-italic animate-desc ">Where form meets flawless function</p>
             <a href="services3.html#service-01" class="btn btn-shaw-outline text-uppercase tracking-wider mt-5 animate-btn">Our Expertise</a>
           </div>
         </div>
@@ -252,7 +341,7 @@
 
 
 
-<hr class=" gone border-1 opacity-50 my-4 pt-4 fade-in">
+
 
 
 
@@ -260,24 +349,24 @@
        SECTION 3: STORY & PARALLAX PULL-QUOTE
        Matches JS: Script 6 (Native Javascript Parallax Script)
        ========================================================= -->
-  <div class="container my-4 py-4 pt-3 pb-5 fade-in">
+  <div class="container my-4 py-4 pt-4 pb-4 ">
     <div class="row align-items-center justify-content-center g-4 g-lg-5">
       
       <!-- LEFT COLUMN: Main Story Copy & Parallax Image -->
-      <div class="col-lg-6 col-md-6">
+      <div class="col-lg-6 col-md-6 gsap-reveal-box">
        
-          <img src="build57.jpg"  style="max-width:100%;" alt="Parallax Interior Showcase"> 
+          <img src="build57.jpg"  style="max-width:100%;" class = "gsap-reveal-img" alt="Parallax Interior Showcase"> 
       
       </div>
 
 
       <!-- RIGHT COLUMN: Large Pull-Quote Block -->
-      <div class="col-lg-5 col-md-5">
-        <blockquote class="blockquote mb-0 bquote-border">
-          <p class="pullquote-large-text fw-bold mb-0">
+      <div class="col-lg-5 col-md-5 ">
+        <blockquote class="blockquote mb-0 bquote-border trigger1">
+          <p class="pullquote-large-text fw-bold mb-0 trigger1">
             &ldquo;We do not merely decorate rooms; we curate the subtle texture of human living.&rdquo;
           </p>
-          <footer class="blockquote-footer text-uppercase tracking-wider mb-0 mt-3 pt-2">
+          <footer class="text-uppercase tracking-wider mb-0 mt-3 pt-2 trigger1">
             <strong class="text-dark fs-8 pl-2">Shaw Interiors</strong> &mdash; <span class="text-muted fs-8">Design Manifesto</span>
           </footer>
         </blockquote>
@@ -310,7 +399,7 @@
 
 
   <!-- Divider -->
-  <hr class="border-1 opacity-50 my-4 fade-in">
+  <hr class="border-1 opacity-25 my-4 ">
 
 
   <!-- =========================================================
@@ -322,10 +411,10 @@
      ========================================================= -->
 	 
 	 
-<div class="pt-4 my-4 fade-in">
-    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 d-block fs-8 text-center">Interior Styling Capabilities</span>
+<div class="pt-4 my-4 ">
+    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 d-block fs-8 text-center trigger1">Interior Styling Capabilities</span>
     <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">EXPLORE our Services</h1>
-    <div class="divider-line-dk mx-auto mt-3 mb-5"></div>
+    <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
   </div>
 
 
@@ -337,7 +426,7 @@
        DESKTOP VERSION (3-card groups - visible >= 768px)
        ========================================== -->
   <div class="d-none d-md-block">
-    <div class="services-carousel-wrapper overflow-hidden fade-in">
+    <div class="services-carousel-wrapper overflow-hidden trigger1">
       <div class="services-track d-flex mt-3" id="desktopServicesTrack" style="transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);">
         
         <!-- GROUP 1 -->
@@ -468,7 +557,7 @@
        MOBILE VERSION (1-by-1 Ticker Slider - visible < 768px)
        ========================================== -->
   <div class="d-block d-md-none">
-    <div class="card-slider-container position-relative overflow-hidden fade-in">
+    <div class="card-slider-container position-relative overflow-hidden trigger1">
       <div class="card-slider d-flex gap-3 mt-3" id="mobileServicesSlider" style="scroll-behavior: smooth; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
         
         <!-- Card 1 -->
@@ -823,46 +912,46 @@
 </script>
 
   <!-- Divider -->
-  <hr class="gone border-1 opacity-50 my-4 fade-in">
+  <hr class="gone border-1 opacity-25 my-4 ">
 
 
   <!-- =========================================================
        SECTION 6: EXCELLENCE PROMISE (3-COLUMN FEATURE GRID)
        ========================================================= -->
-  <section class="excellence-section py-3 text-white fade-in">
+  <section class="excellence-section py-3 text-white ">
     <div class="container py-4">
       
       <!-- Section Heading -->
       <div class="text-center mb-5 mt-2">
-        <span class="text-uppercase text-white-50 fs-8 tracking-widest d-block mb-2">Our Commitment</span>
-        <h2 class="fw-bold text-uppercase tracking-wider fs-2 text-white">We Pride Ourselves On Excellence</h2>
-        <div class="divider-line mx-auto mt-3"></div>
+        <span class="text-uppercase text-white-50 fs-8 tracking-widest d-block mb-2 trigger1">Our Commitment</span>
+        <h2 class="fw-bold text-uppercase tracking-wider fs-2 text-white trigger1">We Pride Ourselves On Excellence</h2>
+        <div class="divider-line mx-auto mt-3 trigger1"></div>
       </div>
 
       <!-- 3-Column Grid -->
       <div class="row g-4 g-lg-5">
         
         <!-- Category 1: Spatial & Structural Planning -->
-        <div class="col-md-4">
+        <div class="col-md-4 ">
           <div class="feature-box p-4 h-100">
-            <div class="d-flex align-items-center gap-3 mb-3">
-              <div class="icon-inline flex-shrink-0">
+            <div class="d-flex align-items-center gap-3 mb-3 trigger1">
+              <div class="icon-inline flex-shrink-0 ">
                 <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"></path>
                 </svg>
               </div>
-              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Proven Track Record</h4>
+              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white ">Proven Track Record</h4>
             </div>
-            <p class="text-white-50 small lh-lg mb-0">
+            <p class="text-white-50 small lh-lg mb-0 trigger1">
               Backed by years of multi-disciplinary interior design expertise, matching diverse creative perspectives to your exact lifestyle desires.
             </p>
           </div>
         </div>
 
         <!-- Category 2: Lighting & Spatial Curation -->
-        <div class="col-md-4">
+        <div class="col-md-4 ">
           <div class="feature-box p-4 h-100">
-            <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="d-flex align-items-center gap-3 mb-3 trigger1">
               <div class="icon-inline flex-shrink-0">
                 <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
@@ -870,16 +959,16 @@
               </div>
               <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Detail-Oriented Planning</h4>
             </div>
-            <p class="text-white-50 small lh-lg mb-0">
+            <p class="text-white-50 small lh-lg mb-0 trigger1">
               Meticulously managing every stage—from precise spatial and furniture layouts to seamless procurement, finishes, and installation.
             </p>
           </div>
         </div>
 
         <!-- Category 3: Interior Living & Comfort -->
-        <div class="col-md-4">
+        <div class="col-md-4 ">
           <div class="feature-box p-4 h-100">
-            <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="d-flex align-items-center gap-3 mb-3 trigger1">
               <div class="icon-inline flex-shrink-0">
                 <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m9-2.25v2.25m-10.5-6.75h12m-13.5 3.75h15m-14.25-9.75h13.5a1.5 1.5 0 011.5 1.5v12.75a1.5 1.5 0 01-1.5 1.5h-13.5a1.5 1.5 0 01-1.5-1.5V5.25a1.5 1.5 0 011.5-1.5z"></path>
@@ -887,7 +976,7 @@
               </div>
               <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Intentional Design</h4>
             </div>
-            <p class="text-white-50 small lh-lg mb-0">
+            <p class="text-white-50 small lh-lg mb-0 trigger1">
               Rooted in a signature aesthetic favoring modern comfort over fleeting trends, curating spaces solely built around your unique story.
             </p>
           </div>
@@ -900,7 +989,7 @@
 
 
   <!-- Divider -->
-  <hr class="gone border-1 opacity-50 my-4 fade-in mb-4">
+  <hr class="gone border-1 opacity-25 my-4  mb-4">
 
 
   <!-- =========================================================
@@ -909,53 +998,53 @@
        ========================================================= -->
  
 
-<div class="pt-5 my-4 fade-in">
-      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block text-center">In-depth showcase of our premier architectural works</span>
+<div class="pt-5 my-4 ">
+      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block text-center trigger1">In-depth showcase of our premier architectural works</span>
       <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Our Featured Projects</h1>
-      <div class="divider-line-dk mx-auto mt-3 mb-5"></div>
+      <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
     </div>
 
 
 
- <div class="container my-3 fade-in">
+ <div class="container my-3 ">
     
     
 
 
 
 <!-- Swipe hint (Visible ONLY on screens below 576px) -->
-<div class="d-block d-sm-none text-center py-2 text-muted fade-in" style="font-size: 9.5px; letter-spacing: 0.25em;">
+<div class="d-block d-sm-none text-center py-2 text-muted trigger1" style="font-size: 9.5px; letter-spacing: 0.25em;">
   &larr; SWIPE TO EXPLORE &rarr;
 </div>
     <!-- SLIDER WRAPPER -->
-    <div id="imageLeftSlider" class="fade-in">
+    <div id="imageLeftSlider" class="trigger1">
 
       <!-- === SLIDE 1 (Visible by default) === -->
       <div class="project-slide border p-4 bg-white shadow-sm">
         <div class="row g-4 align-items-center">
           
           <div class="col-lg-7">
-            <div class="featured-img-wrapper overflow-hidden border">
-              <img src="build54.jpg" class="img-fluid w-100 project-img-responsive" alt="The Glass Pavilion" >
+            <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
+              <img src="build54.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion" >
             </div>
           </div>
 
           <div class="col-lg-5 d-flex flex-column justify-content-between h-100 ps-4">
             <div>
-              <span class="badge bg-dkkk-gray rounded-0 px-3 py-2 text-uppercase mb-3">Commercial</span>
+              <span class="badge bg-dkkk-gray rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Commercial</span>
               <h3 class="fw-bold text-dark mb-3">The Concrete Monolith</h3>
-              <p class="text-muted leading-relaxed text-justify t-md mb-4">
+              <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 A brutalist architectural concept featuring raw board-formed concrete walls, cantilevered spans, and dramatic linear skylights to elevate high-end modern living spaces.
               </p>
               
-              <ul class="list-unstyled text-muted small mb-4">
+              <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Cape Town, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2025</li>
                 <li class="mb-2"><strong class="text-dark">Area:</strong> 650 m²</li>
               </ul>
             </div>
             <div>
-              <a href="#" class="custom-btn">Find out more</a>
+              <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
 
@@ -967,27 +1056,27 @@
         <div class="row g-4 align-items-center">
           
           <div class="col-lg-7">
-            <div class="featured-img-wrapper overflow-hidden border">
-              <img src="build40.jpg" class="img-fluid w-100 project-img-responsive" alt="The Glass Pavilion">
+            <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
+              <img src="build40.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
 
           <div class="col-lg-5 d-flex flex-column justify-content-between ps-4 h-100">
             <div>
-              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">Commercial</span>
+              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Commercial</span>
               <h3 class="fw-bold text-dark mb-3">The Glass Pavilion</h3>
-              <p class="text-muted leading-relaxed text-justify t-md mb-4">
+              <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 A modern minimalist structural design combining floor-to-ceiling glass paneling with sustainable steel frameworks. Designed to maximize natural light while maintaining complete private spatial harmony.
               </p>
               
-              <ul class="list-unstyled text-muted small mb-4">
+              <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Johannesburg, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2026</li>
                 <li class="mb-2"><strong class="text-dark">Area:</strong> 820 m²</li>
               </ul>
             </div>
             <div>
-              <a href="#" class="custom-btn">Find out more</a>
+              <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
 
@@ -999,26 +1088,26 @@
         <div class="row g-4 align-items-center">
           
           <div class="col-lg-7">
-            <div class="featured-img-wrapper overflow-hidden border">
-              <img src="build68.jpg" class="img-fluid w-100 project-img-responsive" alt="The Glass Pavilion">
+            <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
+              <img src="build68.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
 
           <div class="col-lg-5 d-flex flex-column justify-content-between ps-4 h-100">
             <div>
-              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">Commercial</span>
+              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Commercial</span>
               <h3 class="fw-bold text-dark mb-3">Urban Loft Penthouse</h3>
-              <p class="text-muted leading-relaxed text-justify t-md mb-4">
+              <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 Double-height architectural loft featuring polished concrete floors, custom dark oak joinery, exposed steel beams, and sweeping urban cityscape vistas.
               </p>
-              <ul class="list-unstyled text-muted small mb-4">
+              <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Durban, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2026</li>
                 <li class="mb-2"><strong class="text-dark">Area:</strong> 410 m²</li>
               </ul>
             </div>
             <div>
-              <a href="#" class="custom-btn">Find out more</a>
+              <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
 
@@ -1039,7 +1128,7 @@
 
 
 <!-- Swipe hint (Visible ONLY on screens below 576px) -->
-<div class="d-block d-sm-none text-center py-2 text-muted fade-in mt-4" style="font-size: 9.5px; letter-spacing: 0.25em;">
+<div class="d-block d-sm-none text-center py-2 text-muted trigger1 mt-4" style="font-size: 9.5px; letter-spacing: 0.25em;">
   &larr; SWIPE TO EXPLORE &rarr;
 </div>
 
@@ -1048,8 +1137,8 @@
        SECTION 8: FEATURED PROJECTS (TEXT LEFT, IMAGE RIGHT)
        Matches JS: Script 2 (Text Left / Image Right Slider Script)
        ========================================================= -->
-  <div class="container mb-5 fade-in">
-    <div id="textLeftSlider" class="fade-in">
+  <div class="container mb-5 ">
+    <div id="textLeftSlider" class="trigger1">
 
       <!-- === SLIDE 1 (Visible by default) === -->
       <div class="project-slide border p-4 bg-white shadow-sm">
@@ -1057,25 +1146,25 @@
           
           <div class="col-lg-5 d-flex flex-column justify-content-between h-100 order-2 order-lg-1 pe-4">
             <div>
-              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">Residential</span>
+              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Residential</span>
               <h3 class="fw-bold text-dark mb-3">The Glass Pavilion</h3>
-              <p class="text-muted leading-relaxed text-justify t-md mb-4">
+              <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 A modern minimalist structural design combining floor-to-ceiling glass paneling with sustainable steel frameworks. Designed to maximize natural light while maintaining complete private spatial harmony.
               </p>
-              <ul class="list-unstyled text-muted small mb-4">
+              <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Cape Town, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2025</li>
                 <li class="mb-2"><strong class="text-dark">Area:</strong> 650 m²</li>
               </ul>
             </div>
             <div>
-              <a href="#" class="custom-btn">Find out more</a>
+              <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
 
           <div class="col-lg-7 order-1 order-lg-2">
-            <div class="featured-img-wrapper overflow-hidden border">
-              <img src="build62.jpg" class="img-fluid w-100 project-img-responsive" alt="The Glass Pavilion">
+            <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
+              <img src="build62.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
 
@@ -1088,25 +1177,25 @@
           
           <div class="col-lg-5 d-flex flex-column justify-content-between h-100 order-2 pe-4 order-lg-1">
             <div>
-              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">Residential</span>
+              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Residential</span>
               <h3 class="fw-bold text-dark mb-3">The Concrete Monolith</h3>
-              <p class="text-muted leading-relaxed text-justify t-md mb-4">
+              <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 A brutalist architectural concept featuring raw board-formed concrete walls, cantilevered spans, and dramatic linear skylights to elevate high-end modern living spaces.
               </p>
-              <ul class="list-unstyled text-muted small mb-4">
+              <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Johannesburg, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2026</li>
                 <li class="mb-2"><strong class="text-dark">Area:</strong> 820 m²</li>
               </ul>
             </div>
             <div>
-              <a href="#" class="custom-btn">Find out more</a>
+              <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
 
           <div class="col-lg-7 order-1 order-lg-2">
-            <div class="featured-img-wrapper overflow-hidden border">
-              <img src="build35.jpg" class="img-fluid w-100 project-img-responsive" alt="The Glass Pavilion">
+            <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
+              <img src="build35.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
 
@@ -1119,25 +1208,25 @@
           
           <div class="col-lg-5 d-flex flex-column justify-content-between h-100 pe-4 order-2 order-lg-1">
             <div>
-              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3">Residential</span>
+              <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Residential</span>
               <h3 class="fw-bold text-dark mb-3">Urban Loft Penthouse</h3>
-              <p class="text-muted leading-relaxed text-justify t-md mb-4">
+              <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 Double-height architectural loft featuring polished concrete floors, custom dark oak joinery, exposed steel beams, and sweeping urban cityscape vistas.
               </p>
-              <ul class="list-unstyled text-muted small mb-4">
+              <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Durban, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2026</li>
                 <li class="mb-2"><strong class="text-dark">Area:</strong> 410 m²</li>
               </ul>
             </div>
             <div>
-              <a href="#" class="custom-btn">Find out more</a>
+              <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
 
           <div class="col-lg-7 order-1 order-lg-2">
-            <div class="featured-img-wrapper overflow-hidden border">
-              <img src="build49.jpg" class="img-fluid w-100 project-img-responsive" alt="The Glass Pavilion">
+            <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
+              <img src="build49.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
 
@@ -1162,7 +1251,7 @@
 
 
   <!-- Divider -->
-  <hr class="gone border-1 opacity-50 my-4 fade-in">
+  <hr class="gone border-1 opacity-25 my-4 ">
 
 
   <!-- =========================================================
@@ -1170,14 +1259,14 @@
        ========================================================= -->
   <div class="container-fluid p-0 my-5">
     
-    <div class="pt-4 my-4 fade-in">
-      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center">Showcase of our spatial portfolio</span>
+    <div class="pt-4 my-4 ">
+      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Showcase of our spatial portfolio</span>
       <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Our Completed Work Projects</h1>
-      <div class="divider-line-dk mx-auto mt-3 mb-5"></div>
+      <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
     </div>
 
     <!-- Flush Grid Row (Zero Gaps: g-0) -->
-    <div class="row g-0 pt-4 t-5 fade-in">
+    <div class="row g-0 pt-4 t-5 trigger1">
       
       <!-- Card 1 -->
       <div class="col-6 col-md-4 col-lg-2">
@@ -1185,11 +1274,11 @@
           <img src="build64.jpg" class="w-100 recent-work-img" alt="Project 1" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'">
           
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
-            <span class="category-tag text-uppercase fw-semibold">Hospitality</span>
+            <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
-              <h5 class="project-title fw-bold proj-text-hd text-white  mb-2">Geuwels Tasting</h5>
+              <h5 class="project-title fw-bold proj-text-hd text-white  mb-2">Blue Estsate</h5>
               <p class="project-desc text-white-50 small mb-4">Immersive sensory winelands dining.</p>
-              <a href="#" class="btn-view-proj mb-3">View Project</a>
+              <a href="gallerry3.html#Blue-Suite" class="btn-view-proj mb-3">View Project</a>
             </div>
           </div>
         </div>
@@ -1201,11 +1290,11 @@
           <img src="build54.jpg" class="w-100 recent-work-img" alt="Project 2" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80'">
           
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
-            <span class="category-tag text-uppercase fw-semibold">Heritage</span>
+            <span class="category-tag text-uppercase fw-semibold">Corporate</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
-              <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Vergenoegd Löw</h5>
+              <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Private Vanity</h5>
               <p class="project-desc text-white-50 small mb-4">18th century Cape Dutch restoration.</p>
-              <a href="#" class="btn-view-proj mb-3">View Project</a>
+              <a href="gallerry3.html#Private-Vanity" class="btn-view-proj mb-3">View Project</a>
             </div>
           </div>
         </div>
@@ -1217,11 +1306,11 @@
           <img src="build13.jpg" class="w-100 recent-work-img" alt="Project 3" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80'">
           
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
-            <span class="category-tag text-uppercase fw-semibold">Residential</span>
+            <span class="category-tag text-uppercase fw-semibold">Commercial</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
-              <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Lakeside Villa</h5>
+              <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Atrium Lounge</h5>
               <p class="project-desc text-white-50 small mb-4">Frameless glass spatial design.</p>
-              <a href="#" class="btn-view-proj mb-3">View Project</a>
+              <a href="gallerry3.html#Atrium-Lounge" class="btn-view-proj mb-3">View Project</a>
             </div>
           </div>
         </div>
@@ -1233,11 +1322,11 @@
           <img src="build35.jpg" class="w-100 recent-work-img" alt="Project 4" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'">
           
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
-            <span class="category-tag text-uppercase fw-semibold">Commercial</span>
+            <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
               <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Urban Tower</h5>
               <p class="project-desc text-white-50 small mb-4">Eco-friendly corporate facades.</p>
-              <a href="#" class="btn-view-proj mb-3">View Project</a>
+              <a href="gallerry3.html#yellow-lounge" class="btn-view-proj mb-3">View Project</a>
             </div>
           </div>
         </div>
@@ -1249,11 +1338,11 @@
           <img src="build41.jpg" class="w-100 recent-work-img" alt="Project 5" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80'">
           
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
-            <span class="category-tag text-uppercase fw-semibold">Interior</span>
+            <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
-              <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Monochrome Suite</h5>
+              <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Burgundy Suite</h5>
               <p class="project-desc text-white-50 small mb-4">Smart ambient light styling.</p>
-              <a href="#" class="btn-view-proj mb-3">View Project</a>
+              <a href="gallerry3.html#maroon-suite" class="btn-view-proj mb-3">View Project</a>
             </div>
           </div>
         </div>
@@ -1265,11 +1354,11 @@
           <img src="build62.jpg" class="w-100 recent-work-img" alt="Project 6" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'">
           
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
-            <span class="category-tag text-uppercase fw-semibold">Architecture</span>
+            <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
-              <h5 class="project-title fw-bold text-white proj-text-hd mb-2">Glass Pavilion</h5>
+              <h5 class="project-title fw-bold text-white proj-text-hd mb-2">Master Suite Sanctuary</h5>
               <p class="project-desc text-white-50 small mb-4">Sustainable steel framework.</p>
-              <a href="#" class="btn-view-proj mb-3">View Project</a>
+              <a href="gallerry3.html#master-suite" class="btn-view-proj mb-3">View Project</a>
             </div>
           </div>
         </div>
@@ -1472,15 +1561,15 @@
      ========================================================= -->
 
 <div class="pt-4 my-4">
-  <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center">Corporate partners say about our work</span>
-  <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Our Clients Perspectives</h1>
-  <div class="divider-line-dk mx-auto mt-3 mb-5"></div>
+  <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Corporate partners say about our work</span>
+  <h1 class="fw-bold text-dark text-uppercase mb-3 text-center ">Our Clients Perspectives</h1>
+  <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
 </div>
 
-<hr class="border-1 opacity-50 my-4 fade-in">
+<hr class="border-1 opacity-25 my-4 ">
 
 <div class="shaw-testimonial-section pb-4 my-3">
-  <div class="container fade-in">
+  <div class="container trigger1">
     
     <!-- WIDER FULL-WIDTH ROW -->
     <div class="row justify-content-center">
@@ -1516,7 +1605,7 @@
                       </div>
                     </div>
                     <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">AMAZING CUSTOMER SERVICE</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0" style="font-size: 1.1rem; line-height: 1.75;">
+                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
                       “I needed a refund for tickets to an event that was changed last minute. I experienced great customer service and the issue was resolved in a timely manner. Thanks to agent Sandra!”
                     </p>
                   </div>
@@ -1548,7 +1637,7 @@
                       </div>
                     </div>
                     <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">UNMATCHED STRUCTURAL PRECISION</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0" style="font-size: 1.1rem; line-height: 1.75;">
+                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
                       “Their engineering team delivered our corporate headquarters ahead of schedule without cutting a single aesthetic corner.”
                     </p>
                   </div>
@@ -1580,7 +1669,7 @@
                       </div>
                     </div>
                     <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">ELEVATED ATMOSPHERIC DESIGN</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0" style="font-size: 1.1rem; line-height: 1.75;">
+                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
                       “The custom lighting and stone palette completely transformed our hotel lobby into a recognized destination.”
                     </p>
                   </div>
@@ -1612,7 +1701,7 @@
                       </div>
                     </div>
                     <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">SEAMLESS MINIMALIST FINISHES</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0" style="font-size: 1.1rem; line-height: 1.75;">
+                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
                       “Flawless execution on complex glass facade panels. They achieved the exact structural clarity we requested.”
                     </p>
                   </div>
@@ -1641,7 +1730,7 @@
 
 
 
-<span class = "gone"><hr class=" border-1 opacity-50 my-4 fade-in"></span>
+<span class = "gone"><hr class=" border-1 opacity-25 my-4 "></span>
 
 
 
@@ -1942,13 +2031,13 @@
            <!-- RIGHT COLUMN: High-Contrast Contact Form -->
           <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
-              <h3 class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</h3>
+              <div class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</div>
             </div>
             
-            <p class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
+            <div class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
               Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back to discuss your spatial parameters.
  
-            </p>
+            </div>
 
             <div class="w-100">
               <form>
@@ -2134,6 +2223,94 @@
   }
 </script>
  
+
+
+
+
+
+<!-- GSAP ScrollTrigger Initialization Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const revealBoxes = document.querySelectorAll('.gsap-reveal-box');
+
+      revealBoxes.forEach((box) => {
+        const img = box.querySelector('.gsap-reveal-img');
+        if (!img) return;
+
+        gsap.to(img, {
+          clipPath: "inset(0% 0% 0% 0%)",
+          scale: 1,
+          ease: "none",
+          scrollTrigger: {
+            trigger: box,
+            start: "top 85%",
+            end: "top 25%",
+            scrub: 1
+          }
+        });
+      });
+    });
+  </script>
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Target titles, quotes, and badges with .fade-in or custom text classes
+    const animateTextElements = document.querySelectorAll('h1, h3, .trigger1');
+
+    animateTextElements.forEach((el) => {
+      // Create smooth upward fade-and-slide stagger
+      gsap.fromTo(el, 
+        { 
+          opacity: 0, 
+          y: 35 
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            toggleActions: "play none none reverse"
+          }
+        }
+      );
+    });
+  });
+</script>  
+
+
+
+<!-- GSAP refresh Script -->
+<script>
+
+window.addEventListener("load", () => {
+  if (typeof ScrollTrigger !== 'undefined') {
+    ScrollTrigger.refresh();
+  }
+});
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
