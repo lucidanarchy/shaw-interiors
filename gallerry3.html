@@ -212,6 +212,18 @@
     .lb-img { max-height: 50vh; }
     .lb-caption { padding: 1rem; }
   }
+  
+  
+  
+ /* Force background scroll lock when any modal is open */
+body.modal-open {
+  overflow: hidden !important;
+  padding-right: 0 !important; /* Prevents unwanted layout shifts */
+} 
+  
+  
+  
+  
 </style>
 </head>
 
@@ -1017,24 +1029,34 @@
     }
 
     let touchStartX = 0;
+    let touchStartY = 0;
     let touchEndX = 0;
+    let touchEndY = 0;
 
     const modalStage = document.getElementById('portfolioModal');
+    
     modalStage.addEventListener('touchstart', e => {
       touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
     }, false);
 
     modalStage.addEventListener('touchend', e => {
       touchEndX = e.changedTouches[0].screenX;
+      touchEndY = e.changedTouches[0].screenY;
       handleSwipeGesture();
     }, false);
 
     function handleSwipeGesture() {
-      if (touchEndX < touchStartX - 50) {
-        navigateCustomLightbox(1);
-      }
-      if (touchEndX > touchStartX + 50) {
-        navigateCustomLightbox(-1);
+      const diffX = touchEndX - touchStartX;
+      const diffY = touchEndY - touchStartY;
+
+      // Ensure horizontal swipe is intentional and dominant over vertical scrolling
+      if (Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < -50) {
+          navigateCustomLightbox(1);  // Swipe left -> Next image
+        } else if (diffX > 50) {
+          navigateCustomLightbox(-1); // Swipe right -> Previous image
+        }
       }
     }
 
@@ -1141,7 +1163,29 @@
 </script>
   
   
-  
+ <script>
+
+
+const portfolioModalEl = document.getElementById('portfolioModal');
+
+portfolioModalEl.addEventListener('show.bs.modal', () => {
+  document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
+});
+
+portfolioModalEl.addEventListener('hidden.bs.modal', () => {
+  document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.width = '';
+});
+
+
+
+
+
+
+</script> 
   
   
   
