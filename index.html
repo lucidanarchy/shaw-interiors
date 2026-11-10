@@ -2109,6 +2109,41 @@
   <script src="Featured Projects Image right Text left.js"></script>
   
   
+  
+  
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Wait a brief moment for Dual.js to initialize
+    setTimeout(() => {
+      const wrapper = document.querySelector('.services-carousel-wrapper');
+      const track = document.getElementById('desktopServicesTrack');
+      
+      if (wrapper && track) {
+        // Forcefully toggle a data attribute or class that external scripts often listen for
+        wrapper.addEventListener('mouseenter', () => {
+          wrapper.classList.add('paused');
+          track.classList.add('paused');
+          // If the script checks a global paused flag, setting this helps
+          window.isShawServicesPaused = true;
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+          wrapper.classList.remove('paused');
+          track.classList.remove('paused');
+          window.isShawServicesPaused = false;
+        });
+      }
+    }, 300);
+  });
+</script>
+  
+  
+  
+  
+  
+  
+  
+  
 
   <!-- SCRIPT 3: Services Section 9-Card Timed Carousel (with Hover Pause) - Controls Section 5 -->
   
@@ -2298,8 +2333,6 @@ window.addEventListener("load", () => {
 
 
 </script>
-
-
 
 
 
