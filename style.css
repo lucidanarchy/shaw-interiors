@@ -1103,6 +1103,25 @@ max-width: 576px;
   //font-weight:100;
 }
 
+
+
+
+.pullquote-large-text2 {
+  /* font-family: 'Cormorant Garamond', Georgia, serif; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.15rem, 1.5vw + 0.8rem, 2.1rem); 
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: #4a4a4a !important;
+  //font-style:italic;
+  font-weight: 100;
+}
+
+
+
+
+
+
 .bquote-border {
   position: relative;
   border-left: 7px solid #ecc542;
