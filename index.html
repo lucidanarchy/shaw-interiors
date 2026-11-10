@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +8,12 @@
   <!-- CSS Stylesheets -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="service.css">
+  <link rel="stylesheet" href="service.css">
   <link rel="stylesheet" href="profile.css">
   
-  
-  
   <!-- Include GSAP Core and ScrollTrigger CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   
   <!-- Google Fonts Import -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -26,11 +21,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
 
-
-
-<style>
-
-  /* =========================================================
+  <style>
+    /* =========================================================
        GSAP SCROLL IMAGE REVEAL STYLES (STATIC IMAGES + WHITE MASK)
        ========================================================= */
     .gsap-reveal-box {
@@ -50,81 +42,115 @@
       transform: scale(1.12);
     }
 
+    /* Force remove shadows, transitions, and hover lifts from cards */
+    .card, 
+    .light-card, 
+    .recent-work-card,
+    .featured-img-wrapper {
+      box-shadow: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
 
+    .card:hover, 
+    .light-card:hover,
+    .recent-work-card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
 
+    .recent-work-img, 
+    .featured-img-wrapper img {
+      transform: scale(1) !important;
+      transition: none !important;
+    }
 
+    .recent-work-card:hover img {
+      transform: scale(1) !important;
+    }
 
-/* Force remove shadows, transitions, and hover lifts from cards */
-.card, 
-.light-card, 
-.recent-work-card,
-.featured-img-wrapper {
-  box-shadow: none !important;
-  transform: none !important;
-  transition: none !important;
-}
+    /* =========================================================
+       RESPONSIVE SERVICES STYLES (DESKTOP HORIZONTAL / MOBILE RESPONSIVE)
+       ========================================================= */
+    .gsap-horizontal-wrapper {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
 
-/* Prevent card hover scaling or translation */
-.card:hover, 
-.light-card:hover,
-.recent-work-card:hover {
-  transform: none !important;
-  box-shadow: none !important;
-}
+    .gsap-pin-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      transform: translate3d(0, 0, 0);
+    }
 
-/* Prevent image zoom effects inside cards on hover */
-//.card img, 
-.recent-work-img, 
-.featured-img-wrapper img {
-  transform: scale(1) !important;
-  transition: none !important;
-}
+    .gsap-horizontal-track {
+      display: flex;
+      flex-wrap: nowrap;
+      will-change: transform;
+      transform: translate3d(0, 0, 0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
 
-//.card:hover img, 
-.recent-work-card:hover img {
-  transform: scale(1) !important;
-}
+    .scrolly-card-item {
+      width: 82vw;
+      max-width: 320px;
+      transform: translateZ(0);
+    }
 
+    .service-card-img {
+      height: 240px;
+    }
 
+    @media (min-width: 576px) {
+      .scrolly-card-item {
+        width: 440px;
+        max-width: 440px;
+      }
+      .service-card-img {
+        height: 340px;
+      }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</style>
-
-
-
-
-
-
-
-
-
-
+    /* Mobile Natural Responsiveness: Fluid horizontal scroll container or clean layout without dead space */
+    @media (max-width: 575.98px) {
+      .gsap-horizontal-wrapper {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+      .gsap-pin-container {
+        height: auto !important;
+        display: block !important;
+      }
+      .gsap-horizontal-track {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        display: flex !important;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .gsap-horizontal-track::-webkit-scrollbar {
+        display: none;
+      }
+      .scrolly-card-item {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        width: 82vw !important;
+        max-width: 300px !important;
+      }
+    }
+  </style>
 </head>
 
-
-
-
-<body style="scroll-behavior: smooth;">
-
-
+<body>
 
   <!-- =========================================================
        SECTION 1: GLOBAL NAVIGATION HEADER
-       Matches JS: Script 7 (Desktop Nav Peek/Hide on Scroll)
        ========================================================= -->
   <div class="bg">
     <div class="container-md">
@@ -139,7 +165,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="profile2.html">About</a></li>
 
-          <!-- SERVICES DROPDOWN / ACCORDION -->
+          <!-- SERVICES DROPDOWN -->
           <li class="has-dropdown">
             <input type="checkbox" id="services-toggle" class="dropdown-checkbox">
             
@@ -149,7 +175,6 @@
               </label>
             </a>
 
-            <!-- Dropdown Box with Scrollable Items -->
             <div class="dropdown-menu-box">
               <a href="services3.html#service-01" class="dropdown-item-row">
                 <img src="build58.jpg" class="dropdown-thumb" alt="Residential Architecture">
@@ -161,7 +186,7 @@
 
               <a href="services3.html#service-02" class="dropdown-item-row">
                 <img src="build28.jpg" class="dropdown-thumb" alt="Commercial Development">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">02. Commercial Interior</span>
                   <span class="item-sub">Retail, Hospitality & Public Spaces</span>
                 </div>
@@ -169,7 +194,7 @@
 
               <a href="services3.html#service-03" class="dropdown-item-row">
                 <img src="build21.png" class="dropdown-thumb" alt="Spatial Flow Planning">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">03. Corporate Interior</span>
                   <span class="item-sub">Corporate & Modern Workspaces</span>
                 </div>
@@ -177,7 +202,7 @@
 
               <a href="services3.html#service-04" class="dropdown-item-row">
                 <img src="build26.png" class="dropdown-thumb" alt="Custom Lighting Plans">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">04. Custom Kitchen Design</span>
                   <span class="item-sub">High-End Culinary Environments</span>
                 </div>
@@ -185,7 +210,7 @@
 
               <a href="services3.html#service-05" class="dropdown-item-row">
                 <img src="build27.jpg" class="dropdown-thumb" alt="Heritage Restoration">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">05. Master Suite Design</span>
                   <span class="item-sub">Private Bedroom Retreats</span>
                 </div>
@@ -193,25 +218,23 @@
 
               <a href="services3.html#service-06" class="dropdown-item-row">
                 <img src="build32.jpg" class="dropdown-thumb" alt="Commercial Development">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">06. Architectural Millwork</span>
                   <span class="item-sub">Custom Cabinetry & Joinery</span>
                 </div>
               </a>
 			  
-			  <a href="services3.html#service-07" class="dropdown-item-row">
+			        <a href="services3.html#service-07" class="dropdown-item-row">
                 <img src="build32.jpg" class="dropdown-thumb" alt="Commercial Development">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">07. Atmospheric Lighting</span>
                   <span class="item-sub">Architectural Illumination Plans</span>
                 </div>
               </a>
-			  
-
     
               <a href="services3.html#service-08" class="dropdown-item-row">
                 <img src="build35.jpg" class="dropdown-thumb" alt="Custom Lighting Plans">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">08. Spa & Bath Design</span>
                   <span class="item-sub">Sanctuary Bathrooms & Wellness</span>
                 </div>
@@ -219,7 +242,7 @@
 
               <a href="services3.html#service-09" class="dropdown-item-row">
                 <img src="build24.png" class="dropdown-thumb" alt="Heritage Restoration">
-                <div class="dropdown-text ">
+                <div class="dropdown-text">
                   <span class="item-title">09. Material & Texture Design</span>
                   <span class="item-sub">Fine Finishes & Textiles</span>
                 </div>
@@ -268,14 +291,8 @@
     </div> 
   </div> 
 
-
-  <!-- Thicker HR Line 
-  <hr class="border-2 opacity-50 my-3 ">
-  -->
-
-
   <!-- =========================================================
-       SECTION 2: HERO FULL-WIDTH CAROUSEL (BOOTSTRAP SLIDER)
+       SECTION 2: HERO FULL-WIDTH CAROUSEL
        ========================================================= -->
   <div class="full-width-carousel">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -293,9 +310,9 @@
         <div class="carousel-item active">
           <img src="build35.jpg" class="d-block carousel-img-fit" alt="test">
           <div class="carousel-overlay"></div>
-          <div class="carousel-caption carousel-caption-glass  ">
-            <h2 class="animate-title   ">RAW GEOMETRY MEETS REFINED FINISHES</h2>
-            <p class="fst-italic animate-desc ">Where form meets flawless function</p>
+          <div class="carousel-caption carousel-caption-glass">
+            <h2 class="animate-title">RAW GEOMETRY MEETS REFINED FINISHES</h2>
+            <p class="fst-italic animate-desc">Where form meets flawless function</p>
             <a href="services3.html#service-01" class="btn btn-shaw-outline text-uppercase tracking-wider mt-5 animate-btn">Our Expertise</a>
           </div>
         </div>
@@ -305,7 +322,7 @@
           <img src="build62.jpg" class="d-block carousel-img-fit" alt="test">
           <div class="carousel-overlay"></div>
           <div class="carousel-caption carousel-caption-glass">
-            <h2 class="animate-title ">HARNESSING LIGHT, MATERIAL & SILENCE.</h2>
+            <h2 class="animate-title">HARNESSING LIGHT, MATERIAL & SILENCE.</h2>
             <p class="fst-italic animate-desc">Crafting spaces that matter.</p>
             <a href="services3.html#service-07" class="btn btn-shaw-outline text-uppercase tracking-wider mt-5 animate-btn">Our Expertise</a>
           </div>
@@ -316,7 +333,7 @@
           <img src="build41.jpg" class="d-block carousel-img-fit" alt="test">
           <div class="carousel-overlay"></div>
           <div class="carousel-caption carousel-caption-glass">
-            <h2 class="animate-title ">BEYOND TRENDS & DESIGNED FOR GENERATIONS.</h2>
+            <h2 class="animate-title">BEYOND TRENDS & DESIGNED FOR GENERATIONS.</h2>
             <p class="fst-italic animate-desc">Built to last generations.</p>
             <a href="services3.html#service-05" class="btn btn-shaw-outline text-uppercase tracking-wider mt-5 animate-btn">Our Expertise</a>
           </div>
@@ -337,31 +354,15 @@
     </div>
   </div>
 
-  
-
-
-
-
-
-
-
   <!-- =========================================================
        SECTION 3: STORY & PARALLAX PULL-QUOTE
-       Matches JS: Script 6 (Native Javascript Parallax Script)
        ========================================================= -->
-  <div class="container my-4 py-4 pt-4 pb-4 ">
+  <div class="container my-4 py-4 pt-4 pb-4">
     <div class="row align-items-center justify-content-center g-4 g-lg-5">
-      
-      <!-- LEFT COLUMN: Main Story Copy & Parallax Image -->
       <div class="col-lg-6 col-md-6 gsap-reveal-box">
-       
-          <img src="build57.jpg"  style="max-width:100%;" class = "gsap-reveal-img" alt="Parallax Interior Showcase"> 
-      
+        <img src="build57.jpg" style="max-width:100%;" class="gsap-reveal-img" alt="Parallax Interior Showcase"> 
       </div>
-
-
-      <!-- RIGHT COLUMN: Large Pull-Quote Block -->
-      <div class="col-lg-5 col-md-5 ">
+      <div class="col-lg-5 col-md-5">
         <blockquote class="blockquote mb-0 bquote-border trigger1">
           <p class="pullquote-large-text fw-bold mb-0 trigger1">
             &ldquo;We do not merely decorate rooms; we curate the subtle texture of human living.&rdquo;
@@ -371,215 +372,44 @@
           </footer>
         </blockquote>
       </div>
-
-<!--<div class="space-description pt-3" style="max-width: 92%;">
-  <h5 class="text-dark fst-italic fw-bold leading-relaxed mb-3 fs-7">
-    At Shaw Interiors, we pride ourselves on design
-  </h5>
-  <p class="text-dark opacity-75 leading-relaxed mb-0 fs-6 text-justify">
-    Every space we craft is an exploration of light, material, and spatial rhythm. From rich natural stone and hand-finished timber to layered ambient lighting, we approach each residence with editorial precision, transforming spaces into lasting sanctuaries.
-  </p>
-</div>-->
-
     </div>
   </div>
 
-
- 
-
+  <hr class="border-1 opacity-25 my-4">
 
   <!-- =========================================================
-       SECTION 4: TEXT INTRODUCTION & MANIFESTO
-       Matches JS: Script 5 (Scroll Fade-In Effect Observer)
+       SECTION 5: CAPABILITIES (RESPONSIVE GSAP HORIZONTAL)
        ========================================================= -->
-  <!-- =========================================================
-       SECTION: MANIFESTO (PNG QUOTE LEFT & JUSTIFIED TEXT RIGHT)
-       ========================================================= -->
- 
-
-
-  <!-- Divider -->
-  <hr class="border-1 opacity-25 my-4 ">
-
-
-  <!-- =========================================================
-       SECTION 5: CAPABILITIES 9-CARD CAROUSEL (3 PER GROUP)
-       Matches JS: Script 3 (Services 9-Card Timed Carousel Script)
-       ========================================================= -->
-  <!-- =========================================================
-     SECTION 5: CAPABILITIES (Responsive Desktop & Mobile Layouts)
-     ========================================================= -->
-	 
-	 
-<div class="pt-4 my-4 ">
-    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 d-block fs-8 text-center trigger1">Interior Styling Capabilities</span>
-    <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">EXPLORE our Services</h1>
-    <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
+  <div class="pt-4 my-4">
+    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 d-block fs-8 text-center">Interior Styling Capabilities</span>
+    <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">EXPLORE OUR SERVICES</h1>
+    <div class="divider-line-dk mx-auto mt-2 mb-2 trigger1"></div>
   </div>
 
+  <div class="gsap-horizontal-wrapper overflow-hidden mb-5" id="gsapServicesSection">
+    <div class="gsap-pin-container">
+      <div class="gsap-horizontal-track d-flex gap-3 gap-sm-4 px-3 px-sm-4" id="gsapServicesTrack">
 
-	 
-	 
-<div class="container my-5">
-
-  <!-- ==========================================
-       DESKTOP VERSION (3-card groups - visible >= 768px)
-       ========================================== -->
-  <div class="d-none d-md-block">
-    <div class="services-carousel-wrapper overflow-hidden trigger1">
-      <div class="services-track d-flex mt-3" id="desktopServicesTrack" style="transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);">
-        
-        <!-- GROUP 1 -->
-        <div class="services-group row g-2 w-100 flex-shrink-0">
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-01" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build35.jpg" class="card-img-top w-100 object-fit-cover" alt="Residential Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase text-center mb-2 tracking-wider">01. Residential Interior</h5>
-                  <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-02" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build46.jpg" class="card-img-top w-100 object-fit-cover" alt="Commercial Interior" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">02. Commercial Interior</h5>
-                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces that captivate guests.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-03" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build74.jpg" class="card-img-top w-100 object-fit-cover" alt="Corporate Interior" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">03. Corporate Interior</h5>
-                  <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Elevated professional environments designed to inspire productivity, balancing executive sophistication with ergonomic functionality.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- GROUP 2 -->
-        <div class="services-group row g-2 w-100 flex-shrink-0">
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-04" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build70.jpg" class="card-img-top w-100 object-fit-cover" alt="Custom Kitchen Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">04. Custom Kitchen Design</h5>
-                  <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry & premium stone surfaces.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-05" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build41.jpg" class="card-img-top w-100 object-fit-cover" alt="Master Suite Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">05. Master Suite Design</h5>
-                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-06" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build73.jpg" class="card-img-top w-100 object-fit-cover" alt="Architectural Millwork" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">06. Architectural Millwork</h5>
-                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- GROUP 3 -->
-        <div class="services-group row g-2 w-100 flex-shrink-0">
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-07" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build62.jpg" class="card-img-top w-100 object-fit-cover" alt="Atmospheric Lighting" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">07. Atmospheric Lighting</h5>
-                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and curate the perfect mood.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-08" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build54.jpg" class="card-img-top w-100 object-fit-cover" alt="Spa & Bath Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">08. Spa & Bath Design</h5>
-                  <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, and therapeutic water elements.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
-              <a href="services3.html#service-09" class="text-decoration-none d-block h-100 d-flex flex-column">
-                <img src="build48.jpg" class="card-img-top w-100 object-fit-cover" alt="Material & Texture Design" style="height: 270px;" onerror="this.src='https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=600&q=80'">
-                <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                  <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">09. Material & Texture Design</h5>
-                  <p class="card-text text-muted small text-justify flex-grow-1 mb-0">Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth, and character.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- CENTERED 3-RECTANGLE NAV INDICATORS (Desktop >= 768px) -->
-      <div class="d-none d-md-flex justify-content-center align-items-center gap-2 mt-5">
-        <button class="nav-bar-pill active" id="barNav0" aria-label="Group 1"></button>
-        <button class="nav-bar-pill" id="barNav1" aria-label="Group 2"></button>
-        <button class="nav-bar-pill" id="barNav2" aria-label="Group 3"></button>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- ==========================================
-       MOBILE VERSION (1-by-1 Ticker Slider - visible < 768px)
-       ========================================== -->
-  <div class="d-block d-md-none">
-    <div class="card-slider-container position-relative overflow-hidden trigger1">
-      <div class="card-slider d-flex gap-3 mt-3" id="mobileServicesSlider" style="scroll-behavior: smooth; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none;">
-        
         <!-- Card 1 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-01" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build35.jpg" class="card-img-top w-100 object-fit-cover" alt="Residential Design" style="height: 235px;">
+              <img src="build35.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Residential Design">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold text-dark fs-8 text-uppercase mb-2 tracking-wider">01. Residential Interior</h5>
-                <p class="card-text text-muted text-justify small mt-1 flex-grow-1 mb-0">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light.</p>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase text-center mb-2 tracking-wider">01. Residential Interior</h5>
+                <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light.</p>
               </div>
             </a>
           </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-02" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build46.jpg" class="card-img-top w-100 object-fit-cover" alt="Commercial Interior" style="height: 235px;">
+              <img src="build46.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Commercial Interior">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">02. Commercial Interior</h5>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">02. Commercial Interior</h5>
                 <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces that captivate guests.</p>
               </div>
             </a>
@@ -587,25 +417,25 @@
         </div>
 
         <!-- Card 3 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-03" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build74.jpg" class="card-img-top w-100 object-fit-cover" alt="Corporate Interior" style="height: 235px;">
+              <img src="build74.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Corporate Interior">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">03. Corporate Interior</h5>
-                <p class="card-text text-muted text-justify small mt-1 flex-grow-1 mb-0">Elevated professional environments designed to inspire productivity, balancing executive sophistication with ergonomic functionality.</p>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">03. Corporate Interior</h5>
+                <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Elevated professional environments designed to inspire productivity, balancing executive sophistication with ergonomic functionality.</p>
               </div>
             </a>
           </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-04" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build70.jpg" class="card-img-top w-100 object-fit-cover" alt="Custom Kitchen Design" style="height: 235px;">
+              <img src="build70.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Custom Kitchen Design">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold text-dark fs-8 text-uppercase mb-2 tracking-wider">04. Custom Kitchen Design</h5>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">04. Custom Kitchen Design</h5>
                 <p class="card-text text-muted text-justify mt-1 small flex-grow-1 mb-0">Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry & premium stone surfaces.</p>
               </div>
             </a>
@@ -613,12 +443,12 @@
         </div>
 
         <!-- Card 5 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-05" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build41.jpg" class="card-img-top w-100 object-fit-cover" alt="Master Suite Design" style="height: 235px;">
+              <img src="build41.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Master Suite Design">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">05. Master Suite Design</h5>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">05. Master Suite Design</h5>
                 <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.</p>
               </div>
             </a>
@@ -626,12 +456,12 @@
         </div>
 
         <!-- Card 6 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-06" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build73.jpg" class="card-img-top w-100 object-fit-cover" alt="Architectural Millwork" style="height: 235px;">
+              <img src="build73.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Architectural Millwork">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">06. Architectural Millwork</h5>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">06. Architectural Millwork</h5>
                 <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.</p>
               </div>
             </a>
@@ -639,12 +469,12 @@
         </div>
 
         <!-- Card 7 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-07" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build62.jpg" class="card-img-top w-100 object-fit-cover" alt="Atmospheric Lighting" style="height: 235px;">
+              <img src="build62.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Atmospheric Lighting">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">07. Atmospheric Lighting</h5>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">07. Atmospheric Lighting</h5>
                 <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and curate the perfect mood.</p>
               </div>
             </a>
@@ -652,12 +482,12 @@
         </div>
 
         <!-- Card 8 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-08" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build54.jpg" class="card-img-top w-100 object-fit-cover" alt="Spa & Bath Design" style="height: 235px;">
+              <img src="build54.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Spa & Bath Design">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">08. Spa & Bath Design</h5>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 text-center tracking-wider">08. Spa & Bath Design</h5>
                 <p class="card-text text-muted small text-justify mt-1 flex-grow-1 mb-0">Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, and therapeutic water elements.</p>
               </div>
             </a>
@@ -665,12 +495,12 @@
         </div>
 
         <!-- Card 9 -->
-        <div class="slider-card-item flex-shrink-0" style="width: 82vw; max-width: 300px;">
+        <div class="scrolly-card-item flex-shrink-0">
           <div class="card light-card h-100 shadow-sm overflow-hidden border-0">
             <a href="services3.html#service-09" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build48.jpg" class="card-img-top w-100 object-fit-cover" alt="Material & Texture Design" style="height: 235px;">
+              <img src="build48.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Material & Texture Design">
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fw-bold fs-8 text-dark text-uppercase mb-2 tracking-wider">09. Material & Texture Design</h5>
+                <h5 class="card-title fs-6 fw-bold text-dark text-uppercase mb-2 tracking-wider">09. Material & Texture Design</h5>
                 <p class="card-text text-muted small flex-grow-1 mb-0">Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth, and character.</p>
               </div>
             </a>
@@ -678,354 +508,112 @@
         </div>
 
       </div>
-
-      <!-- CENTERED NAVIGATION LINES FOR MOBILE / TABLET (Visible between 576px and 767px, Hides below 576px) -->
-      <div class="d-none d-sm-flex d-md-none justify-content-center align-items-center gap-3  mt-5">
-        <button class="nav-line-pill active" id="mobileLineNav0" aria-label="Card 1"></button>
-        <button class="nav-line-pill" id="mobileLineNav1" aria-label="Card 2"></button>
-        <button class="nav-line-pill" id="mobileLineNav2" aria-label="Card 3"></button>
-        <button class="nav-line-pill" id="mobileLineNav3" aria-label="Card 4"></button>
-        <button class="nav-line-pill" id="mobileLineNav4" aria-label="Card 5"></button>
-        <button class="nav-line-pill" id="mobileLineNav5" aria-label="Card 6"></button>
-        <button class="nav-line-pill" id="mobileLineNav6" aria-label="Card 7"></button>
-        <button class="nav-line-pill" id="mobileLineNav7" aria-label="Card 8"></button>
-        <button class="nav-line-pill" id="mobileLineNav8" aria-label="Card 9"></button>
-      </div>
-
     </div>
   </div>
 
-</div>
+  <style>
+    .card, .card img, .light-card {
+      border-radius: 0 !important;
+    }
 
-<style>
+    .card img {
+      transform: scale(1);
+    }
 
-.card, 
-.card img, 
-.light-card {
-  border-radius: 0 !important;
-}
-
-
-/* Base image has NO transition or zoom */
-.card img {
-  transform: scale(1);
-}
-
-/* Transition and zoom apply ONLY on desktop screens (768px and up) */
-@media (min-width: 768px) {
-  .card img {
-    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-  .card:hover img {
-    transform: scale(1.05);
-  }
-}
-
-@media (hover: none) {
-  .card img {
-    pointer-events: none !important;
-    transform: none !important;
-  }
-}
-
-
-
-
-/* DESKTOP 3-RECTANGLE NAVIGATION BAR STYLING */
-.nav-bar-pill {
-  width: 40px;
-  height: 5px;
-  background-color: #d1d1d1;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 0.4s ease, width 0.4s ease;
-}
-.nav-bar-pill:hover {
-  background-color: #888888;
-}
-.nav-bar-pill.active {
-  background-color: #3a3a3a;
-  width: 45px;
-}
-
-/* MOBILE / TABLET LINE NAVS STYLING */
-.nav-line-pill {
-  width: 35px;
-  height: 3px;
-  background-color: #d1d1d1;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  transition: background-color 0.3s ease, width 0.3s ease;
-}
-.nav-line-pill:hover {
-  background-color: #888888;
-}
-.nav-line-pill.active {
-  background-color: #3a3a3a;
-  width: 35px;
-}
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    /* ---------------------------------------------------------
-       1. DESKTOP CAROUSEL CONTROLLER (>= 768px)
-       --------------------------------------------------------- */
-    const desktopTrack = document.getElementById("desktopServicesTrack");
-    const desktopPills = [
-      document.getElementById("barNav0"),
-      document.getElementById("barNav1"),
-      document.getElementById("barNav2")
-    ];
-
-    if (desktopTrack && desktopPills[0]) {
-      let activeIndex = 0;
-      const totalGroups = 3;
-      let desktopTimer = null;
-
-      const moveToGroup = (index) => {
-        activeIndex = (index + totalGroups) % totalGroups;
-        desktopTrack.style.transform = `translateX(-${activeIndex * 100}%)`;
-
-        desktopPills.forEach((pill, i) => {
-          if (pill) pill.classList.toggle("active", i === activeIndex);
-        });
-      };
-
-      const startDesktopTimer = () => {
-        if (desktopTimer) clearInterval(desktopTimer);
-        desktopTimer = setInterval(() => {
-          moveToGroup(activeIndex + 1);
-        }, 4000);
-      };
-
-      desktopPills.forEach((pill, index) => {
-        if (pill) {
-          pill.addEventListener("click", () => {
-            moveToGroup(index);
-            startDesktopTimer();
-          });
-        }
-      });
-
-      const desktopWrapper = desktopTrack.closest('.services-carousel-wrapper');
-      if (desktopWrapper) {
-        desktopWrapper.addEventListener("mouseenter", () => {
-          if (desktopTimer) clearInterval(desktopTimer);
-        });
-        desktopWrapper.addEventListener("mouseleave", () => {
-          startDesktopTimer();
-        });
+    @media (min-width: 768px) {
+      .card img {
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
       }
-
-      startDesktopTimer();
+      .card:hover img {
+        transform: scale(1.05);
+      }
     }
 
-    /* ---------------------------------------------------------
-       2. MOBILE TICKER SLIDER (< 768px) + Multi-Line Nav Sync
-       --------------------------------------------------------- */
-    const mobileSlider = document.getElementById("mobileServicesSlider");
-    const mobileLinePills = Array.from(document.querySelectorAll(".nav-line-pill"));
-
-    if (mobileSlider) {
-      let mobileTimer = null;
-      let isInteracting = false;
-
-      const updateMobileLines = () => {
-        if (mobileLinePills.length === 0) return;
-        const cardItem = mobileSlider.querySelector(".slider-card-item");
-        if (!cardItem) return;
-
-        const slideStep = cardItem.offsetWidth + 16;
-        const currentIndex = Math.round(mobileSlider.scrollLeft / slideStep);
-
-        mobileLinePills.forEach((pill, i) => {
-          if (pill) pill.classList.toggle("active", i === currentIndex);
-        });
-      };
-
-      const stepNextMobileCard = () => {
-        if (isInteracting) return;
-
-        const cardItem = mobileSlider.querySelector(".slider-card-item");
-        if (!cardItem) return;
-
-        const slideStep = cardItem.offsetWidth + 16;
-        const maxScroll = mobileSlider.scrollWidth - mobileSlider.clientWidth;
-
-        if (mobileSlider.scrollLeft >= maxScroll - 10) {
-          mobileSlider.scrollTo({ left: 0, behavior: "smooth" });
-        } else {
-          mobileSlider.scrollBy({ left: slideStep, behavior: "smooth" });
-        }
-      };
-
-      const startMobileTimer = () => {
-        if (mobileTimer) clearInterval(mobileTimer);
-        mobileTimer = setInterval(stepNextMobileCard, 3000);
-      };
-
-      // Click event for line pills
-      mobileLinePills.forEach((pill, index) => {
-        if (pill) {
-          pill.addEventListener("click", () => {
-            const cardItem = mobileSlider.querySelector(".slider-card-item");
-            if (cardItem) {
-              const slideStep = cardItem.offsetWidth + 16;
-              mobileSlider.scrollTo({ left: slideStep * index, behavior: "smooth" });
-              startMobileTimer();
-            }
-          });
-        }
-      });
-
-      // Keep line pills updated on scroll
-      mobileSlider.addEventListener("scroll", updateMobileLines, { passive: true });
-
-      // Touch / Swipe listeners
-      mobileSlider.addEventListener("touchstart", () => {
-        isInteracting = true;
-        if (mobileTimer) clearInterval(mobileTimer);
-      }, { passive: true });
-
-      mobileSlider.addEventListener("touchend", () => {
-        isInteracting = false;
-        startMobileTimer();
-      }, { passive: true });
-
-      // Hover listeners
-      mobileSlider.addEventListener("mouseenter", () => {
-        isInteracting = true;
-        if (mobileTimer) clearInterval(mobileTimer);
-      });
-
-      mobileSlider.addEventListener("mouseleave", () => {
-        isInteracting = false;
-        startMobileTimer();
-      });
-
-      startMobileTimer();
+    @media (hover: none) {
+      .card img {
+        pointer-events: none !important;
+        transform: none !important;
+      }
     }
-  });
-</script>
-
-  <!-- Divider -->
-  <hr class="gone border-1 opacity-25 my-4 ">
-
+  </style>
 
   <!-- =========================================================
-       SECTION 6: EXCELLENCE PROMISE (3-COLUMN FEATURE GRID)
+       SECTION 6: EXCELLENCE PROMISE
        ========================================================= -->
-  <section class="excellence-section py-3 text-white ">
+  <section class="excellence-section py-3 text-white">
     <div class="container py-4">
-      
-      <!-- Section Heading -->
       <div class="text-center mb-5 mt-2">
         <span class="text-uppercase text-white-50 fs-8 tracking-widest d-block mb-2 trigger1">Our Commitment</span>
         <h2 class="fw-bold text-uppercase tracking-wider fs-2 text-white trigger1">We Pride Ourselves On Excellence</h2>
         <div class="divider-line mx-auto mt-3 trigger1"></div>
       </div>
 
-      <!-- 3-Column Grid -->
       <div class="row g-4 g-lg-5">
-        
-        <!-- Category 1: Spatial & Structural Planning -->
-        <div class="col-md-4 ">
-          <div class="feature-box p-4 h-100">
-            <div class="d-flex align-items-center gap-3 mb-3 trigger1">
-              <div class="icon-inline flex-shrink-0 ">
-                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"></path>
-                </svg>
-              </div>
-              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white ">Proven Track Record</h4>
-            </div>
-            <p class="text-white-50 small lh-lg mb-0 trigger1">
-              Backed by years of multi-disciplinary interior design expertise, matching diverse creative perspectives to your exact lifestyle desires.
-            </p>
-          </div>
-        </div>
-
-        <!-- Category 2: Lighting & Spatial Curation -->
-        <div class="col-md-4 ">
+        <div class="col-md-4">
           <div class="feature-box p-4 h-100">
             <div class="d-flex align-items-center gap-3 mb-3 trigger1">
               <div class="icon-inline flex-shrink-0">
-                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path>
-                </svg>
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"></path></svg>
+              </div>
+              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Proven Track Record</h4>
+            </div>
+            <p class="text-white-50 small lh-lg mb-0 trigger1">Backed by years of multi-disciplinary interior design expertise, matching diverse creative perspectives to your exact lifestyle desires.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="feature-box p-4 h-100">
+            <div class="d-flex align-items-center gap-3 mb-3 trigger1">
+              <div class="icon-inline flex-shrink-0">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
               </div>
               <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Detail-Oriented Planning</h4>
             </div>
-            <p class="text-white-50 small lh-lg mb-0 trigger1">
-              Meticulously managing every stage—from precise spatial and furniture layouts to seamless procurement, finishes, and installation.
-            </p>
+            <p class="text-white-50 small lh-lg mb-0 trigger1">Meticulously managing every stage—from precise spatial and furniture layouts to seamless procurement, finishes, and installation.</p>
           </div>
         </div>
 
-        <!-- Category 3: Interior Living & Comfort -->
-        <div class="col-md-4 ">
+        <div class="col-md-4">
           <div class="feature-box p-4 h-100">
             <div class="d-flex align-items-center gap-3 mb-3 trigger1">
               <div class="icon-inline flex-shrink-0">
-                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m9-2.25v2.25m-10.5-6.75h12m-13.5 3.75h15m-14.25-9.75h13.5a1.5 1.5 0 011.5 1.5v12.75a1.5 1.5 0 01-1.5 1.5h-13.5a1.5 1.5 0 01-1.5-1.5V5.25a1.5 1.5 0 011.5-1.5z"></path>
-                </svg>
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m9-2.25v2.25m-10.5-6.75h12m-13.5 3.75h15m-14.25-9.75h13.5a1.5 1.5 0 011.5 1.5v12.75a1.5 1.5 0 01-1.5 1.5h-13.5a1.5 1.5 0 01-1.5-1.5V5.25a1.5 1.5 0 011.5-1.5z"></path></svg>
               </div>
               <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Intentional Design</h4>
             </div>
-            <p class="text-white-50 small lh-lg mb-0 trigger1">
-              Rooted in a signature aesthetic favoring modern comfort over fleeting trends, curating spaces solely built around your unique story.
-            </p>
+            <p class="text-white-50 small lh-lg mb-0 trigger1">Rooted in a signature aesthetic favoring modern comfort over fleeting trends, curating spaces solely built around your unique story.</p>
           </div>
         </div>
-
       </div>
-
     </div>
   </section>
 
-
-  <!-- Divider -->
-  <hr class="gone border-1 opacity-25 my-4  mb-4">
-
+  <hr class="gone border-1 opacity-25 my-4 mb-4">
 
   <!-- =========================================================
        SECTION 7: FEATURED PROJECTS (IMAGE LEFT, TEXT RIGHT)
-       Matches JS: Script 1 (Image Left / Text Right Slider Script)
        ========================================================= -->
- 
+  <div class="pt-5 my-4">
+    <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block text-center trigger1">In-depth showcase of our premier architectural works</span>
+    <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Our Featured Projects</h1>
+    <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
+  </div>
 
-<div class="pt-5 my-4 ">
-      <span class="text-uppercase text-muted small tracking-wider fw-bold mb-2 fs-8 d-block text-center trigger1">In-depth showcase of our premier architectural works</span>
-      <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Our Featured Projects</h1>
-      <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
+  <div class="container my-3">
+    <!-- Swipe hint -->
+    <div class="d-block d-sm-none text-center py-2 text-muted trigger1" style="font-size: 9.5px; letter-spacing: 0.25em;">
+      &larr; SWIPE TO EXPLORE &rarr;
     </div>
 
-
-
- <div class="container my-3 ">
-    
-    
-
-
-
-<!-- Swipe hint (Visible ONLY on screens below 576px) -->
-<div class="d-block d-sm-none text-center py-2 text-muted trigger1" style="font-size: 9.5px; letter-spacing: 0.25em;">
-  &larr; SWIPE TO EXPLORE &rarr;
-</div>
     <!-- SLIDER WRAPPER -->
     <div id="imageLeftSlider" class="trigger1">
 
-      <!-- === SLIDE 1 (Visible by default) === -->
+      <!-- === SLIDE 1 === -->
       <div class="project-slide border p-4 bg-white shadow-sm">
         <div class="row g-4 align-items-center">
-          
           <div class="col-lg-7">
             <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
-              <img src="build54.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion" >
+              <img src="build54.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
 
@@ -1036,7 +624,6 @@
               <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 A brutalist architectural concept featuring raw board-formed concrete walls, cantilevered spans, and dramatic linear skylights to elevate high-end modern living spaces.
               </p>
-              
               <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Cape Town, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2025</li>
@@ -1047,14 +634,12 @@
               <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- === SLIDE 2 (Hidden by default) === -->
+      <!-- === SLIDE 2 === -->
       <div class="project-slide border p-4 bg-white shadow-sm" style="display: none;">
         <div class="row g-4 align-items-center">
-          
           <div class="col-lg-7">
             <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
               <img src="build40.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
@@ -1068,7 +653,6 @@
               <p class="text-muted leading-relaxed text-justify t-md mb-4 trigger1">
                 A modern minimalist structural design combining floor-to-ceiling glass paneling with sustainable steel frameworks. Designed to maximize natural light while maintaining complete private spatial harmony.
               </p>
-              
               <ul class="list-unstyled text-muted small mb-4 trigger1">
                 <li class="mb-2"><strong class="text-dark">Location:</strong> Johannesburg, SA</li>
                 <li class="mb-2"><strong class="text-dark">Year Completed:</strong> 2026</li>
@@ -1079,14 +663,12 @@
               <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- === SLIDE 3 (Hidden by default) === -->
+      <!-- === SLIDE 3 === -->
       <div class="project-slide border p-4 bg-white shadow-sm" style="display: none;">
         <div class="row g-4 align-items-center">
-          
           <div class="col-lg-7">
             <div class="featured-img-wrapper overflow-hidden border gsap-reveal-box">
               <img src="build68.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
@@ -1110,40 +692,35 @@
               <a href="#" class="custom-btn trigger1">Find out more</a>
             </div>
           </div>
-
         </div>
       </div>
-
     </div>
 
     <!-- NAVIGATION BUTTONS -->
-   <span class = "gone"> <div class="d-flex justify-content-end mt-4 mb-3">
-      <div class="slider-nav-btns d-flex gap-2">
-        <button class="btn square-btn imgleft-prev" aria-label="Previous Featured Project">Previous</button>
-        <button class="btn square-btn imgleft-next" aria-label="Next Featured Project">Next</button>
+    <span class="gone"> 
+      <div class="d-flex justify-content-end mt-4 mb-3">
+        <div class="slider-nav-btns d-flex gap-2">
+          <button class="btn square-btn imgleft-prev" aria-label="Previous Featured Project">Previous</button>
+          <button class="btn square-btn imgleft-next" aria-label="Next Featured Project">Next</button>
+        </div>
       </div>
-    </div></span>
-
+    </span>
   </div>
 
-
-<!-- Swipe hint (Visible ONLY on screens below 576px) -->
-<div class="d-block d-sm-none text-center py-2 text-muted trigger1 mt-4" style="font-size: 9.5px; letter-spacing: 0.25em;">
-  &larr; SWIPE TO EXPLORE &rarr;
-</div>
-
+  <!-- Swipe hint -->
+  <div class="d-block d-sm-none text-center py-2 text-muted trigger1 mt-4" style="font-size: 9.5px; letter-spacing: 0.25em;">
+    &larr; SWIPE TO EXPLORE &rarr;
+  </div>
 
   <!-- =========================================================
        SECTION 8: FEATURED PROJECTS (TEXT LEFT, IMAGE RIGHT)
-       Matches JS: Script 2 (Text Left / Image Right Slider Script)
        ========================================================= -->
-  <div class="container mb-5 ">
+  <div class="container mb-5">
     <div id="textLeftSlider" class="trigger1">
 
-      <!-- === SLIDE 1 (Visible by default) === -->
+      <!-- === SLIDE 1 === -->
       <div class="project-slide border p-4 bg-white shadow-sm">
         <div class="row g-4 align-items-center">
-          
           <div class="col-lg-5 d-flex flex-column justify-content-between h-100 order-2 order-lg-1 pe-4">
             <div>
               <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Residential</span>
@@ -1167,14 +744,12 @@
               <img src="build62.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- === SLIDE 2 (Hidden by default) === -->
+      <!-- === SLIDE 2 === -->
       <div class="project-slide border p-4 bg-white shadow-sm" style="display: none;">
         <div class="row g-4 align-items-center">
-          
           <div class="col-lg-5 d-flex flex-column justify-content-between h-100 order-2 pe-4 order-lg-1">
             <div>
               <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Residential</span>
@@ -1198,14 +773,12 @@
               <img src="build35.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- === SLIDE 3 (Hidden by default) === -->
+      <!-- === SLIDE 3 === -->
       <div class="project-slide border p-4 bg-white shadow-sm" style="display: none;">
         <div class="row g-4 align-items-center">
-          
           <div class="col-lg-5 d-flex flex-column justify-content-between h-100 pe-4 order-2 order-lg-1">
             <div>
               <span class="badge bg-dark rounded-0 px-3 py-2 text-uppercase mb-3 trigger1">Residential</span>
@@ -1229,66 +802,51 @@
               <img src="build49.jpg" class="img-fluid w-100 project-img-responsive gsap-reveal-img" alt="The Glass Pavilion">
             </div>
           </div>
-
         </div>
       </div>
 
       <!-- NAVIGATION BUTTONS -->
-     <span class = "gone"> <div class="d-flex justify-content-end mt-4">
-        <div class="slider-nav-btns d-flex gap-2">
-          <button class="btn square-btn textleft-prev" aria-label="Previous Featured Project">Previous</button>
-          <button class="btn square-btn textleft-next" aria-label="Next Featured Project">Next</button>
+      <span class="gone"> 
+        <div class="d-flex justify-content-end mt-4">
+          <div class="slider-nav-btns d-flex gap-2">
+            <button class="btn square-btn textleft-prev" aria-label="Previous Featured Project">Previous</button>
+            <button class="btn square-btn textleft-next" aria-label="Next Featured Project">Next</button>
+          </div>
         </div>
-      </div></span>
-
-
-
-
-
+      </span>
 
     </div>
   </div>
 
-
-  <!-- Divider -->
-  <hr class="gone border-1 opacity-25 my-4 ">
-
+  <hr class="gone border-1 opacity-25 my-4">
 
   <!-- =========================================================
        SECTION 9: COMPLETED WORK PROJECTS (FLUSH IMAGE GRID)
        ========================================================= -->
   <div class="container-fluid p-0 my-5">
-    
-    <div class="pt-4 my-4 ">
+    <div class="pt-4 my-4">
       <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Showcase of our spatial portfolio</span>
       <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Our Completed Work Projects</h1>
       <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
     </div>
 
-    <!-- Flush Grid Row (Zero Gaps: g-0) -->
     <div class="row g-0 pt-4 t-5 trigger1">
-      
-      <!-- Card 1 -->
       <div class="col-6 col-md-4 col-lg-2">
         <div class="recent-work-card position-relative overflow-hidden">
-          <img src="build64.jpg" class="w-100 recent-work-img" alt="Project 1" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'">
-          
+          <img src="build64.jpg" class="w-100 recent-work-img" alt="Project 1" style="height: 330px; object-fit: cover;">
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
             <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
-              <h5 class="project-title fw-bold proj-text-hd text-white  mb-2">Blue Estsate</h5>
+              <h5 class="project-title fw-bold proj-text-hd text-white mb-2">Blue Estsate</h5>
               <p class="project-desc text-white-50 small mb-4">Immersive sensory winelands dining.</p>
               <a href="gallerry3.html#Blue-Suite" class="btn-view-proj mb-3">View Project</a>
             </div>
           </div>
         </div>
       </div>
-
-      <!-- Card 2 -->
       <div class="col-6 col-md-4 col-lg-2">
         <div class="recent-work-card position-relative overflow-hidden">
-          <img src="build54.jpg" class="w-100 recent-work-img" alt="Project 2" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80'">
-          
+          <img src="build54.jpg" class="w-100 recent-work-img" alt="Project 2" style="height: 330px; object-fit: cover;">
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
             <span class="category-tag text-uppercase fw-semibold">Corporate</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
@@ -1299,12 +857,9 @@
           </div>
         </div>
       </div>
-
-      <!-- Card 3 -->
       <div class="col-6 col-md-4 col-lg-2">
         <div class="recent-work-card position-relative overflow-hidden">
-          <img src="build13.jpg" class="w-100 recent-work-img" alt="Project 3" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80'">
-          
+          <img src="build13.jpg" class="w-100 recent-work-img" alt="Project 3" style="height: 330px; object-fit: cover;">
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
             <span class="category-tag text-uppercase fw-semibold">Commercial</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
@@ -1315,12 +870,9 @@
           </div>
         </div>
       </div>
-
-      <!-- Card 4 -->
       <div class="col-6 col-md-4 col-lg-2">
         <div class="recent-work-card position-relative overflow-hidden">
-          <img src="build35.jpg" class="w-100 recent-work-img" alt="Project 4" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'">
-          
+          <img src="build35.jpg" class="w-100 recent-work-img" alt="Project 4" style="height: 330px; object-fit: cover;">
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
             <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
@@ -1331,12 +883,9 @@
           </div>
         </div>
       </div>
-
-      <!-- Card 5 -->
       <div class="col-6 col-md-4 col-lg-2">
         <div class="recent-work-card position-relative overflow-hidden">
-          <img src="build41.jpg" class="w-100 recent-work-img" alt="Project 5" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=600&q=80'">
-          
+          <img src="build41.jpg" class="w-100 recent-work-img" alt="Project 5" style="height: 330px; object-fit: cover;">
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
             <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
@@ -1347,12 +896,9 @@
           </div>
         </div>
       </div>
-
-      <!-- Card 6 -->
       <div class="col-6 col-md-4 col-lg-2">
         <div class="recent-work-card position-relative overflow-hidden">
-          <img src="build62.jpg" class="w-100 recent-work-img" alt="Project 6" style="height: 330px; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'">
-          
+          <img src="build62.jpg" class="w-100 recent-work-img" alt="Project 6" style="height: 330px; object-fit: cover;">
           <div class="recent-work-overlay d-flex flex-column justify-content-between align-items-center p-4 text-center">
             <span class="category-tag text-uppercase fw-semibold">Residential</span>
             <div class="overlay-content d-flex flex-column align-items-center w-100">
@@ -1363,610 +909,256 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
-
-
- 
-
 
   <!-- =========================================================
-       SECTION 10: CLIENT TESTIMONIALS SLIDER (HORIZON SCROLL)
-       Matches JS: Script 4 (Client Testimonials Auto-Scroll Script)
+       SECTION 10: CUSTOM INTERIOR TESTIMONIAL
        ========================================================= -->
-	   
-
-  <!--<div class="container my-5 fade-in">
-    
-    <div class="pt-4 my-4 fade-in">
-      <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center">corporate partners say about our work</span>
-      <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Hear From Our Clients</h1>
-      <div class="divider-line-dk mx-auto mt-3 mb-5"></div>
-    </div>
-
-    
-    <div class="card-slider-container position-relative overflow-hidden fade-in">
-      <div class="card-slider d-flex gap-3" id="testimonialSlider" style="scroll-behavior: smooth; overflow-x: auto; scrollbar-width: none;">
-        
-        
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-light text-dark">
-            <p class="text-muted small fst-italic mb-4">
-              "Their team’s precision in interior spatial design made our boutique hotel project stand out. Professional, creative."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus1.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover; border-radius:100px !important;">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">David van der Merwe</h6>
-                <span class="text-muted fs-8 text-uppercase">Private Villa</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-     
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-white">
-            <p class="text-muted small fst-italic mb-4">
-              "Their team’s precision in interior spatial design made our boutique hotel project stand out. Professional, creative, and highly attentive to spatial flow."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus3.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover; border-radius:100px !important;">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">Sarah Jenkins</h6>
-                <span class="text-muted fs-8 text-uppercase">Managing Director</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-       
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-white">
-            <p class="text-muted small fst-italic mb-4">
-              "An exceptional eye for luxury finishes and sustainable frameworks. Working together on the Urban Horizon Tower was a flawless collaborative experience."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus5.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover; border-radius:100px !important; ">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">Michael Thorne</h6>
-                <span class="text-muted fs-8 text-uppercase">Lead Developer, Apex Urban</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-white">
-            <p class="text-muted small fst-italic mb-4">
-              "The bespoke interior concepts and custom lighting plan redefined our residence. They truly understand how to craft immersive living spaces."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus4.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover; border-radius:100px !important;">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">Elena Rostova</h6>
-                <span class="text-muted fs-8 text-uppercase">Private Homeowner</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-light text-dark">
-            <p class="text-muted small fst-italic mb-4">
-              "Their team’s precision in interior spatial design made our boutique hotel project stand out. Professional, creative."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus1.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover; border-radius:100px !important;">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">David van der Merwe</h6>
-                <span class="text-muted fs-8 text-uppercase">Private Villa</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-       
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-white">
-            <p class="text-muted small fst-italic mb-4">
-              "Their team’s precision in interior spatial design made our boutique hotel project stand out. Professional, creative, and highly attentive to spatial flow."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus3.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover; border-radius:100px !important; ">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">Sarah Jenkins</h6>
-                <span class="text-muted fs-8 text-uppercase">Managing Director</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-white">
-            <p class="text-muted small fst-italic mb-4">
-              "An exceptional eye for luxury finishes and sustainable frameworks. Working together on the Urban Horizon Tower was a flawless collaborative experience."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus5.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover;border-radius:100px !important;">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">Michael Thorne</h6>
-                <span class="text-muted fs-8 text-uppercase">Lead Developer, Apex Urban</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-       
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-white">
-            <p class="text-muted small fst-italic mb-4">
-              "The bespoke interior concepts and custom lighting plan redefined our residence. They truly understand how to craft immersive living spaces."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus4.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover;border-radius:100px !important;">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">Elena Rostova</h6>
-                <span class="text-muted fs-8 text-uppercase">Private Homeowner</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-     
-        <div class="slider-card-item flex-shrink-0" style="width: 320px;">
-          <div class="card light-card h-100 shadow-sm border p-4 d-flex flex-column justify-content-between bg-white">
-            <p class="text-muted small fst-italic mb-4">
-              "The bespoke interior concepts and custom lighting plan redefined our residence. They truly understand how to craft immersive living spaces."
-            </p>
-            <div class="d-flex align-items-center gap-3 pt-3 border-top">
-              <img src="bus4.jpg" class=" grayscale-img" alt="Client" style="width: 70px; height: 70px; object-fit: cover; border-radius:100px !important;">
-              <div>
-                <h6 class="fw-bold text-dark mb-0 fs-6">Elena Rostova</h6>
-                <span class="text-muted fs-8 text-uppercase">Private Homeowner</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  
-	<div class = "gone">
-	
-	<div class="d-flex justify-content-end mt-3 fade-in">
-      <div class="slider-nav-btns d-flex gap-2">
-        <button class="btn square-btn testimonial-prev" id="testimonialPrev" aria-label="Previous Testimonials">&larr;</button>
-        <button class="btn square-btn testimonial-next" id="testimonialNext" aria-label="Next Testimonials">&rarr;</button>
-      </div>
-    
-	</div>
-	
-	</div>
-
-  </div>-->
-
-
-
-
-
-
-<!-- =========================================================
-     SECTION 10: CUSTOM INTERIOR TESTIMONIAL (ISOLATED SLIDER)
-     ========================================================= -->
-
-<div class="pt-4 my-4">
-  <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Corporate partners say about our work</span>
-  <h1 class="fw-bold text-dark text-uppercase mb-3 text-center ">Our Clients Perspectives</h1>
-  <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
-</div>
-
-<hr class="border-1 opacity-25 my-4 ">
-
-<div class="shaw-testimonial-section pb-4 my-3">
-  <div class="container trigger1">
-    
-    <!-- WIDER FULL-WIDTH ROW -->
-    <div class="row justify-content-center">
-      <div class="col-12">
-        
-        <!-- Strict Overflow Hidden Wrapper to Stop Bleeding -->
-        <div class="shaw-carousel-wrapper bg-white p-4 p-lg-5 position-relative shadow-sm" id="shawSwipeContainer" style="overflow: hidden !important; width: 100%;">
-          
-          <!-- Sliding Track Holding All Slides Side-by-Side -->
-          <div class="shaw-track" id="shawTrack">
-
-            <!-- SLIDE 1 -->
-            <div class="shaw-slide shaw-active">
-              <div class="row align-items-center g-4 g-lg-5">
-                <div class="col-lg-6 text-center">
-                  <div class="shaw-img-box shadow-sm">
-                    <img src="fm1.jpg" alt="Vergenoegd Löw Project" class="img-fluid shaw-main-img">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="testimonial-content-wrap ps-lg-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                      <div class="shaw-quote-mark">“</div>
-                      <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                      <div class="shaw-avatar-box flex-shrink-0">
-                        <img src="bus8.jpg" alt="Kate Rogers" class="shaw-avatar-img">
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-0 fs-6">Kate Rogers</h6>
-                        <span class="text-muted small">Graphic Designer</span>
-                      </div>
-                    </div>
-                    <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">AMAZING CUSTOMER SERVICE</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
-                      “I needed a refund for tickets to an event that was changed last minute. I experienced great customer service and the issue was resolved in a timely manner. Thanks to agent Sandra!”
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 2 -->
-            <div class="shaw-slide">
-              <div class="row align-items-center g-4 g-lg-5">
-                <div class="col-lg-6 text-center">
-                  <div class="shaw-img-box shadow-sm">
-                    <img src="mm1.jpg" alt="The Glass Pavilion" class="img-fluid shaw-main-img">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="testimonial-content-wrap ps-lg-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                      <div class="shaw-quote-mark">“</div>
-                      <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                      <div class="shaw-avatar-box flex-shrink-0">
-                        <img src="bus2.jpg" alt="Marcus Vance" class="shaw-avatar-img">
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-0 fs-6">Marcus Vance</h6>
-                        <span class="text-muted small">Lead Architect</span>
-                      </div>
-                    </div>
-                    <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">UNMATCHED STRUCTURAL PRECISION</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
-                      “Their engineering team delivered our corporate headquarters ahead of schedule without cutting a single aesthetic corner.”
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 3 -->
-            <div class="shaw-slide">
-              <div class="row align-items-center g-4 g-lg-5">
-                <div class="col-lg-6 text-center">
-                  <div class="shaw-img-box shadow-sm">
-                    <img src="fm2.jpg" alt="Urban Loft Penthouse" class="img-fluid shaw-main-img">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="testimonial-content-wrap ps-lg-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                      <div class="shaw-quote-mark">“</div>
-                      <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                      <div class="shaw-avatar-box flex-shrink-0">
-                        <img src="bus7.jpg" alt="Elena Rostova" class="shaw-avatar-img">
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-0 fs-6">Elena Rostova</h6>
-                        <span class="text-muted small">Hospitality Director</span>
-                      </div>
-                    </div>
-                    <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">ELEVATED ATMOSPHERIC DESIGN</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
-                      “The custom lighting and stone palette completely transformed our hotel lobby into a recognized destination.”
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- SLIDE 4 -->
-            <div class="shaw-slide">
-              <div class="row align-items-center g-4 g-lg-5">
-                <div class="col-lg-6 text-center">
-                  <div class="shaw-img-box shadow-sm">
-                    <img src="mm2.jpg" alt="Glass Pavilion" class="img-fluid shaw-main-img">
-                  </div>
-                </div>
-                <div class="col-lg-6">
-                  <div class="testimonial-content-wrap ps-lg-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                      <div class="shaw-quote-mark">“</div>
-                      <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
-                    </div>
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                      <div class="shaw-avatar-box flex-shrink-0">
-                        <img src="bus1.jpg" alt="Julian Mercer" class="shaw-avatar-img">
-                      </div>
-                      <div>
-                        <h6 class="fw-bold text-dark mb-0 fs-6">Julian Mercer</h6>
-                        <span class="text-muted small">Estate Developer</span>
-                      </div>
-                    </div>
-                    <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">SEAMLESS MINIMALIST FINISHES</h3>
-                    <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
-                      “Flawless execution on complex glass facade panels. They achieved the exact structural clarity we requested.”
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div><!-- End of shaw-track -->
-
-        </div>
-
-        <!-- OUTSIDE NAVIGATION PILLS -->
-        <div class="mt-4 pt-2 d-none d-sm-flex justify-content-center align-items-center gap-2">
-          <button class="shaw-nav-dot active" data-index="0" aria-label="Slide 1"></button>
-          <button class="shaw-nav-dot" data-index="1" aria-label="Slide 2"></button>
-          <button class="shaw-nav-dot" data-index="2" aria-label="Slide 3"></button>
-          <button class="shaw-nav-dot" data-index="3" aria-label="Slide 4"></button>
-        </div>
-
-      </div>
-    </div>
-
+  <div class="pt-4 my-4">
+    <span class="text-uppercase text-muted small tracking-wider fs-8 fw-bold mb-2 d-block text-center trigger1">Corporate partners say about our work</span>
+    <h1 class="fw-bold text-dark text-uppercase mb-3 text-center">Our Clients Perspectives</h1>
+    <div class="divider-line-dk mx-auto mt-3 mb-5 trigger1"></div>
   </div>
-</div>
 
+  <hr class="border-1 opacity-25 my-4">
 
+  <div class="shaw-testimonial-section pb-4 my-3">
+    <div class="container trigger1">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <div class="shaw-carousel-wrapper bg-white p-4 p-lg-5 position-relative shadow-sm" id="shawSwipeContainer" style="overflow: hidden !important; width: 100%;">
+            <div class="shaw-track" id="shawTrack">
+              <!-- Slide 1 -->
+              <div class="shaw-slide shaw-active">
+                <div class="row align-items-center g-4 g-lg-5">
+                  <div class="col-lg-6 text-center">
+                    <div class="shaw-img-box shadow-sm">
+                      <img src="fm1.jpg" alt="Vergenoegd Löw Project" class="img-fluid shaw-main-img">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="testimonial-content-wrap ps-lg-3">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="shaw-quote-mark">“</div>
+                        <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="shaw-avatar-box flex-shrink-0">
+                          <img src="bus8.jpg" alt="Kate Rogers" class="shaw-avatar-img">
+                        </div>
+                        <div>
+                          <h6 class="fw-bold text-dark mb-0 fs-6">Kate Rogers</h6>
+                          <span class="text-muted small">Graphic Designer</span>
+                        </div>
+                      </div>
+                      <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">AMAZING CUSTOMER SERVICE</h3>
+                      <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
+                        “I needed a refund for tickets to an event that was changed last minute. I experienced great customer service and the issue was resolved in a timely manner. Thanks to agent Sandra!”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <!-- Slide 2 -->
+              <div class="shaw-slide">
+                <div class="row align-items-center g-4 g-lg-5">
+                  <div class="col-lg-6 text-center">
+                    <div class="shaw-img-box shadow-sm">
+                      <img src="mm1.jpg" alt="The Glass Pavilion" class="img-fluid shaw-main-img">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="testimonial-content-wrap ps-lg-3">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="shaw-quote-mark">“</div>
+                        <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="shaw-avatar-box flex-shrink-0">
+                          <img src="bus2.jpg" alt="Marcus Vance" class="shaw-avatar-img">
+                        </div>
+                        <div>
+                          <h6 class="fw-bold text-dark mb-0 fs-6">Marcus Vance</h6>
+                          <span class="text-muted small">Lead Architect</span>
+                        </div>
+                      </div>
+                      <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">UNMATCHED STRUCTURAL PRECISION</h3>
+                      <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
+                        “Their engineering team delivered our corporate headquarters ahead of schedule without cutting a single aesthetic corner.”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-<span class = "gone"><hr class=" border-1 opacity-25 my-4 "></span>
+              <!-- Slide 3 -->
+              <div class="shaw-slide">
+                <div class="row align-items-center g-4 g-lg-5">
+                  <div class="col-lg-6 text-center">
+                    <div class="shaw-img-box shadow-sm">
+                      <img src="fm2.jpg" alt="Urban Loft Penthouse" class="img-fluid shaw-main-img">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="testimonial-content-wrap ps-lg-3">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="shaw-quote-mark">“</div>
+                        <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="shaw-avatar-box flex-shrink-0">
+                          <img src="bus7.jpg" alt="Elena Rostova" class="shaw-avatar-img">
+                        </div>
+                        <div>
+                          <h6 class="fw-bold text-dark mb-0 fs-6">Elena Rostova</h6>
+                          <span class="text-muted small">Hospitality Director</span>
+                        </div>
+                      </div>
+                      <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">ELEVATED ATMOSPHERIC DESIGN</h3>
+                      <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
+                        “The custom lighting and stone palette completely transformed our hotel lobby into a recognized destination.”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+              <!-- Slide 4 -->
+              <div class="shaw-slide">
+                <div class="row align-items-center g-4 g-lg-5">
+                  <div class="col-lg-6 text-center">
+                    <div class="shaw-img-box shadow-sm">
+                      <img src="mm2.jpg" alt="Glass Pavilion" class="img-fluid shaw-main-img">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="testimonial-content-wrap ps-lg-3">
+                      <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="shaw-quote-mark">“</div>
+                        <div class="star-rating text-warning fs-5">★ ★ ★ ★ ★</div>
+                      </div>
+                      <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="shaw-avatar-box flex-shrink-0">
+                          <img src="bus1.jpg" alt="Julian Mercer" class="shaw-avatar-img">
+                        </div>
+                        <div>
+                          <h6 class="fw-bold text-dark mb-0 fs-6">Julian Mercer</h6>
+                          <span class="text-muted small">Estate Developer</span>
+                        </div>
+                      </div>
+                      <h3 class="fw-bold text-dark text-uppercase mb-3 tracking-wider fs-4">SEAMLESS MINIMALIST FINISHES</h3>
+                      <p class="fst-italic text-secondary font-serif mb-0 trigger1" style="font-size: 1.1rem; line-height: 1.75;">
+                        “Flawless execution on complex glass facade panels. They achieved the exact structural clarity we requested.”
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+            </div>
+          </div>
 
+          <!-- OUTSIDE NAVIGATION PILLS -->
+          <div class="mt-4 pt-2 d-none d-sm-flex justify-content-center align-items-center gap-2">
+            <button class="shaw-nav-dot active" data-index="0" aria-label="Slide 1"></button>
+            <button class="shaw-nav-dot" data-index="1" aria-label="Slide 2"></button>
+            <button class="shaw-nav-dot" data-index="2" aria-label="Slide 3"></button>
+            <button class="shaw-nav-dot" data-index="3" aria-label="Slide 4"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <style>
+    .shaw-testimonial-section {
+      overflow: hidden !important;
+      width: 100%;
+    }
+    .shaw-carousel-wrapper {
+      background: #ffffff;
+      border: none;
+      margin: 0;
+      overflow: hidden !important;
+      width: 100%;
+    }
+    .shaw-track {
+      display: flex;
+      width: 100%;
+      will-change: transform;
+      transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .shaw-slide {
+      min-width: 100%;
+      width: 100%;
+      flex-shrink: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    }
+    .shaw-slide.shaw-active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .shaw-img-box {
+      width: 100%;
+      max-height: 340px;
+      overflow: hidden;
+      border-radius: 0;
+      background: #f8f9fa;
+    }
+    .shaw-main-img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      filter: grayscale(50%);
+    }
+    .shaw-avatar-box {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #e0e0e0;
+    }
+    .shaw-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(70%) contrast(105%);
+    }
+    .shaw-quote-mark {
+      font-size: 4.3rem;
+      line-height: 1;
+      font-family: Georgia, serif;
+      color: #8c8c8c;
+    }
+    .shaw-nav-dot {
+      width: 35px;
+      height: 4px;
+      background-color: #d1d1d1;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease, width 0.3s ease;
+    }
+    .shaw-nav-dot.active {
+      background-color: #3a3a3a;
+      width: 45px;
+    }
+  </style>
 
-
-<style>
-  /* --- ISOLATED SLIDING CAROUSEL STYLES --- */
-  .shaw-testimonial-section {
-    overflow: hidden !important;
-    width: 100%;
-  }
-
-  .shaw-carousel-wrapper {
-    background: #ffffff;
-    border: none;
-    margin: 0;
-    overflow: hidden !important;
-    width: 100%;
-  }
-
-  /* Horizontal Flex Track */
-  .shaw-track {
-    display: flex;
-    width: 100%;
-    will-change: transform;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  /* Each slide takes exactly 100% width, non-shrinking, hidden when inactive */
-  .shaw-slide {
-    min-width: 100%;
-    width: 100%;
-    flex-shrink: 0;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-  }
-  
-  .shaw-slide.shaw-active {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .shaw-font-serif { 
-    font-family: Georgia, 'Times New Roman', Times, serif; 
-  }
-
-  /* Interior Photo Box */
-  .shaw-img-box {
-    width: 100%;
-    max-height: 340px;
-    overflow: hidden;
-    border-radius: 0;
-    background: #f8f9fa;
-  }
-  .shaw-main-img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    filter: grayscale(50%);
-  }
-
-  /* Round Avatar Portrait */
-  .shaw-avatar-box {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    overflow: hidden;
-    background: #e0e0e0;
-  }
-  .shaw-avatar-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: grayscale(70%) contrast(105%);
-  }
-
-  .shaw-quote-mark {
-    font-size: 4.3rem;
-    line-height: 1;
-    font-family: Georgia, serif;
-    color: #8c8c8c;
-  }
-
-  /* Navigation Dots */
-  .shaw-nav-dot {
-    width: 35px;
-    height: 4px;
-    background-color: #d1d1d1;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease, width 0.3s ease;
-  }
-  .shaw-nav-dot:hover { 
-    background-color: #888888; 
-  }
-  .shaw-nav-dot.active {
-    background-color: #3a3a3a;
-    width: 45px;
-  }
-  
- @media (max-width: 576px)  {
-
-.shaw-main-img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    filter: grayscale(50%);
-  }
-
-
-
-
-} 
-  
-  
-  
-  
-  
-  
-  
-  
-</style>
-
-<script>
-  (function() {
-    document.addEventListener("DOMContentLoaded", function() {
-      const track = document.getElementById('shawTrack');
-      const slides = document.querySelectorAll('.shaw-slide');
-      const dots = document.querySelectorAll('.shaw-nav-dot');
-      const container = document.getElementById('shawSwipeContainer');
-      if (!track || !slides.length || !dots.length) return;
-
-      let currentIndex = 0;
-      let timer = null;
-
-      function updateSlide(index) {
-        currentIndex = (index + slides.length) % slides.length;
-        
-        // Glide the track horizontally
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-        slides.forEach((slide, i) => {
-          slide.classList.toggle('shaw-active', i === currentIndex);
-        });
-
-        dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentIndex);
-        });
-
-        restartTimer();
-      }
-
-      function nextSlide() {
-        updateSlide(currentIndex + 1);
-      }
-
-      function prevSlide() {
-        updateSlide(currentIndex - 1);
-      }
-
-      function restartTimer() {
-        if (timer) clearInterval(timer);
-        timer = setInterval(nextSlide, 6000);
-      }
-
-      // Click event for navigation dots
-      dots.forEach((dot) => {
-        dot.addEventListener('click', function() {
-          const targetIndex = parseInt(this.getAttribute('data-index'), 10);
-          updateSlide(targetIndex);
-        });
-      });
-
-      // Mobile Touch Swipe Support
-      if (container) {
-        let touchStartX = 0;
-        let touchStartY = 0;
-
-        container.addEventListener('touchstart', (e) => {
-          touchStartX = e.changedTouches[0].screenX;
-          touchStartY = e.changedTouches[0].screenY;
-        }, { passive: true });
-
-        container.addEventListener('touchend', (e) => {
-          let touchEndX = e.changedTouches[0].screenX;
-          let touchEndY = e.changedTouches[0].screenY;
-          let diffX = touchStartX - touchEndX;
-          let diffY = Math.abs(touchStartY - touchEndY);
-
-          if (Math.abs(diffX) > 50 && diffY < 80) {
-            if (diffX > 0) {
-              nextSlide(); // Swiped Left -> Next Slide
-            } else {
-              prevSlide(); // Swiped Right -> Previous Slide
-            }
-          }
-        }, { passive: true });
-      }
-
-      restartTimer();
-    });
-  })();
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <!-- =========================================================
+  <!-- =========================================================
        SECTION 11: EXTENDED FOOTER & INQUIRY FORM
-       Matches JS: Script 5 (Scroll Fade-In Effect Observer)
        ========================================================= -->
   <div class="overflow-hidden">
     <footer class="arrcc-footer text-white py-5">
       <div class="container">
         <div class="row g-4 g-lg-5">
           
-          <!-- LEFT COLUMN: Brand, Addresses, Navigation Links & Social Media -->
-          <div class="col-lg-6 pe-lg-5 text-center text-lg-start gone">
-            
+          <!-- LEFT COLUMN: Brand, Addresses, Quick Navs & Social Media -->
+          <div class="col-lg-6 pe-lg-5 text-center text-lg-start">
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
               <img src="logo-1.png" class="foot-logo" alt="Shaw Interiors Logo">
             </div>
@@ -2007,7 +1199,7 @@
               </div>
             </div>
 
-            <!-- Flat White Square Social Icons -->
+            <!-- Social Icons -->
             <div class="pt-2">
               <h6 class="text-white fs-8 text-uppercase fw-bold mb-3 tracking-wider mt-4">Connect with us</h6>
               <div class="social-icons-wrapper d-flex justify-content-center justify-content-lg-start gap-2">
@@ -2025,10 +1217,9 @@
                 </a>
               </div>
             </div>
-
           </div>
 
-           <!-- RIGHT COLUMN: High-Contrast Contact Form -->
+          <!-- RIGHT COLUMN: High-Contrast Contact Form -->
           <div class="col-lg-6 ps-lg-4 text-center text-lg-start">
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start" style="min-height: 38px;">
               <div class="text-uppercase fw-bold text-white mb-0 fs-2 mt-2 mt-lg-4">Consult call back</div>
@@ -2036,7 +1227,6 @@
             
             <div class="text-white-50 mb-4 mt-3 mx-auto mx-lg-0" style="max-width: 540px; font-size:0.93em;">
               Prefer a direct conversation? Leave your details below and a senior SHAW Interiors design consultant will call you back to discuss your spatial parameters.
- 
             </div>
 
             <div class="w-100">
@@ -2084,193 +1274,177 @@
       </div>
     </div>
   </div>
-  <!-- =========================================================
-       FLOATING BACK TO TOP BUTTON
-       Matches JS: Script 5 (Back to Top Button Functionality)
-       ========================================================= -->
+
+  <!-- BACK TO TOP BUTTON -->
   <button id="backToTopBtn" aria-label="Back to Top" class="btn btn-dark square-btn position-fixed shadow">
     &uarr;
   </button>
 
-
   <!-- =========================================================
        JAVASCRIPT LOGIC & COMPONENT CONTROLLERS
        ========================================================= -->
-
-  <!-- SCRIPT 1: Featured Projects (Image Left, Text Right) - Controls Section 7 -->
-  
-   <script src="Featured Projects Image Left Text Right.js"></script>
-  
-  
-
-  <!-- SCRIPT 2: Featured Projects (Text Left, Image Right) - Controls Section 8 -->
-  
-  
+  <script src="Featured Projects Image Left Text Right.js"></script>
   <script src="Featured Projects Image right Text left.js"></script>
-  
-  
-  
-  
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Wait a brief moment for Dual.js to initialize
-    setTimeout(() => {
-      const wrapper = document.querySelector('.services-carousel-wrapper');
-      const track = document.getElementById('desktopServicesTrack');
-      
-      if (wrapper && track) {
-        // Forcefully toggle a data attribute or class that external scripts often listen for
-        wrapper.addEventListener('mouseenter', () => {
-          wrapper.classList.add('paused');
-          track.classList.add('paused');
-          // If the script checks a global paused flag, setting this helps
-          window.isShawServicesPaused = true;
-        });
-
-        wrapper.addEventListener('mouseleave', () => {
-          wrapper.classList.remove('paused');
-          track.classList.remove('paused');
-          window.isShawServicesPaused = false;
-        });
-      }
-    }, 300);
-  });
-</script>
-  
-  
-  
-  
-  
-  
-  
-  
-
-  <!-- SCRIPT 3: Services Section 9-Card Timed Carousel (with Hover Pause) - Controls Section 5 -->
-  
-  
   <script src="Shaw Services Dual.js"></script>
-  
-  
-
-  <!-- SCRIPT 4: Client Testimonials Auto-Scroll (with Hover Pause) - Controls Section 10 -->
- 
- <script src="client test ticker.js"></script>
-
-  
- <!-- SCRIPT 5: Floating Back to Top Button Controller - Controls Floating Back-to-Top Button -->
-  
-  
+  <script src="client test ticker.js"></script>
   <script src="back to top.js"></script>
-  
-
-  <!-- SCRIPT 6: Global Scroll Intersection Observer (Fade-In Reveal) - Controls Sections 3, 4, 5, 7, 8, 9, 10, 11 -->
-  
   <script src="fade in scroll.js"></script>
-
-  <!-- SCRIPT 7: Native JavaScript Parallax Script - Controls Section 3 Image -->
-  
   <script src="image parallax.js"></script>
-  
-
-  <!-- SCRIPT 8: Desktop Header Auto-Hide / Scroll Peek Script - Controls Section 1 Navigation -->
-  
   <script src="desktop header peek.js"></script>
-  
-  
-   <!-- touc gesture -->
-  
- 
+
+  <!-- Mobile Touch Swipe Handler Script -->
   <script>
- document.addEventListener("DOMContentLoaded", () => {
-  function setupCleanSwipe(sliderId, prevBtnSelector, nextBtnSelector) {
-    const sliderEl = document.getElementById(sliderId);
-    const prevBtn = document.querySelector(prevBtnSelector);
-    const nextBtn = document.querySelector(nextBtnSelector);
-    
-    if (!sliderEl || !prevBtn || !nextBtn) return;
+    document.addEventListener("DOMContentLoaded", () => {
+      function setupCleanSwipe(sliderId, prevBtnSelector, nextBtnSelector) {
+        const sliderEl = document.getElementById(sliderId);
+        const prevBtn = document.querySelector(prevBtnSelector);
+        const nextBtn = document.querySelector(nextBtnSelector);
+        if (!sliderEl || !prevBtn || !nextBtn) return;
 
-    // Hide arrow buttons on mobile screens (< 768px wide)
-    const navContainer = prevBtn.closest(".d-flex.justify-content-end") || prevBtn.parentElement.parentElement;
-    if (navContainer && window.innerWidth < 576) {
-      navContainer.style.display = "none";
-    }
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let isScrolling = false;
 
-    let touchStartX = 0;
-    let touchStartY = 0;
-    let isScrolling = false;
+        sliderEl.addEventListener("touchstart", (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          touchStartY = e.changedTouches[0].screenY;
+          isScrolling = false;
+        }, { passive: true });
 
-    sliderEl.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-      isScrolling = false; // Reset scroll flag on new touch
-    }, { passive: true });
+        sliderEl.addEventListener("touchmove", (e) => {
+          if (isScrolling) return;
+          let diffX = Math.abs(e.changedTouches[0].screenX - touchStartX);
+          let diffY = Math.abs(e.changedTouches[0].screenY - touchStartY);
+          if (diffY > diffX && diffY > 10) {
+            isScrolling = true;
+          }
+        }, { passive: true });
 
-    // Detect if user is scrolling vertically early
-    sliderEl.addEventListener("touchmove", (e) => {
-      if (isScrolling) return;
-      
-      let touchCurrentX = e.changedTouches[0].screenX;
-      let touchCurrentY = e.changedTouches[0].screenY;
-      
-      let diffX = Math.abs(touchCurrentX - touchStartX);
-      let diffY = Math.abs(touchCurrentY - touchStartY);
-
-      // If vertical movement starts dominating early, lock it out as a scroll
-      if (diffY > diffX && diffY > 10) {
-        isScrolling = true;
+        sliderEl.addEventListener("touchend", (e) => {
+          if (isScrolling) return;
+          let diffX = touchStartX - e.changedTouches[0].screenX;
+          if (Math.abs(diffX) > 50) {
+            if (diffX > 0) nextBtn.click();
+            else prevBtn.click();
+          }
+        }, { passive: true });
       }
-    }, { passive: true });
 
-    sliderEl.addEventListener("touchend", (e) => {
-      // If it was identified as a vertical scroll, ignore completely
-      if (isScrolling) return;
-
-      let touchEndX = e.changedTouches[0].screenX;
-      let diffX = touchStartX - touchEndX;
-
-      // Only trigger if it's a deliberate horizontal swipe (> 50px)
-      if (Math.abs(diffX) > 50) {
-        if (diffX > 0) {
-          nextBtn.click(); // Swiped Left -> Next Slide
-        } else {
-          prevBtn.click(); // Swiped Right -> Previous Slide
-        }
-      }
-    }, { passive: true });
-  }
-
-  // Apply to your two sliders
-  setupCleanSwipe("imageLeftSlider", ".imgleft-prev", ".imgleft-next");
-  setupCleanSwipe("textLeftSlider", ".textleft-prev", ".textleft-next");
-});
-</script>
-  
- 
-<script>
-  // Nuke mobile card hover zoom via JS on touch devices
-  if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
-    document.querySelectorAll('.card img').forEach(img => {
-      img.style.transition = 'none';
-      img.addEventListener('touchstart', () => {
-        img.style.transform = 'none';
-      }, { passive: true });
+      setupCleanSwipe("imageLeftSlider", ".imgleft-prev", ".imgleft-next");
+      setupCleanSwipe("textLeftSlider", ".textleft-prev", ".textleft-next");
     });
-  }
-</script>
- 
+  </script>
 
+  <!-- Testimonial Slider Interactive Script -->
+  <script>
+    (function() {
+      document.addEventListener("DOMContentLoaded", function() {
+        const track = document.getElementById('shawTrack');
+        const slides = document.querySelectorAll('.shaw-slide');
+        const dots = document.querySelectorAll('.shaw-nav-dot');
+        const container = document.getElementById('shawSwipeContainer');
+        if (!track || !slides.length || !dots.length) return;
 
+        let currentIndex = 0;
+        let timer = null;
 
+        function updateSlide(index) {
+          currentIndex = (index + slides.length) % slides.length;
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
+          slides.forEach((slide, i) => {
+            slide.classList.toggle('shaw-active', i === currentIndex);
+          });
 
-<!-- GSAP ScrollTrigger Initialization Script -->
+          dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+          });
+
+          restartTimer();
+        }
+
+        function nextSlide() { updateSlide(currentIndex + 1); }
+        function prevSlide() { updateSlide(currentIndex - 1); }
+
+        function restartTimer() {
+          if (timer) clearInterval(timer);
+          timer = setInterval(nextSlide, 6000);
+        }
+
+        dots.forEach((dot) => {
+          dot.addEventListener('click', function() {
+            updateSlide(parseInt(this.getAttribute('data-index'), 10));
+          });
+        });
+
+        if (container) {
+          let touchStartX = 0;
+          let touchStartY = 0;
+          container.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+            touchStartY = e.changedTouches[0].screenY;
+          }, { passive: true });
+
+          container.addEventListener('touchend', (e) => {
+            let diffX = touchStartX - e.changedTouches[0].screenX;
+            let diffY = Math.abs(touchStartY - e.changedTouches[0].screenY);
+            if (Math.abs(diffX) > 50 && diffY < 80) {
+              if (diffX > 0) nextSlide();
+              else prevSlide();
+            }
+          }, { passive: true });
+        }
+
+        restartTimer();
+      });
+    })();
+  </script>
+
+  <!-- Responsive GSAP MatchMedia Core Script -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const revealBoxes = document.querySelectorAll('.gsap-reveal-box');
+      const track = document.getElementById("gsapServicesTrack");
+      const section = document.getElementById("gsapServicesSection");
 
-      revealBoxes.forEach((box) => {
+      if (track && section) {
+        // Use GSAP matchMedia to dynamically handle Desktop vs Mobile behavior cleanly
+        let mm = gsap.matchMedia();
+
+        // Desktop and tablet landscape (screens >= 576px)
+        mm.add("(min-width: 576px)", () => {
+          gsap.set(track, { force3D: true, transform: "translate3d(0,0,0)" });
+          const getScrollAmount = () => -(track.scrollWidth - window.innerWidth + 80);
+
+          let tween = gsap.to(track, {
+            x: getScrollAmount,
+            ease: "none",
+            scrollTrigger: {
+              trigger: section,
+              pin: true,
+              pinSpacing: true,
+              scrub: 0.5,
+              start: "top top",
+              end: () => `+=${track.scrollWidth}`,
+              invalidateOnRefresh: true,
+              anticipatePin: 1
+            }
+          });
+
+          return () => {
+            tween.kill();
+          };
+        });
+
+        // Mobile screens (< 576px) - Let it naturally respond as a horizontal touch-swipe track
+        mm.add("(max-width: 575.98px)", () => {
+          gsap.set(track, { clearProps: "all" });
+        });
+      }
+
+      // Image Reveal Animations
+      document.querySelectorAll('.gsap-reveal-box').forEach((box) => {
         const img = box.querySelector('.gsap-reveal-img');
         if (!img) return;
 
@@ -2286,67 +1460,36 @@
           }
         });
       });
+
+      // Text Stagger Animations
+      document.querySelectorAll('h1, h3, .trigger1').forEach((el) => {
+        gsap.fromTo(el, 
+          { opacity: 0, y: 35 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: el,
+              start: "top 88%",
+              toggleActions: "play none none reverse"
+            }
+          }
+        );
+      });
+
+      ScrollTrigger.refresh();
+    });
+
+    window.addEventListener("load", () => {
+      if (typeof ScrollTrigger !== 'undefined') {
+        ScrollTrigger.refresh();
+      }
     });
   </script>
-  
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Target titles, quotes, and badges with .fade-in or custom text classes
-    const animateTextElements = document.querySelectorAll('h1, h3, .trigger1');
-
-    animateTextElements.forEach((el) => {
-      // Create smooth upward fade-and-slide stagger
-      gsap.fromTo(el, 
-        { 
-          opacity: 0, 
-          y: 35 
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 88%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-    });
-  });
-</script>  
-
-
-
-<!-- GSAP refresh Script -->
-<script>
-
-window.addEventListener("load", () => {
-  if (typeof ScrollTrigger !== 'undefined') {
-    ScrollTrigger.refresh();
-  }
-});
-
-
-
-</script>
-
-
-
-
-
-
-
-
-
-
-
 
   <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
