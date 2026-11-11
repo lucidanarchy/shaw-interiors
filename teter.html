@@ -1,0 +1,224 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shaw Interiors</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f7f4ef;
+    overflow-x:hidden;
+}
+
+.hero{
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-image{
+    position:absolute;
+    inset:0;
+    background:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=2000') center center/cover;
+    animation:zoomHero 12s ease forwards;
+}
+
+.hero-image::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+}
+
+@keyframes zoomHero{
+    from{
+        transform:scale(1.08);
+    }
+    to{
+        transform:scale(1);
+    }
+}
+
+.nav{
+    position:absolute;
+    top:40px;
+    left:60px;
+    right:60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:20;
+}
+
+.logo{
+    color:white;
+    font-size:1rem;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.nav-links{
+    display:flex;
+    gap:40px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-size:.8rem;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.content{
+    position:relative;
+    z-index:10;
+    height:100%;
+    display:flex;
+    align-items:center;
+    padding-left:8vw;
+}
+
+.text-wrapper{
+    max-width:900px;
+}
+
+.kicker{
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    margin-bottom:20px;
+    font-size:.8rem;
+}
+
+h1{
+    font-family:'Cormorant Garamond',serif;
+    color:white;
+    font-weight:300;
+    line-height:.9;
+    font-size:clamp(5rem,10vw,11rem);
+    margin-bottom:25px;
+}
+
+.subtitle{
+    color:rgba(255,255,255,.85);
+    font-size:1.1rem;
+    max-width:500px;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+.btn{
+    display:inline-block;
+    padding:18px 40px;
+    background:white;
+    color:black;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:.75rem;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.scroll{
+    position:absolute;
+    bottom:40px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    letter-spacing:3px;
+    font-size:.7rem;
+    text-transform:uppercase;
+    z-index:20;
+}
+
+@media(max-width:768px){
+
+    .nav{
+        left:25px;
+        right:25px;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    h1{
+        font-size:4.5rem;
+    }
+
+    .content{
+        padding:35px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<section class="hero">
+
+    <div class="hero-image"></div>
+
+    <nav class="nav">
+        <div class="logo">SHAW INTERIORS</div>
+
+        <div class="nav-links">
+            <a href="#">Projects</a>
+            <a href="#">Services</a>
+            <a href="#">Studio</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+    <div class="content">
+
+        <div class="text-wrapper">
+
+            <div class="kicker">
+                Cape Town Interior Architecture
+            </div>
+
+            <h1>
+                Material.<br>
+                Light.<br>
+                Atmosphere.
+            </h1>
+
+            <p class="subtitle">
+                Designing refined residential and commercial spaces
+                through thoughtful architecture, timeless materials,
+                and carefully curated interiors.
+            </p>
+
+            <a href="#" class="btn">
+                View Projects
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="scroll">
+        Scroll
+    </div>
+
+</section>
+
+</body>
+</html>

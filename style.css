@@ -1067,6 +1067,14 @@ max-width: 576px;
   display: inline-block;}
   
   
+   .carousel-caption .btn-shaw-outline,
+  a.btn-shaw-outline {
+    font-size: 10px !important;
+    padding: 14px 14px !important;
+    margin-top: 1.2rem !important;
+  }
+  
+  
 }
 
 
