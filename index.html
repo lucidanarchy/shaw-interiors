@@ -99,7 +99,7 @@
     }
 
     .scrolly-card-item {
-      width: 82vw;
+      width: 320px;
       max-width: 320px;
       transform: translateZ(0);
     }
@@ -149,6 +149,51 @@
       }
     }
   </style>
+  
+  
+  
+  
+  <style>
+  @media (max-width: 575.98px) {
+    /* Hide arrows and indicator dots */
+    .full-width-carousel .carousel-control-prev,
+    .full-width-carousel .carousel-control-next,
+    .full-width-carousel .carousel-indicators {
+      display: none !important;
+    }
+	
+	
+	.full-width-carousel .carousel-caption-glass {
+      left: 10px !important;
+      right: 10px !important;
+      width: auto !important;
+      max-width: 90% !important;
+    }
+	
+	
+	
+  }
+</style>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 </head>
 
 <body>
@@ -358,10 +403,30 @@
     </div>
   </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- =========================================================
        SECTION 3: STORY & PARALLAX PULL-QUOTE
        ========================================================= -->
-  <div class="container my-4 py-4 pt-5 pb-5">
+  <div class="container my-4 py-sm-4 pt-2 pt-sm-5 pb-5">
     <div class="row align-items-center justify-content-center g-4 g-lg-5">
       <div class="col-lg-6 col-md-6 gsap-reveal-box">
         <img src="build57.jpg" style="max-width:100%;" class="gsap-reveal-img" alt="Parallax Interior Showcase"> 
@@ -395,112 +460,228 @@
       <div class="gsap-horizontal-track d-flex gap-2 gap-sm-2 px-3 px-sm-4" id="gsapServicesTrack">
 
         <!-- Card 1 -->
-        <div class="scrolly-card-item flex-shrink-0">
-          <div class="card  h-100  overflow-hidden border-0">
-            <a href="services3.html#service-01" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build35.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Residential Design">
-              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase text-center mt-2 mb-2 tracking-wider">01. Residential Interior</h5>
-				
-                <p class="card-text text-muted text-justify mt-3 pb-4 small flex-grow-1 mb-2">Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow & natural light.</p>
-              <div class="divider-line-dk mx-auto  mb-2"></div>
-			  
-			  </div>
-            </a>
-          </div>
+       <!-- Card 1 -->
+<div class="scrolly-card-item flex-shrink-0">
+  <div class="card h-100 overflow-hidden border-0">
+    <a href="services3.html#service-01" class="text-decoration-none d-block h-100 d-flex flex-column">
+      
+      <!-- Image Wrapper with Hover Overlay -->
+      <div class="position-relative overflow-hidden">
+        <img src="build35.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Residential Design">
+        
+        <!-- Hover Overlay Content -->
+        <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+          <span class="fs-1 fw-light text-white d-block mb-2">01</span>
+          <h5 class=" text-uppercase  fs-4 tracking-wider text-white mb-3">Residential Interior</h5>
+		  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">design tailored for luxury</span>
+          
         </div>
+      </div>
 
-        <!-- Card 2 -->
+      <!-- Bottom Card Body (Stays intact below) -->
+      <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+        <h5 class=" text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
+          <span class="fs-2 fw-light text-muted ">01</span> Residential Interior
+        </h5>
+        <p class="card-text text-muted text-justify mt-3 pb-sm-3 small flex-grow-1 ">
+          Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow &amp; natural light.
+        </p>
+        <div class="divider-line-dk mx-auto mb-2"></div>
+      </div>
+      
+    </a>
+  </div>
+</div>
+
+       
+	<!-- Card 2 -->
         <div class="scrolly-card-item flex-shrink-0">
-          <div class="card  h-100 overflow-hidden border-0">
+          <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-02" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build46.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Commercial Interior">
+              
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build46.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Commercial Interior">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-2">02</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Commercial Interior</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Curated design solutions</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 text-center mt-2 tracking-wider">02. Commercial Interior</h5>
-                <p class="card-text text-muted small text-justify pb-4 mt-3 flex-grow-1 mb-2">Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces.</p>
-              <div class="divider-line-dk mx-auto  mb-2"></div>
-			  
-			  </div>
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">02</span> Commercial Interior
+                </h5>
+                <p class="card-text text-muted small text-justify  mt-3 flex-grow-1 ">
+                  Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
         </div>
 
         <!-- Card 3 -->
         <div class="scrolly-card-item flex-shrink-0">
-          <div class="card  h-100 overflow-hidden border-0">
+          <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-03" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build74.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Corporate Interior">
+              
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build74.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Corporate Interior">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-3">03</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Corporate Interior</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Elevated professional environments</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 text-center mt-2 tracking-wider">03. Corporate Interior</h5>
-                <p class="card-text text-muted text-justify mt-3 pb-4 small flex-grow-1 mb-2">Elevated professional environments designed to inspire productivity, balancing executive sophistication with functionality.</p>
-              <div class="divider-line-dk mx-auto  mb-2"></div>
-			  
-			  </div>
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">03</span> Corporate Interior
+                </h5>
+                <p class="card-text text-muted text-justify mt-3  small flex-grow-1 ">
+                  Elevated professional environments designed to inspire productivity, balancing executive sophistication with functionality.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
         </div>
 
         <!-- Card 4 -->
         <div class="scrolly-card-item flex-shrink-0">
-          <div class="card  h-100  overflow-hidden border-0">
+          <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-04" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build70.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Custom Kitchen Design">
-              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 mt-2 text-center tracking-wider">04. Custom Kitchen Design</h5>
-                <p class="card-text text-muted text-justify mt-3 pb-4 small flex-grow-1 mb-2">Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry & premium stone surfaces.</p>
               
-			  <div class="divider-line-dk mx-auto  mb-2"></div>
-			  
-			  </div>
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build70.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Custom Kitchen Design">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-2">04</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Custom Kitchen Design</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Architectural kitchen concepts</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">04</span> Custom Kitchen Design
+                </h5>
+                <p class="card-text text-muted text-justify mt-3 small flex-grow-1 ">
+                  Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry &amp; premium stone surfaces.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
         </div>
 
         <!-- Card 5 -->
         <div class="scrolly-card-item flex-shrink-0">
-          <div class="card  h-100  overflow-hidden border-0">
+          <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-05" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build41.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Master Suite Design">
-              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 mt-2 text-center tracking-wider">05. Master Suite Design</h5>
-                <p class="card-text text-muted small text-justify mt-3 pb-4 flex-grow-1 mb-2">Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.</p>
               
-			  <div class="divider-line-dk mx-auto mb-2"></div>
-			  
-			  </div>
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build41.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Master Suite Design">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-2">05</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Master Suite Design</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Sanctuary-like private quarters</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2  tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">05</span> Master Suite Design
+                </h5>
+                <p class="card-text text-muted small text-justify mt-3  flex-grow-1 ">
+                  Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
         </div>
 
         <!-- Card 6 -->
         <div class="scrolly-card-item flex-shrink-0">
-          <div class="card  h-100  overflow-hidden border-0">
+          <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-06" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build73.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Architectural Millwork">
-              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 mt-2 text-center tracking-wider">06. Architectural Millwork</h5>
-                <p class="card-text text-muted small text-justify mt-3 pb-4 flex-grow-1 mb-2">Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.</p>
               
-			  <div class="divider-line-dk mx-auto mb-2"></div>
-			  
-			  </div>
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build73.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Architectural Millwork">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-2">06</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Architectural Millwork</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Handcrafted architectural woodwork</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2  tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">06</span> Architectural Millwork
+                </h5>
+                <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
+                  Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
         </div>
 
         <!-- Card 7 -->
         <div class="scrolly-card-item flex-shrink-0">
-          <div class="card  h-100  overflow-hidden border-0">
+          <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-07" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build62.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Atmospheric Lighting">
-              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 mt-2 text-center tracking-wider">07. Atmospheric Lighting</h5>
-                <p class="card-text text-muted small text-justify mt-3 pb-4 flex-grow-1 mb-2">Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and mood.</p>
               
-			  <div class="divider-line-dk mx-auto  mb-2"></div>
-			  
-			  
-			  </div>
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build62.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Atmospheric Lighting">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-2">07</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Atmospheric Lighting</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">lighting designed to accentuate</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">07</span> Atmospheric Lighting
+                </h5>
+                <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
+                  Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and mood.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
         </div>
@@ -509,15 +690,30 @@
         <div class="scrolly-card-item flex-shrink-0">
           <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-08" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build54.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Spa & Bath Design">
+              
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build54.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Spa &amp; Bath Design">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-2">08</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Spa &amp; Bath Design</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Spa-inspired wellness spaces</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 mt-2 text-center tracking-wider">08. Spa & Bath Design</h5>
-                <p class="card-text text-muted small text-justify mt-3 flex-grow-1 pb-4 mb-2">Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, water elements.</p>
-             
-
-<div class="divider-line-dk mx-auto mb-2"></div>
-
-			 </div>
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">08</span> Spa &amp; Bath Design
+                </h5>
+                <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
+                  Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, water elements.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
         </div>
@@ -526,47 +722,102 @@
         <div class="scrolly-card-item flex-shrink-0">
           <div class="card h-100 overflow-hidden border-0">
             <a href="services3.html#service-09" class="text-decoration-none d-block h-100 d-flex flex-column">
-              <img src="build48.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Material & Texture Design">
-              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="card-title fs-5 fw-bold text-dark text-uppercase mb-2 mt-2 text-center tracking-wider">09. Material & Texture Design</h5>
-                <p class="card-text text-muted small flex-grow-1 mt-3 pb-4 mb-2">Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth.</p>
               
-			  <div class="divider-line-dk mx-auto  mb-2"></div>
-			  
-			  </div>
+              <!-- Image Wrapper with Hover Overlay -->
+              <div class="position-relative overflow-hidden">
+                <img src="build48.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Material &amp; Texture Design">
+                
+                <!-- Hover Overlay Content -->
+                <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
+                  <span class="fs-1 fw-light text-white d-block mb-2">09</span>
+                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Material &amp; Texture Design</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">curation of tactile palettes</span>
+                </div>
+              </div>
+
+              <!-- Bottom Card Body (Stays intact below) -->
+              <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
+                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 tracking-wider">
+                  <span class="fs-2 fw-light text-muted trigger1">09</span> Material &amp; Texture Design
+                </h5>
+                <p class="card-text text-muted small flex-grow-1 mt-3 ">
+                  Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth.
+                </p>
+                <div class="divider-line-dk mx-auto mb-2"></div>
+              </div>
+              
             </a>
           </div>
-        </div>
+        </div>   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 
       </div>
     </div>
   </div>
 
   <style>
-    .card, .card img, .light-card {
-      border-radius: 0 !important;
+  /* Base Reset */
+  .card, .card img, .light-card {
+    border-radius: 0 !important;
+  }
+
+  /* Image Scale */
+  .service-card-img {
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* Overlay Box (Matches Image Bounds Exactly) */
+  .img-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 15, 15, 0.55);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+
+  /* Bottom Card Body Divider */
+  .divider-line-dk {
+    transition: width 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* Desktop Hover State */
+  @media (min-width: 576px) {
+    .scrolly-card-item .card:hover .service-card-img {
+      transform: scale(1.05);
     }
 
-    .card img {
-      transform: scale(1);
+    .scrolly-card-item .card:hover .img-hover-overlay {
+      opacity: 1;
     }
 
-    @media (min-width: 768px) {
-      .card img {
-        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-      }
-      .card:hover img {
-        transform: scale(1.05);
-      }
+   
+    .scrolly-card-item .card:hover .divider-line-dk {
+      width: 20%;
     }
+  }
 
-    @media (hover: none) {
-      .card img {
-        pointer-events: none !important;
-        transform: none !important;
-      }
+  /* Mobile Touch Guard */
+  @media (hover: none) {
+    .img-hover-overlay {
+      display: none !important;
     }
-  </style>
+    .service-card-img {
+      transform: none !important;
+    }
+  }
+</style>
   
   
   
@@ -600,8 +851,8 @@
   <section class="excellence-section py-1 text-white">
     <div class="container py-4 ">
       <div class="text-center mb-5 mt-5">
-        <span class="text-uppercase text-white-50 fs-8 tracking-widest d-block mb-3 trigger1">Our Commitment</span>
-        <h2 class="fw-bold text-uppercase tracking-wider fs-2 text-white trigger1">We Pride Ourselves On Excellence</h2>
+        <span class="text-uppercase text-white-50 fs-8 tracking-widest  d-block mb-3 trigger1">Our Commitment</span>
+        <h2 class="fw-bold text-uppercase tracking-wider fs-2 text-white lh-base trigger1">We Pride Ourselves On Excellence</h2>
         <div class="divider-line mx-auto mt-4 trigger1"></div>
       </div>
 
@@ -612,7 +863,7 @@
               <div class="icon-inline flex-shrink-0">
                 <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"></path></svg>
               </div>
-              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Proven Track Record</h4>
+              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 lh-base text-white">Proven Track Record</h4>
             </div>
             <p class="text-white-50 small lh-lg mb-0 trigger1">Backed by years of multi-disciplinary interior design expertise, matching diverse creative perspectives to your exact lifestyle desires.</p>
           </div>
@@ -624,7 +875,7 @@
               <div class="icon-inline flex-shrink-0">
                 <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"></path></svg>
               </div>
-              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Detail-Oriented Planning</h4>
+              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 lh-base text-white">Detail-Oriented Planning</h4>
             </div>
             <p class="text-white-50 small lh-lg mb-0 trigger1">Meticulously managing every stage—from precise spatial and furniture layouts to seamless procurement, finishes</p>
           </div>
@@ -636,7 +887,7 @@
               <div class="icon-inline flex-shrink-0">
                 <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.25" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m9-2.25v2.25m-10.5-6.75h12m-13.5 3.75h15m-14.25-9.75h13.5a1.5 1.5 0 011.5 1.5v12.75a1.5 1.5 0 01-1.5 1.5h-13.5a1.5 1.5 0 01-1.5-1.5V5.25a1.5 1.5 0 011.5-1.5z"></path></svg>
               </div>
-              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 text-white">Intentional Design</h4>
+              <h4 class="text-uppercase fs-6 fw-bold tracking-wider mb-0 lh-base text-white">Intentional Design</h4>
             </div>
             <p class="text-white-50 small lh-lg mb-0 trigger1">Rooted in a signature aesthetic favoring modern comfort over fleeting trends, curating spaces solely built around your unique story.</p>
           </div>
@@ -764,10 +1015,7 @@
     </span>
   </div>
 
-  <!-- Swipe hint -->
-  <div class="d-block d-sm-none text-center py-2 text-muted trigger1 mt-4" style="font-size: 9.5px; letter-spacing: 0.25em;">
-    &larr; SWIPE TO EXPLORE &rarr;
-  </div>
+  
 
 
 
@@ -787,7 +1035,6 @@
       </div>
     </div>
   </div>  
-
 
 
 
