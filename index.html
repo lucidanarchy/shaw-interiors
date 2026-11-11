@@ -154,25 +154,128 @@
   
   
   <style>
-  @media (max-width: 575.98px) {
-    /* Hide arrows and indicator dots */
-    .full-width-carousel .carousel-control-prev,
-    .full-width-carousel .carousel-control-next,
-    .full-width-carousel .carousel-indicators {
-      display: none !important;
-    }
-	
-	
-	.full-width-carousel .carousel-caption-glass {
-      left: 10px !important;
-      right: 10px !important;
-      width: auto !important;
-      max-width: 90% !important;
-    }
-	
-	
-	
+
+
+
+
+
+@media (max-width: 575.98px) {
+  /* Hide arrows and indicator dots */
+  .full-width-carousel .carousel-control-prev,
+  .full-width-carousel .carousel-control-next,
+  .full-width-carousel .carousel-indicators {
+    display: none !important;
   }
+
+  /* Perfectly centered glass box on mobile */
+  .full-width-carousel .carousel-caption-glass {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    width: calc(100% - 24px) !important; /* Leaves crisp 12px margins on left and right */
+    max-width: none !important;
+    bottom: 3rem !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+  
+  
+  
+/* Move carousel indicator dots higher */
+//.full-width-carousel .carousel-indicators {
+  bottom: 30px !important; /* Increase this number (e.g., 40px, 50px) to push them higher */
+  z-index: 15; /* Ensures they sit cleanly above overlays */
+}
+  
+  
+  
+  
+  
+ /* =========================================================
+   CENTERED AGENCY PAGINATION (No Background, High Contrast)
+   ========================================================= */
+.full-width-carousel .carousel-indicators {
+  position: absolute !important;
+  bottom: 45px !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
+  width: auto !important;
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+  
+  /* NO background box — clean floating dots */
+  background: transparent !important;
+  border: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding: 0 !important;
+}
+
+.full-width-carousel .carousel-indicators button {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: 9px !important;
+  height: 9px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  
+  /* Solid contrast design: clean white with a dark drop shadow for visibility over any image */
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border: 1.5px solid #ffffff !important;
+  border-radius: 50% !important;
+  opacity: 0.85;
+  //box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* Punchy shadow makes them stand out on white photos */
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.full-width-carousel .carousel-indicators button:hover {
+  opacity: 1;
+  background-color: #ffffff !important;
+  transform: scale(1.3);
+}
+
+/* Active State: Morphs into a brilliant solid white dash */
+.full-width-carousel .carousel-indicators button.active {
+  width: 32px !important;
+  height: 9px !important;
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  border-radius: 5px !important;
+  opacity: 1;
+  //box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+
+@media (max-width: 575.98px) {
+  .full-width-carousel .carousel-indicators,
+  .full-width-carousel .carousel-control-prev,
+  .full-width-carousel .carousel-control-next {
+    display: none !important;
+  }
+} 
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
 </style>
   
   
@@ -346,7 +449,7 @@
   <div class="full-width-carousel">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       
-      <div class="container-sm">
+      <div class="container-sm  ">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -481,7 +584,7 @@
       <!-- Bottom Card Body (Stays intact below) -->
       <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
         <h5 class=" text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-          <span class="fs-2 fw-light text-muted ">01</span> Residential Interior
+          <!--<span class="fs-2 fw-light text-muted ">01</span>--> Residential Interior
         </h5>
         <p class="card-text text-muted text-justify mt-3 pb-sm-3 small flex-grow-1 ">
           Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow &amp; natural light.
@@ -514,7 +617,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">02</span> Commercial Interior
+                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Commercial Interior
                 </h5>
                 <p class="card-text text-muted small text-justify  mt-3 flex-grow-1 ">
                   Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces.
@@ -546,7 +649,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">03</span> Corporate Interior
+                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Corporate Interior
                 </h5>
                 <p class="card-text text-muted text-justify mt-3  small flex-grow-1 ">
                   Elevated professional environments designed to inspire productivity, balancing executive sophistication with functionality.
@@ -578,7 +681,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">04</span> Custom Kitchen Design
+                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Custom Kitchen Design
                 </h5>
                 <p class="card-text text-muted text-justify mt-3 small flex-grow-1 ">
                   Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry &amp; premium stone surfaces.
@@ -610,7 +713,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2  tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">05</span> Master Suite Design
+                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Master Suite Design
                 </h5>
                 <p class="card-text text-muted small text-justify mt-3  flex-grow-1 ">
                   Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.
@@ -642,7 +745,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2  tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">06</span> Architectural Millwork
+                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Architectural Millwork
                 </h5>
                 <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
                   Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.
@@ -674,7 +777,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">07</span> Atmospheric Lighting
+                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Atmospheric Lighting
                 </h5>
                 <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
                   Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and mood.
@@ -706,7 +809,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">08</span> Spa &amp; Bath Design
+                 <!--<span class="fs-2 fw-light text-muted ">01</span>--> Spa &amp; Bath Design
                 </h5>
                 <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
                   Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, water elements.
@@ -738,7 +841,7 @@
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
                 <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 tracking-wider">
-                  <span class="fs-2 fw-light text-muted trigger1">09</span> Material &amp; Texture Design
+                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Material &amp; Texture Design
                 </h5>
                 <p class="card-text text-muted small flex-grow-1 mt-3 ">
                   Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth.
@@ -1397,10 +1500,10 @@
           </div>
 
           <!-- OUTSIDE NAVIGATION PILLS -->
-          <div class="mt-4 pt-2 d-none d-sm-flex justify-content-center align-items-center gap-2">
-            <button class="shaw-nav-dot active" data-index="0" aria-label="Slide 1"></button>-
-            <button class="shaw-nav-dot" data-index="1" aria-label="Slide 2"></button>-
-            <button class="shaw-nav-dot" data-index="2" aria-label="Slide 3"></button>-
+          <div class="mt-4 pt-2 d-none d-sm-flex justify-content-center align-items-center gap-3">
+            <button class="shaw-nav-dot active" data-index="0" aria-label="Slide 1"></button>
+            <button class="shaw-nav-dot" data-index="1" aria-label="Slide 2"></button>
+            <button class="shaw-nav-dot" data-index="2" aria-label="Slide 3"></button>
             <button class="shaw-nav-dot" data-index="3" aria-label="Slide 4"></button>
           </div>
         </div>
