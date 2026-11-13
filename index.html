@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="service.css">
   <link rel="stylesheet" href="profile.css">
+  <!-- Global Lenis Smooth Scroll CSS -->
+<link rel="stylesheet" href="lenis-global.css">
   
   <!-- Include GSAP Core and ScrollTrigger CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -98,26 +100,7 @@
 	  
     }
 
-    .scrolly-card-item {
-      width: 320px;
-      max-width: 320px;
-      transform: translateZ(0);
-    }
-
-    .service-card-img {
-      height: 240px;
-    }
-
-    @media (min-width: 576px) {
-      .scrolly-card-item {
-        width: 550px;
-        max-width: 600px;
-		
-      }
-      .service-card-img {
-        height: 360px;
-      }
-    }
+    
 
     /* Mobile Natural Responsiveness: Fluid horizontal scroll container or clean layout without dead space */
     @media (max-width: 575.98px) {
@@ -270,8 +253,115 @@
 
   
   
+/* =========================================================
+   HERO LIFT & SCALE STYLES
+   ========================================================= */
+.hero-lift-section {
+  position: relative;
+  height: 120vh; /* Replaced fixed 768px with full viewport height */
+  min-height: 700px; /* Optional safety floor for ultra-wide screens */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a1a;
+  border-bottom: 2px solid #424242;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.hero-giant-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(4rem, 18vw, 14rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  will-change: transform, opacity;
+  margin-top: 3rem;
+}
+
+.hero-subtitle {
+  font-size: 0.75rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4rem;
+  will-change: transform, opacity;
+}
+
+
+
+/* =========================================================
+   MINIMALIST SCROLL DOWN INDICATOR & LOOP ANIMATION
+   ========================================================= */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 12;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.hero-scroll-text {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-scroll-bracket {
+  width: 14px;
+  height: 14px;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.7);
+  border-bottom: 1.5px solid rgba(255, 255, 255, 0.7);
+  transform: rotate(45deg);
+  margin-top: -2px;
+}
+
+/* Continuous looping bobbing animation */
+.scroll-indicator-anim {
+  animation: scrollLoopBounce 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scrollLoopBounce {
+  0%, 100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(8px) translateX(-50%);
+  }
+}
+
+@media (max-width: 575.98px) {  
+  .hero-lift-section {
+    height: 100svh;
+  }
+}
+
+
   
   
+  
+  
+  
+  
+  
+  
+  
+  
+  }
   
   
   
@@ -300,6 +390,40 @@
 </head>
 
 <body>
+
+
+
+
+<!-- =========================================================
+       HERO PIPPED SECTION (Shows Big Title first)
+       ========================================================= -->
+  <section class="hero-lift-section" id="heroLiftSection">
+    <div class="text-center">
+      <h1 class="hero-giant-title" id="giantTitle">SHAW</h1>
+      <p class="hero-subtitle">Architectural Monograph &mdash; 2026</p>
+    </div>
+	
+	<!-- Animated Scroll Indicator & Downward Bracket -->
+    <div class="hero-scroll-indicator scroll-indicator-anim">
+      <span class="hero-scroll-text">Scroll</span>
+      <div class="hero-scroll-bracket"></div>
+    </div>
+	
+	
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- =========================================================
        SECTION 1: GLOBAL NAVIGATION HEADER
@@ -560,7 +684,7 @@
 
   <div class="gsap-horizontal-wrapper overflow-hidden pt-4 pb-3 mb-3" id="gsapServicesSection">
     <div class="gsap-pin-container">
-      <div class="gsap-horizontal-track d-flex gap-2 gap-sm-2 px-3 px-sm-4" id="gsapServicesTrack">
+      <div class="gsap-horizontal-track d-flex gap-2 gap-sm-1 px-3 px-sm-4" id="gsapServicesTrack">
 
         <!-- Card 1 -->
        <!-- Card 1 -->
@@ -573,22 +697,20 @@
         <img src="build35.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Residential Design">
         
         <!-- Hover Overlay Content -->
-        <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-          <span class="fs-1 fw-light text-white d-block mb-2">01</span>
-          <h5 class=" text-uppercase  fs-4 tracking-wider text-white mb-3">Residential Interior</h5>
-		  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">design tailored for luxury</span>
+        <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-4">
+          <span class="fw-light text-white d-block mb-2" style = "font-size:3em;" >01</span>
+           <h5 class=" text-uppercase  fs-6 tracking-wider text-white mb-3">Residential Interior</h5>
+		  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Comprehensive interior architectural design tailored for luxury residences.</span>
           
         </div>
       </div>
 
       <!-- Bottom Card Body (Stays intact below) -->
       <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-        <h5 class=" text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-          <!--<span class="fs-2 fw-light text-muted ">01</span>--> Residential Interior
+        <h5 class=" text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+          <span class="fs-4 fw-light  ">01.</span> Residential Interior
         </h5>
-        <p class="card-text text-muted text-justify mt-3 pb-sm-3 small flex-grow-1 ">
-          Comprehensive interior architectural design tailored for luxury residences, harmonizing spatial flow &amp; natural light.
-        </p>
+        
         <div class="divider-line-dk mx-auto mb-2"></div>
       </div>
       
@@ -608,20 +730,18 @@
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-2">02</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Commercial Interior</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Curated design solutions</span>
+                  <span class="fw-light text-white d-block mb-2" style = "font-size:3em;" >02</span>
+				  <h5 class=" text-uppercase  fs-6 tracking-wider text-white mb-3">Commercial Interior</h5>
+		  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Curated design solutions for premium retail environments & boutique hotels.</span>
                 </div>
               </div>
 
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Commercial Interior
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light  ">02.</span> Commercial Interior
                 </h5>
-                <p class="card-text text-muted small text-justify  mt-3 flex-grow-1 ">
-                  Curated design solutions for premium retail environments, boutique hotels, and upscale hospitality spaces.
-                </p>
+                
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
@@ -640,20 +760,19 @@
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-3">03</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Corporate Interior</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Elevated professional environments</span>
+                  <span class="fw-light text-white d-block mb-2" style = "font-size:3em;" >03</span>
+				  <h5 class=" text-uppercase  fs-6 tracking-wider text-white mb-3">Corporate Interior</h5>
+		  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Elevated professional environments designed to inspire productivity.</span>
+                  
                 </div>
               </div>
 
               <!-- Bottom Card Body (Stays intact below) -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Corporate Interior
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light  ">03.</span> Corporate Interior
                 </h5>
-                <p class="card-text text-muted text-justify mt-3  small flex-grow-1 ">
-                  Elevated professional environments designed to inspire productivity, balancing executive sophistication with functionality.
-                </p>
+               
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
@@ -672,20 +791,17 @@
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-2">04</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Custom Kitchen Design</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Architectural kitchen concepts</span>
+                  <span class="fw-light text-white d-block mb-2" style="font-size:3em;">04</span>
+                  <h5 class="text-uppercase fs-6 tracking-wider text-white mb-3">Custom Kitchen Design</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Architectural kitchen concepts merging state-of-the-art tech.</span>
                 </div>
               </div>
 
-              <!-- Bottom Card Body (Stays intact below) -->
+              <!-- Bottom Card Body -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Custom Kitchen Design
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light">04.</span> Custom Kitchen Design
                 </h5>
-                <p class="card-text text-muted text-justify mt-3 small flex-grow-1 ">
-                  Architectural kitchen concepts merging state-of-the-art culinary technology with seamless cabinetry &amp; premium stone surfaces.
-                </p>
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
@@ -704,20 +820,17 @@
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-2">05</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Master Suite Design</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Sanctuary-like private quarters</span>
+                  <span class="fw-light text-white d-block mb-2" style="font-size:3em;">05</span>
+                  <h5 class="text-uppercase fs-6 tracking-wider text-white mb-3">Master Suite Design</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Sanctuary-like private quarters and integrated luxury.</span>
                 </div>
               </div>
 
-              <!-- Bottom Card Body (Stays intact below) -->
+              <!-- Bottom Card Body -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2  tracking-wider">
-                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Master Suite Design
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light">05.</span> Master Suite Design
                 </h5>
-                <p class="card-text text-muted small text-justify mt-3  flex-grow-1 ">
-                  Sanctuary-like private quarters encompassing custom walk-in wardrobes, tranquil sleeping quarters, and integrated luxury.
-                </p>
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
@@ -736,20 +849,17 @@
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-2">06</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Architectural Millwork</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Handcrafted architectural woodwork</span>
+                  <span class="fw-light text-white d-block mb-2" style="font-size:3em;">06</span>
+                  <h5 class="text-uppercase fs-6 tracking-wider text-white mb-3">Architectural Millwork</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Handcrafted woodwork and bespoke furniture pieces.</span>
                 </div>
               </div>
 
-              <!-- Bottom Card Body (Stays intact below) -->
+              <!-- Bottom Card Body -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2  tracking-wider">
-                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Architectural Millwork
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light">06.</span> Architectural Millwork
                 </h5>
-                <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
-                  Handcrafted architectural woodwork, built-in paneling, and bespoke furniture pieces engineered to exact specifications.
-                </p>
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
@@ -768,20 +878,17 @@
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-2">07</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Atmospheric Lighting</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">lighting designed to accentuate</span>
+                  <span class="fw-light text-white d-block mb-2" style="font-size:3em;">07</span>
+                  <h5 class="text-uppercase fs-6 tracking-wider text-white mb-3">Atmospheric Lighting</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Lighting designed to accentuate architectural features.</span>
                 </div>
               </div>
 
-              <!-- Bottom Card Body (Stays intact below) -->
+              <!-- Bottom Card Body -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 mb-2 tracking-wider">
-                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Atmospheric Lighting
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light">07.</span> Atmospheric Lighting
                 </h5>
-                <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
-                  Layered lighting strategies designed to accentuate architectural features, manipulate spatial perception, and mood.
-                </p>
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
@@ -796,24 +903,21 @@
               
               <!-- Image Wrapper with Hover Overlay -->
               <div class="position-relative overflow-hidden">
-                <img src="build54.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Spa &amp; Bath Design">
+                <img src="build54.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Spa & Bath Architecture">
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-2">08</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Spa &amp; Bath Design</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">Spa-inspired wellness spaces</span>
+                  <span class="fw-light text-white d-block mb-2" style="font-size:3em;">08</span>
+                  <h5 class="text-uppercase fs-6 tracking-wider text-white mb-3">Spa & Bath Architecture</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Spa-inspired wellness spaces featuring tactile organic stones.</span>
                 </div>
               </div>
 
-              <!-- Bottom Card Body (Stays intact below) -->
+              <!-- Bottom Card Body -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 tracking-wider">
-                 <!--<span class="fs-2 fw-light text-muted ">01</span>--> Spa &amp; Bath Design
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light">08.</span> Spa & Bath Architecture
                 </h5>
-                <p class="card-text text-muted small text-justify mt-3 flex-grow-1 ">
-                  Spa-inspired wellness spaces featuring tactile organic stones, minimalist fixtures, water elements.
-                </p>
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
@@ -828,30 +932,27 @@
               
               <!-- Image Wrapper with Hover Overlay -->
               <div class="position-relative overflow-hidden">
-                <img src="build48.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Material &amp; Texture Design">
+                <img src="build48.jpg" class="card-img-top w-100 object-fit-cover service-card-img" alt="Material & Texture Design">
                 
                 <!-- Hover Overlay Content -->
                 <div class="img-hover-overlay d-flex flex-column justify-content-center align-items-center text-center p-3">
-                  <span class="fs-1 fw-light text-white d-block mb-2">09</span>
-                  <h5 class="text-uppercase fs-4 tracking-wider text-white mb-3">Material &amp; Texture Design</h5>
-                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2">curation of tactile palettes</span>
+                  <span class="fw-light text-white d-block mb-2" style="font-size:3em;">09</span>
+                  <h5 class="text-uppercase fs-6 tracking-wider text-white mb-3">Material & Texture Design</h5>
+                  <span class="fs-6 fw-light fst-italic text-white d-block mb-2 px-3">Expert curation of tactile palettes and luxury textiles.</span>
                 </div>
               </div>
 
-              <!-- Bottom Card Body (Stays intact below) -->
+              <!-- Bottom Card Body -->
               <div class="card-body p-4 bg-white d-flex flex-column flex-grow-1">
-                <h5 class="text-uppercase fs-7 tracking-wider text-dark text-center mt-2 tracking-wider">
-                  <!--<span class="fs-2 fw-light text-muted ">01</span>--> Material &amp; Texture Design<!--<span class="fs-2 fw-light text-muted ">01</span>-->
+                <h5 class="text-uppercase fs-6 tracking-wider text-dark text-center mt-2 mb-4 tracking-wider">
+                  <span class="fs-4 fw-light">09.</span> Material & Texture Design
                 </h5>
-                <p class="card-text text-muted small flex-grow-1 mt-3 ">
-                  Expert curation of tactile palettes, artisanal wall finishes, luxury textiles, and rare patinas that infuse warmth, depth.
-                </p>
                 <div class="divider-line-dk mx-auto mb-2"></div>
               </div>
               
             </a>
           </div>
-        </div>   
+        </div>
 	   
 	   
 	   
@@ -865,6 +966,25 @@
   </div>
 
   <style>
+  
+  
+ 
+
+    @media (min-width: 576px) {
+      .scrolly-card-item {
+        width: 420px;
+        max-width: 420px;
+		
+      }
+      .service-card-img {
+        height: 520px;
+      }
+    }
+  
+  
+  
+    
+  
   /* Base Reset */
   .card, .card img, .light-card {
     border-radius: 0 !important;
@@ -887,6 +1007,12 @@
     transition: opacity 0.4s ease;
     pointer-events: none;
     z-index: 2;
+	
+	 backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+	
+	
+	
   }
 
 
@@ -907,7 +1033,7 @@
 
    
     .scrolly-card-item .card:hover .divider-line-dk {
-      width: 20%;
+      width: 50%;
     }
   }
 
@@ -920,6 +1046,63 @@
       transform: none !important;
     }
   }
+  
+  
+  @media (max-width: 575.98px) {
+  .scrolly-card-item .card {
+    height: auto !important;
+  }
+  .scrolly-card-item .card-body {
+    padding: 1.25rem !important;
+  }
+}
+  
+  
+  
+  
+  
+ /* =========================================================
+     MOBILE & DESKTOP CARD SIZING FIX
+     ========================================================= */
+  
+  /* 1. Base mobile card width (applies to phones < 576px) */
+  .scrolly-card-item {
+    width: 220px !important;
+    max-width: 220px !important;
+    transform: translateZ(0);
+    flex-shrink: 0;
+  }
+
+  .service-card-img {
+    height: 240px;
+  }
+
+  /* 2. Desktop & Tablet landscape sizing (>= 576px) */
+  @media (min-width: 576px) {
+    .scrolly-card-item {
+      width: 420px !important;
+      max-width: 420px !important;
+    }
+    .service-card-img {
+      height: 520px;
+    }
+  }
+
+  /* 3. Clean override for the mobile swipe track so it allows custom card widths */
+  @media (max-width: 575.98px) {
+    .gsap-horizontal-track {
+      display: flex !important;
+      gap: 1rem; /* Keeps spacing neat between the smaller cards */
+    }
+  } 
+  
+  
+  
+  
+  
+  
+  
+  
 </style>
   
   
@@ -1366,7 +1549,7 @@
     <div class="container trigger1">
       <div class="row justify-content-center">
         <div class="col-12">
-          <div class="shaw-carousel-wrapper bg-white p-4 p-lg-5 position-relative shadow-sm" id="shawSwipeContainer" style="overflow: hidden !important; width: 100%;">
+          <div class="shaw-carousel-wrapper bg-white p-4 p-lg-5 position-relative " id="shawSwipeContainer" style="overflow: hidden !important; width: 100%;">
             <div class="shaw-track" id="shawTrack">
               <!-- Slide 1 -->
               <div class="shaw-slide shaw-active">
@@ -1927,6 +2110,87 @@
       }
     });
   </script>
+  
+  
+  
+  
+  
+  <script>
+  
+  
+  
+
+gsap.registerPlugin(ScrollTrigger);
+
+let heroTl = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#heroLiftSection",
+    start: "top top",
+    end: "+=100%", // Pins for 1 full viewport height of scrolling
+    pin: true,     // Locks the hero section in place while scrolling
+    scrub: true,   // Ties the animation directly to mouse/trackpad scroll
+    anticipatePin: 1
+  }
+});
+
+// As you scroll down, the giant title scales up and fades out
+heroTl.to("#giantTitle", {
+  scale: 1.25,     // Makes the title get noticeably bigger
+  opacity: 0,
+  ease: "power2.in"
+}, 0);
+
+heroTl.to("#heroSubtitle", {
+  opacity: 0,
+  ease: "power2.in"
+}, 0);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Lenis Library CDN -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<!-- Global Lenis Initialization -->
+<script src="lenis-global.js"></script>
 
   <!-- Bootstrap Bundle JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>

@@ -12,6 +12,10 @@
   <link rel="stylesheet" href="profile.css">
   <link rel="stylesheet" href="portfolio.css">
   
+  <link rel="stylesheet" href="lenis-global.css">
+  
+  
+  
   <!-- Google Fonts Import -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -758,39 +762,35 @@
     </div>
   </div>
 
-  <!-- =========================================================
+
+
+
+
+
+ <!-- =========================================================
        LIGHTBOX MODAL DIALOG
        ========================================================= -->
   <div class="modal fade" id="portfolioModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content modal-content-clean position-relative shadow-lg">
+      <!-- ADDED data-lenis-prevent HERE -->
+      <div class="modal-content modal-content-clean position-relative shadow-lg" data-lenis-prevent>
         <button type="button" class="modal-close-clean" data-bs-dismiss="modal" aria-label="Close">&times;</button>
         
         <!-- Lightbox Navigation Arrows -->
         <button type="button" class="lb-arrow lb-prev" onclick="navigateCustomLightbox(-1)" aria-label="Previous Image">&#10094;</button>
         <button type="button" class="lb-arrow lb-next" onclick="navigateCustomLightbox(1)" aria-label="Next Image">&#10095;</button>
 
-
-
-
-
-
         <!-- Main Image Stage (Click to Zoom) -->
         <div class="lb-stage" id="lbStage" onclick="toggleImageZoom()">
           <img id="modalImg" src="" class="lb-img" alt="Project Image">
         </div>
 
-
-
-
         <!-- Info Below Image -->
         <div class="lb-caption">
-		
-	<!-- Mobile Swipe Hint -->
-          <div class="d-block d-sm-none text-center text-white pt-2 pb-4 " style="font-size: 9.5px; letter-spacing: 0.25em; color:white;">
+          <!-- Mobile Swipe Hint -->
+          <div class="d-block d-sm-none text-center text-white pt-2 pb-4" style="font-size: 9.5px; letter-spacing: 0.25em; color:white;">
             &larr; SWIPE TO EXPLORE &rarr;
           </div>
-		
 		
           <div class="d-flex align-items-center gap-2 mb-1">
             <span id="modalNumber" class="text-white-50 small text-uppercase">01</span>
@@ -809,6 +809,12 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
 
   <section class="container my-3">
     <div class="bg-white p-2 p-md-5">
@@ -1193,10 +1199,41 @@
   
   
   
+  <!-- Lenis Library CDN -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+<!-- Global Lenis Initialization -->
+<script src="lenis-global.js"></script>  
+  
+  
+  <script>
+  
+  
+  // 5. Pause background scroll when modals/offcanvas open
+  document.addEventListener("show.bs.modal", () => {
+    if (window.lenis) window.lenis.stop();
+  });
+  
+  document.addEventListener("hidden.bs.modal", () => {
+    if (window.lenis) window.lenis.start();
+  });
+
+  document.addEventListener("show.bs.offcanvas", () => {
+    if (window.lenis) window.lenis.stop();
+  });
+  
+  document.addEventListener("hidden.bs.offcanvas", () => {
+    if (window.lenis) window.lenis.start();
+  });
   
   
   
   
+  
+  
+  
+  
+  </script>
   
   
   

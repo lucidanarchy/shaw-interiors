@@ -189,7 +189,7 @@ padding:0.65em 0;
   width: 100%;
   background: #1a1a1a;
   background-color: rgba(26, 26, 26, 0.9);
-  border-bottom: 2px solid #424242;
+  border-bottom: 1px solid #424242;
   backdrop-filter: blur(7px);
   -webkit-backdrop-filter: blur(7px);
 }
@@ -588,7 +588,7 @@ overflow-x: hidden !important;
     left: 0;
     width: 100%;
     background-color: #1a1a1a !important;
-    border-bottom: 5px solid #424242;
+    border-bottom: 2px solid #424242;
     z-index: 1060;
   }
 
@@ -1008,7 +1008,7 @@ max-width: 576px;
    ========================================================= */
 
 @media (max-width: 767.98px) {
-  .full-width-carousel {
+  //.full-width-carousel {
     margin-top: 60px;
   }
 
@@ -1045,6 +1045,12 @@ max-width: 576px;
 }
 
 @media (max-width: 576px) {
+  
+  //.full-width-carousel {
+    margin-top: 60px;
+  }
+  
+  
   .carousel,
   .carousel-inner,
   .carousel-item {
@@ -1117,7 +1123,7 @@ max-width: 576px;
 .pullquote-large-text2 {
   /* font-family: 'Cormorant Garamond', Georgia, serif; */
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.15rem, 1.5vw + 0.8rem, 2.1rem); 
+  font-size: clamp(1.32rem, 1.5vw + 0.8rem, 2.1rem); 
   line-height: 1.5;
   letter-spacing: -0.2px;
   color: #4a4a4a !important;
@@ -1748,3 +1754,29 @@ background-color:#202020;
 }
 
 
+/* =========================================================
+   FIX FOR FIXED HEADER & SCROLLBAR LAYOUT JUMP (LENIS SYNC)
+   ========================================================= */
+
+/* Ensure the fixed header accounts for scrollbar spacing */
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* Prevent Lenis scrollbar padding shifts on modern browsers */
+html.lenis {
+  scrollbar-gutter: stable;
+}
+
+/* If your header uses standard Bootstrap fixed-top class */
+.fixed-top {
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
