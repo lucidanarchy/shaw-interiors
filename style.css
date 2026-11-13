@@ -898,6 +898,7 @@ max-width: 576px;
   position: relative;
   overflow: hidden;
   background-color: #1a1a1a; /* Prevents raw white background flashes during transitions */
+  //border-bottom: solid 40px #1a1a1a;
 }
 
 .carousel,
